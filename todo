@@ -1,0 +1,70 @@
+automounts
+fonts
+boot modules
+ttys
+networking
+firewall
+env variables
+sys packages/programs
+wayland
+shell
+pipewwire/alsa
+steam and video drivers
+sudo and sudo hardening
+ssh and ssh hardening
+ly
+services
+users
+
+
+
+--
+
+Hyprland
+Hypridle
+Hyprpaper
+Hyprcursor
+QuickShell
+gtk3
+gtk4
+qt5-base
+qt6-base
+dunst
+rofi
+ly
+noto-fonts
+
+Gnome-caculator
+Gnome-clocks
+Gnome-nautilus
+Gnome-weather
+Gnome-disk-utility
+Gnome-calendar
+Bitwarden
+steam
+firefox
+zen-browser
+pavucontrol
+
+radeon
+sof-firmware
+amd-ucode
+e2fsprogs
+dosfstools
+networkmanager
+man
+git
+
+yazi
+nethog
+btop
+htop
+nano
+cava
+cbonsai
+clipse
+battop
+
+------------------------------------------------------
+
+homepage w/ gamedig, navidome, time&date, (Glances, Resources), Greeting, Logo, (Open-Meteo, OpenWeatherMap), Search
