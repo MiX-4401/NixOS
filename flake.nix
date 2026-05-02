@@ -8,13 +8,13 @@
   outputs = { self, nixpkgs, ... }@inputs:
   let 
     lib = nixpkgs.lib;
+    system = "x86_64-linux";
   in {
     nixosConfigurations = {
       nixlaptop = lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        inherit system;
         modules = [
-          ./Hosts/nixos/configuration.nix
+          ./Hosts/nixlaptop/configuration.nix
         ];
       };
     };

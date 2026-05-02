@@ -20,6 +20,7 @@
         # Helper
         grim
         slurp
+        home-manager
 
         # System
         timeshift
@@ -59,8 +60,8 @@
         # System
         
         # Desktop
-        hyprland.enable = true;
-        hyprlock.enable = true;
+        # hyprland.enable = true;
+        # hyprlock.enable = true;
                 
         # Terminal Programs
         htop.enable = true;
