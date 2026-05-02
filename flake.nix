@@ -17,6 +17,12 @@
           ./Hosts/nixlaptop/configuration.nix
         ];
       };
+      nixvm = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./Hosts/nixvm/configuration.nix
+        ];
+      };
     };
   };
 }
