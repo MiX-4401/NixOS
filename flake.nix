@@ -21,7 +21,7 @@
       };
 
       nixvm = lib.nixosSystem {
-        system = { inherit system };
+        inherit system;
         specialArgs = { inherit inputs };
 
         modules = [
