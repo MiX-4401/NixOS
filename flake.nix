@@ -3,9 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -17,10 +19,18 @@
           ./Hosts/nixlaptop/configuration.nix
         ];
       };
+
       nixvm = lib.nixosSystem {
-        inherit system;
+        system = { inherit system };
+        specialArgs = { inherit inputs };
+
         modules = [
           ./Hosts/nixvm/configuration.nix
+          ./Hosts/nixvm/home-manager.nix
+
+          {
+            home-manager.users.nixuser = import ./Hosts/nixvm/Dotfiles/home.nix;
+          }    
         ];
       };
     };

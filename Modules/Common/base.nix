@@ -20,7 +20,6 @@
         # Helper
         grim
         slurp
-        home-manager
 
         # System
         timeshift
