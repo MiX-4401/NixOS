@@ -22,7 +22,7 @@
 
       nixvm = lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs };
+        specialArgs = { inherit inputs; };
 
         modules = [
           ./Hosts/nixvm/configuration.nix
