@@ -26,7 +26,7 @@
         ly
 
         # Desktop
-        kitty
+        # kitty
         # gnome-maps
         # gnome-music
         # gnome-notes
