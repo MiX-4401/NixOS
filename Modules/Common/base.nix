@@ -42,7 +42,7 @@
         # hyprland-workspaces
         
         # Terminal Programs
-        ncdu
+        
         nethogs
         btop
         cava
