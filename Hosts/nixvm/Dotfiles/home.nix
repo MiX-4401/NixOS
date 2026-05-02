@@ -6,4 +6,5 @@
     ];
 
     home.file.".zshrc".source = ./.zshrc;
+    home.stateVersion = "24.05";
 }

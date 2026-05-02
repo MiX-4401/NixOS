@@ -8,6 +8,4 @@
     home-manager.extraSpecialArgs = { 
         inherit inputs;
     };
-    home-manager.home.stateVersion = "24.05";
-
 }
