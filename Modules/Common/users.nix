@@ -1,21 +1,10 @@
 { config, pkgs, ... }:
 
 {
-    users.users.nixuser = {
+    users.users.ejradford = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
         shell = pkgs.zsh;
-        password = "nixuser";
-    };
-
-    programs.zsh = {
-        enable = true;
-        autosuggestions.async = true;
-        autosuggestions.enable = true;
-        enableCompletion = true;
-        syntaxHighlighting.enable = true;
-        shellAliases = {
-            c = "clear";
-        };     
+        hashedPassword = "$6$dpR5KS22c3tIhRZ7$FhWMuP6mhb4L6BlBkt1BBBb9tMcftiX041KrU/sjazfQYk38YwziumJ1uqJOt/udssACCPvasDmQK2B8oWOwx1";
     };
 }

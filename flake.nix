@@ -13,12 +13,19 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
-      # nixlaptop = lib.nixosSystem {
-      #   inherit system;
-      #   modules = [
-      #     ./Hosts/nixlaptop/configuration.nix
-      #   ];
-      # };
+      ejlaptop = lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+
+        modules = [
+          ./Hosts/ejlaptop/configuration.nix
+          ./Hosts/ejlaptop/home-manager.nix
+
+          {
+            home-manager.users.ejradford = import ./Hosts/ejlaptop/Dotfiles/home.nix;
+          }
+        ];
+      };
 
       nixvm = lib.nixosSystem {
         inherit system;

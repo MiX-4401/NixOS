@@ -1,70 +1,29 @@
 { pkgs, ... }:
 
 {
-
+    # NixOS
+    system.stateVersion = "24.05";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    # Time/language/keyboard settings
     time.timeZone = "Australia/Melbourne";
+    i18n.defaultLocale.defaultLocale = "en_AU.UTF-8";
+    services.xserver.xkb.layout = "au";
+    services.xserver.xkb.variant = "";
 
-    # System
-    system = {
-        stateVersion = "24.05";
-    }; 
-
+    # System fonts
     fonts.packages = [
         pkgs.noto-fonts
     ];
 
-    environment.systemPackages = with pkgs; [
-        
-        # Helper
-        # grim
-        # slurp
-
-        # # System
-        # timeshift
-        # ly
-
-        # Desktop
-        # kitty
-        # gnome-maps
-        # gnome-music
-        # gnome-notes
-        # gnome-clocks
-        # gnome-photos
-        # gnome-weather
-        # gnome-calendar
-        # gnome-calculator
-        # gnome-disk-utility
-        # hypridle
-        # hyprshot
-        # hypr-dynamic-cursors
-        # hyprland-workspaces
-        
-        # Terminal Programs
-        
-        # nethogs
-        # btop
-        # cava
-        # cbonsai
-        # clipse
-
-    ];
-
-    programs = {
-
-        # Helper
-        git.enable = true;
-
-        # System
-        
-        # Desktop
-        # hyprland.enable = true;
-        # hyprlock.enable = true;
-                
-        # Terminal Programs
-        # htop.enable = true;
-        # yazi.enable = true;
-        # nano.enable = true;
+    programs.zsh = {
+        enable = true;
+        autosuggestions.async = true;
+        autosuggestions.enable = true;
+        enableCompletion = true;
+        syntaxHighlighting.enable = true;
+        shellAliases = {
+            c = "clear";
+        };     
     };
 }
