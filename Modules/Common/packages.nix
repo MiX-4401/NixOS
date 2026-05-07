@@ -3,16 +3,16 @@
 {
     environment.systemPackages = with pkgs; [
         
-        # Helper
-        # grim
-        # slurp
+        # Dep
+        grim
+        slurp
 
-        # # System
-        # timeshift
-        # ly
+        # System
+        timeshift
+        ly
 
         # Desktop
-        # kitty
+        kitty
         # gnome-maps
         # gnome-music
         # gnome-notes
@@ -22,18 +22,18 @@
         # gnome-calendar
         # gnome-calculator
         # gnome-disk-utility
-        # hypridle
-        # hyprshot
+        hypridle
+        hyprshot
         # hypr-dynamic-cursors
         # hyprland-workspaces
         
         # Terminal Programs
-        
-        # nethogs
-        # btop
-        # cava
-        # cbonsai
-        # clipse
+        nethogs
+        btop
+        cava
+        cbonsai
+        clipse
+        ncdu
 
     ];
 
@@ -45,12 +45,12 @@
         # System
         
         # Desktop
-        # hyprland.enable = true;
-        # hyprlock.enable = true;
+        hyprland.enable = true;
+        hyprlock.enable = true;
                 
         # Terminal Programs
-        # htop.enable = true;
-        # yazi.enable = true;
-        # nano.enable = true;
+        htop.enable = true;
+        yazi.enable = true;
+        nano.enable = true;
     };
 }
