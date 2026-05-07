@@ -13,12 +13,12 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
-      nixlaptop = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./Hosts/nixlaptop/configuration.nix
-        ];
-      };
+      # nixlaptop = lib.nixosSystem {
+      #   inherit system;
+      #   modules = [
+      #     ./Hosts/nixlaptop/configuration.nix
+      #   ];
+      # };
 
       nixvm = lib.nixosSystem {
         inherit system;

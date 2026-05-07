@@ -18,12 +18,12 @@
     environment.systemPackages = with pkgs; [
         
         # Helper
-        grim
-        slurp
+        # grim
+        # slurp
 
-        # System
-        timeshift
-        ly
+        # # System
+        # timeshift
+        # ly
 
         # Desktop
         # kitty
@@ -43,11 +43,11 @@
         
         # Terminal Programs
         
-        nethogs
-        btop
-        cava
-        cbonsai
-        clipse
+        # nethogs
+        # btop
+        # cava
+        # cbonsai
+        # clipse
 
     ];
 
@@ -63,8 +63,8 @@
         # hyprlock.enable = true;
                 
         # Terminal Programs
-        htop.enable = true;
-        yazi.enable = true;
-        nano.enable = true;
+        # htop.enable = true;
+        # yazi.enable = true;
+        # nano.enable = true;
     };
 }
