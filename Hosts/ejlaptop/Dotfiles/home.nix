@@ -5,7 +5,6 @@
 
     home.packages = with pkgs; [
         # User packages here
-        
     ];
 
     # Example import: home.file.".zshrc".source = ./.zshrc; # This adds .zshrc to ~/.zshrc
