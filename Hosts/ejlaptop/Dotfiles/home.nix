@@ -8,7 +8,7 @@
     ];
 
     # Hyprpaper
-    home.services.hyprpaper = {
+    services.hyprpaper = {
         enable = true;
         settings = {
             preload = [
@@ -16,9 +16,15 @@
             ];
             wallpaper = [
             # By display
-            #"DP-2,~/wallpapers/wallpaper2.jpg"
+            # {
+            #   monitor = "DP-2";
+            #   path = "~/wallpapers/wallpaper2.jpg";
+            # }
             # By default/fallback
-            ",~/.config/hypr/Wallpapers/rainworld7.webp"
+            {
+                monitor = "";
+                path = "~/.config/hypr/Wallpapers/rainworld7.webp"; 
+            }
             ];
         };
     };
