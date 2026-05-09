@@ -7,6 +7,22 @@
         # User packages here
     ];
 
+    # Hyprpaper
+    home.services.hyprpaper = {
+        enable = true;
+        settings = {
+            preload = [
+            "~/.config/hypr/Wallpapers/rainworld7.webp"
+            ];
+            wallpaper = [
+            # By display
+            #"DP-2,~/wallpapers/wallpaper2.jpg"
+            # By default/fallback
+            ",~/.config/hypr/Wallpapers/rainworld7.webp"
+            ];
+        };
+    };
+
     # Example import: home.file.".zshrc".source = ./.zshrc; # This adds .zshrc to ~/.zshrc
 
     home.file.".zshrc" = {

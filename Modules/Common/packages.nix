@@ -24,7 +24,7 @@
         # gnome-disk-utility
         hypridle
         hyprshot
-        hyprpaper
+        # hyprpaper
         # hypr-dynamic-cursors
         # hyprland-workspaces
         
