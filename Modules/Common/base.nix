@@ -7,7 +7,7 @@
 
     # Time/language/keyboard settings
     time.timeZone = "Australia/Melbourne";
-    i18n.defaultLocale.defaultLocale = "en_AU.UTF-8";
+    i18n.defaultLocale = "en_AU.UTF-8";
     services.xserver.xkb.layout = "au";
     services.xserver.xkb.variant = "";
 

@@ -24,6 +24,7 @@
         # gnome-disk-utility
         hypridle
         hyprshot
+        hyprpaper
         # hypr-dynamic-cursors
         # hyprland-workspaces
         
@@ -34,7 +35,6 @@
         cbonsai
         clipse
         ncdu
-
     ];
 
     programs = {
