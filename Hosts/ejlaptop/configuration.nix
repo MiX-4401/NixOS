@@ -3,11 +3,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../Modules/Common/base.nix
-    ../../Modules/Common/users.nix
-    ../../Modules/Common/boot.nix
-    ../../Modules/Common/network.nix
-    ../../Modules/Common/packages.nix
+    ./home-manager.nix
+    ../../Modules/System/base.nix
+    ../../Modules/System/users.nix
+    ../../Modules/System/boot.nix
+    ../../Modules/System/network.nix
+    ../../Modules/System/packages.nix
   ];
 
   # Host specific configs

@@ -1,0 +1,8 @@
+{ ... };
+
+{
+    imports = [
+        ./Hyprland
+        ./Shell
+    ];
+}

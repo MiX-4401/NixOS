@@ -11,33 +11,15 @@
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
+    username = "ejradford";
   in {
     nixosConfigurations = {
       ejlaptop = lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs username; };
 
         modules = [
           ./Hosts/ejlaptop/configuration.nix
-          ./Hosts/ejlaptop/home-manager.nix
-
-          {
-            home-manager.users.ejradford = import ./Hosts/ejlaptop/Dotfiles/home.nix;
-          }
-        ];
-      };
-
-      nixvm = lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-
-        modules = [
-          ./Hosts/nixvm/configuration.nix
-          ./Hosts/nixvm/home-manager.nix
-
-          {
-            home-manager.users.nixuser = import ./Hosts/nixvm/Dotfiles/home.nix;
-          }    
         ];
       };
     };
