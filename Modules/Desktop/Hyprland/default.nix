@@ -27,14 +27,14 @@
                 shadow_render_power = 3;
                 col.shadow = "rgba(1a1a1aee)";
 
-                blur {
+                blur = {
                     enabled = true;
                     size = 3;
                     passes = 1;
                 }
             };
 
-            animation = {
+            animation = { 
                 enabled = true;
                 bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
                 animation = "windows, 1, 7, myBezier";
