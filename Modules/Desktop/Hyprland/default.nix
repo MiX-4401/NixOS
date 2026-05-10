@@ -63,11 +63,11 @@
                 force_default_wallpaper = -1;
                 disable_hyprland_logo = false; 
             };
-
+    
             "$mainMod" = "SUPER"; 
-
+            
             bind = [
-                "$mainMod, Q, exec, $terminal"
+                "$mainMod, Q, exec, kitty"
                 "$mainMod, C, killactive,"
                 "$mainMod, M, exit,"
                 "$mainMod, E, exec, $fileManager"
