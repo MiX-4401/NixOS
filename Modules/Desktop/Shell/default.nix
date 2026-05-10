@@ -3,8 +3,8 @@
 {
     programs.zsh = {
         enable = true;
-        autosuggestions.async = true;
-        autosuggestions.enable = true;
+        autosuggestion.async = true;
+        autosuggestion.enable = true;
         enableCompletion = true;
         syntaxHighlighting.enable = true;
         shellAliases = {

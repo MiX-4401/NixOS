@@ -13,4 +13,5 @@
 
   # Host specific configs
   services.sshd.enable = true;
+  networking.firewall.enable = false;
 }
