@@ -1,8 +1,8 @@
-{ ... }:
+# { ... }:
 
-{
-    services.hyprpaper.enable = true;
-    services.hyprpaper.settings = {
-        splash = false;
-    };
-}
+# {
+#     services.hyprpaper.enable = true;
+#     services.hyprpaper.settings = {
+#         splash = false;
+#     };
+# }
