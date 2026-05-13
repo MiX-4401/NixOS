@@ -1,9 +1,9 @@
 { ... }:
 
 {
-    home.file."~/Pictures/Wallpapers/" = {
+    home.file."/Pictures/Wallpapers/" = {
         source = "./Wallpapers/";
-        recurse = true;
+        recursive = true;
     };
 
     services.hyprpaper.settings = {
@@ -14,7 +14,7 @@
             {
                 monitor = "~/Pictures/Wallpaper/rainworld3.jpg";
                 path = "~/Pictures/Wallpaper/rainworld3.jpg";
-            };
+            }
         ];
     };
 }
