@@ -11,8 +11,10 @@
         splash = false;
 
         wallpaper = [
-            monitor = "~/Pictures/Wallpaper/rainworld3.jpg";
-            path = "~/Pictures/Wallpaper/rainworld3.jpg"
+            {
+                monitor = "~/Pictures/Wallpaper/rainworld3.jpg";
+                path = "~/Pictures/Wallpaper/rainworld3.jpg";
+            };
         ];
     };
 }
