@@ -2,19 +2,22 @@
 
 {
     home.file."/Pictures/Wallpapers/" = {
-        source = "./Wallpapers/";
+        source = ./Wallpapers;
         recursive = true;
     };
 
-    services.hyprpaper.settings = {
+    services.hyprpaper = {
         enable = true;
-        splash = false;
+    
+        settings = {
+            splash = false;
 
-        wallpaper = [
-            {
-                monitor = "~/Pictures/Wallpaper/rainworld3.jpg";
-                path = "~/Pictures/Wallpaper/rainworld3.jpg";
-            }
-        ];
+            wallpaper = [
+                {
+                    monitor = "";
+                    path = "~/Pictures/Wallpaper/rainworld3.jpg";
+                }
+            ];
+        };
     };
 }

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
     imports = [
@@ -7,4 +7,9 @@
         ./Shell
         ./Kitty
     ];
+
+    home.packages = [
+        pkgs.firefox
+    ];
+
 }
