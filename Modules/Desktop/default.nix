@@ -10,6 +10,7 @@
 
     home.packages = [
         pkgs.firefox
+        pkgs.hyprpaper
     ];
 
 }
