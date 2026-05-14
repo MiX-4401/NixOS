@@ -16,15 +16,15 @@
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
             home.stateVersion = "24.05";
-        };
 
-        home.packages = [
-            pkgs.firefox
-            pkgs.hyprpaper
-            pkgs.hyprland
-            pkgs.neofetch
-            pkgs.gnome-calculator
-        ];
+            home.packages = [
+                pkgs.firefox
+                pkgs.hyprpaper
+                pkgs.hyprland
+                pkgs.neofetch
+                pkgs.gnome-calculator
+            ];
+        };
     };
 
     # imports = [ 
