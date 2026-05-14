@@ -5,6 +5,6 @@
     stylix.enable = true;
 
     stylix.homeManagerIntegration.followSystem = true;
-
+    stylix.polarity = "dark";
     stylix.image = ../../Modules/Desktop/Wallpapers/rainworld2.png;
 }
