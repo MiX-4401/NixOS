@@ -13,5 +13,4 @@
         pkgs.hyprpaper
         pkgs.hyprland
     ];
-
 }
