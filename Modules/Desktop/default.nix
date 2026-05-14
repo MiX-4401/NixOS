@@ -12,5 +12,7 @@
         pkgs.firefox
         pkgs.hyprpaper
         pkgs.hyprland
+        pkgs.neofetch
+        pkgs.gnome-calculator
     ];
 }
