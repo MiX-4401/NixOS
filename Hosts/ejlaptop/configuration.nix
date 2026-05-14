@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./home-manager.nix
+    ./stylix
     ../../Modules/System/base.nix
     ../../Modules/System/users.nix
     ../../Modules/System/boot.nix
