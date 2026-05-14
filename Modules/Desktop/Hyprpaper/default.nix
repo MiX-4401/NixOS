@@ -2,7 +2,7 @@
 
 {
     home.file."/Pictures/Wallpapers/" = {
-        source = ./Wallpapers;
+        source = ../Wallpapers;
         recursive = true;
     };
 
@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                "~/Pictures/Wallpapers/rainworld3.jpg"
+                "~/Pictures/Wallpapers/rainworld2.png"
             ];
             wallpaper = [
-                ",~/Pictures/Wallpapers/rainworld3.jpg"
+                ",~/Pictures/Wallpapers/rainworld2.png"
             ];
         };
     };

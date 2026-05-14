@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
     imports = [ inputs.stylix.nixosModules.stylix ];
     stylix.enable = true;
 
-    stylix.image = ~/Pictures/Wallpapers/rainworld3.jpg;
+    stylix.targets.hyprland.enable = true;
+
+    stylix.image = ../../Modules/Desktop/Wallpapers/rainworld2.png;
 }
