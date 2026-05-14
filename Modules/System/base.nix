@@ -11,6 +11,8 @@
     services.xserver.xkb.layout = "au";
     services.xserver.xkb.variant = "";
 
+    environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
+
     # System fonts
     fonts.packages = [
         pkgs.noto-fonts

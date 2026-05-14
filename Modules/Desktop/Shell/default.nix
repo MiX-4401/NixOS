@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 
 {
     programs.zsh = {
@@ -13,7 +13,7 @@
         history = {
             save = 1000;
             size = 1000;
-            path = "~/.zshhistory";
+            path = "/home/${username}/.zshhistory";
         };
     };
 }

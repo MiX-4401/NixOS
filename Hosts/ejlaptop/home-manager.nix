@@ -12,5 +12,6 @@
             home.homeDirectory = "/home/${username}";
             home.stateVersion = "24.05";
         };
+        environment.pathsToLink = [ `/share/applications` `/share/xdg-desktop-portal` ];
     };
 }
