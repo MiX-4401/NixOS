@@ -13,6 +13,4 @@
             home.stateVersion = "24.05";
         };
     };
-
-    stylix.targets.hyprland.enable = false;
 }
