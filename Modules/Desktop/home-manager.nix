@@ -7,10 +7,30 @@
         useUserPackages = true;
         extraSpecialArgs = { inherit inputs username; };
         users.${username} = {
-            imports = [ ../../Modules/Desktop ];
+            imports = [ 
+                ./Hyprland
+                ./Hyprpaper
+                ./Shell
+                ./Kitty
+            ];
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
             home.stateVersion = "24.05";
         };
     };
+
+    # imports = [ 
+    #     ./Hyprland
+    #     ./Hyprpaper
+    #     ./Shell
+    #     ./Kitty
+    # ];
+
+    home.packages = [
+        pkgs.firefox
+        pkgs.hyprpaper
+        pkgs.hyprland
+        pkgs.neofetch
+        pkgs.gnome-calculator
+    ];
 }

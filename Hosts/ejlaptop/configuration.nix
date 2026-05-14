@@ -3,8 +3,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./home-manager.nix
-    ./stylix.nix
+    # ./home-manager.nix
+    # ./stylix.nix
+    ../../Modules/Desktop/default.nix
     ../../Modules/System/base.nix
     ../../Modules/System/users.nix
     ../../Modules/System/boot.nix

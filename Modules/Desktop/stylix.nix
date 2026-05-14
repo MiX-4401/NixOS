@@ -7,7 +7,9 @@
         enable = true;
 
         polarity = "dark";
-        image = ../../Modules/Desktop/Wallpapers/rainworld2.png;
+        # image = ../../Modules/Desktop/Wallpapers/rainworld2.png;
+        
+        image = ./Wallpapers/rainworld2.png;
 
         homeManagerIntegration.followSystem = true;
 
