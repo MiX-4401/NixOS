@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./Stylix
         ./Hyprland
         ./Hyprpaper
         ./Shell
