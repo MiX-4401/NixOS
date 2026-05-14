@@ -28,8 +28,8 @@
             };
 
             emoji = {
-                package = pkgs.noto-fonts;
-                family = "Noto Emoji";
+                package = pkgs.noto-fonts-color-emoji;
+                family = "Noto Color Emoji";
             };
         };
     };
