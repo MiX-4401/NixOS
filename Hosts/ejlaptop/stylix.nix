@@ -14,17 +14,17 @@
         fonts = {
             serif = {
                 package = pkgs.noto-fonts;
-                family = "Noto Serif";
+                name = "Noto Serif";
             };
 
             sansSerif = {
                 package = pkgs.noto-fonts;
-                family = "Noto Sans";
+                name = "Noto Sans";
             };
 
             monospace = {
                 package = pkgs.noto-fonts;
-                family = "Noto Sans Mono";
+                name = "Noto Sans Mono";
             };
 
             emoji = {
