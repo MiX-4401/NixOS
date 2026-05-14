@@ -6,10 +6,10 @@
         # package = null;
         # portalPackage = null;
 
-        extraConfig = 
-            ''
-            exec-once = hyprpaper
-            '';
+        # extraConfig = 
+        #     ''
+        #     exec-once = hyprpaper
+        #     '';
 
         settings = {
             monitor = [ ",preferred,auto,auto" ];

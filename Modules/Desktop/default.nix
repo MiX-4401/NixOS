@@ -11,6 +11,7 @@
     home.packages = [
         pkgs.firefox
         pkgs.hyprpaper
+        pkgs.hyprland
     ];
 
 }
