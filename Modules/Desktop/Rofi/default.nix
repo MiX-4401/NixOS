@@ -1,7 +1,7 @@
 { ... }:
 
 {
-    home.file."" = {
+    home.file."file" = {
         source = ./myConfig.rasi;
     };
 
