@@ -23,7 +23,6 @@
             home.packages = [
                 pkgs.firefox
                 # pkgs.hyprpaper
-                pkgs.dunst
                 pkgs.neofetch
                 pkgs.ashell
                 pkgs.walker
