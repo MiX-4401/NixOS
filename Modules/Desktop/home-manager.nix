@@ -9,7 +9,7 @@
         users.${username} = {
             imports = [ 
                 ./Hyprland  # Compositor
-                # ./Hyprpaper # Wallpaper engine
+                ./Hyprpaper # Wallpaper engine
                 ./Waypaper  # Wallapaper engine
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
@@ -22,7 +22,7 @@
 
             home.packages = [
                 pkgs.firefox
-                # pkgs.hyprpaper
+                pkgs.hyprpaper
                 pkgs.neofetch
                 pkgs.ashell
                 pkgs.walker
