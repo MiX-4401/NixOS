@@ -24,6 +24,7 @@
                 pkgs.neofetch
                 pkgs.gnome-calculator
                 pkgs.ashell
+                pkgs.walker
             ];
         };
     };
