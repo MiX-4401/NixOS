@@ -8,11 +8,12 @@
         extraSpecialArgs = { inherit inputs username; };
         users.${username} = {
             imports = [ 
-                ./Hyprland
-                ./Hyprpaper
-                ./Shell
-                ./Kitty
-                ./Ashell
+                ./Hyprland  # Compositor
+                ./Hyprpaper # Wallpaper
+                ./Shell     # Shell zsh
+                ./Kitty     # Terminal
+                ./Ashell    # StatusBar
+                ./Walker    # App launcher
             ];
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
