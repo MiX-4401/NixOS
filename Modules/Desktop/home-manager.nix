@@ -20,17 +20,10 @@
             home.packages = [
                 pkgs.firefox
                 pkgs.hyprpaper
-                pkgs.hyprland
+                # pkgs.hyprland
                 pkgs.neofetch
                 pkgs.gnome-calculator
             ];
         };
     };
-
-    # imports = [ 
-    #     ./Hyprland
-    #     ./Hyprpaper
-    #     ./Shell
-    #     ./Kitty
-    # ];
 }
