@@ -21,11 +21,11 @@
 
             home.packages = [
                 pkgs.firefox
-                pkgs.hyprpaper
+                # pkgs.hyprpaper
                 pkgs.neofetch
-                pkgs.gnome-calculator
                 pkgs.ashell
                 pkgs.walker
+                pkgs.waypaper
             ];
         };
     };
