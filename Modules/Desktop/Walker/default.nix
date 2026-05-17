@@ -12,7 +12,7 @@
             disable_click_to_close = false;
             force_keyboard_focus = true;
             terminal_title_flag = "App Launcher";
-            theme = "default";
+            theme = "nixos";
             timeout = 20;
         };
 
