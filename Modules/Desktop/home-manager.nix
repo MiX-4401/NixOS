@@ -12,8 +12,9 @@
                 ./Hyprpaper # Wallpaper
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
-                ./Ashell    # StatusBar
-                ./Walker    # App launcher
+                # ./Ashell    # StatusBar
+                # ./Walker    # App launcher
+                ./Rofi
             ];
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
@@ -21,10 +22,10 @@
 
             home.packages = [
                 pkgs.firefox
-                # pkgs.hyprpaper
+                pkgs.hyprpaper
                 pkgs.neofetch
-                pkgs.ashell
-                pkgs.walker
+                # pkgs.ashell
+                # pkgs.walker
                 # pkgs.waypaper
                 # pkgs.hyprlauncher
                 pkgs.rofi
