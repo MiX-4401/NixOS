@@ -7,7 +7,6 @@
         nethogs
         btop
         ncdu
-        rofi
     ];
 
     programs = {

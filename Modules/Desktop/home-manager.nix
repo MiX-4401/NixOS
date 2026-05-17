@@ -28,7 +28,7 @@
                 # pkgs.walker
                 # pkgs.waypaper
                 # pkgs.hyprlauncher
-                
+                pkgs.rofi
             ];
         };
     };

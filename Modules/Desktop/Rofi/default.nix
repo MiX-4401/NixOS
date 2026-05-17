@@ -2,7 +2,7 @@
 
 {
     home.file.".config/rofi/" = {
-        source = ./config.rasi;
+        source = ./myConfig.rasi;
     };
 
     programs.rofi = {
