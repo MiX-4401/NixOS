@@ -26,7 +26,8 @@
                 pkgs.ashell
                 pkgs.walker
                 # pkgs.waypaper
-                pkgs.hyprlauncher
+                # pkgs.hyprlauncher
+                pkgs.rofi
             ];
         };
     };
