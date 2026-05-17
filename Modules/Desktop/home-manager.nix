@@ -13,8 +13,8 @@
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
                 # ./Ashell    # StatusBar
-                # ./Walker    # App launcher
-                ./Rofi
+                ./Walker    # App launcher
+                # ./Rofi
             ];
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
@@ -25,10 +25,10 @@
                 pkgs.hyprpaper
                 pkgs.neofetch
                 # pkgs.ashell
-                # pkgs.walker
+                pkgs.walker
                 # pkgs.waypaper
                 # pkgs.hyprlauncher
-                pkgs.rofi
+                # pkgs.rofi
             ];
         };
     };
