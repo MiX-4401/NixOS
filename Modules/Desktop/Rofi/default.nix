@@ -1,9 +1,9 @@
 { ... }:
 
 {
-    # home.file.".config/rofi/" = {
-    #     source = ./myConfig.rasi;
-    # };
+    home.file."" = {
+        source = ./myConfig.rasi;
+    };
 
     programs.rofi = {
         enable = true;
