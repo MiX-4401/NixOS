@@ -9,12 +9,12 @@
         users.${username} = {
             imports = [ 
                 ./Hyprland  # Compositor
-                ./Hyprpaper # Wallpaper
+                # ./Hyprpaper # Wallpaper engine
+                ./Waypaper  # Wallapaper engine
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
-                # ./Ashell    # StatusBar
+                ./Ashell    # StatusBar
                 ./Walker    # App launcher
-                # ./Rofi
             ];
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
@@ -22,13 +22,12 @@
 
             home.packages = [
                 pkgs.firefox
-                pkgs.hyprpaper
+                # pkgs.hyprpaper
+                pkgs.dunst
                 pkgs.neofetch
-                # pkgs.ashell
+                pkgs.ashell
                 pkgs.walker
-                # pkgs.waypaper
-                # pkgs.hyprlauncher
-                # pkgs.rofi
+                pkgs.waypaper
             ];
         };
     };
