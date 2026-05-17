@@ -25,7 +25,8 @@
                 pkgs.neofetch
                 pkgs.ashell
                 pkgs.walker
-                pkgs.waypaper
+                # pkgs.waypaper
+                pkgs.hyprlauncher
             ];
         };
     };

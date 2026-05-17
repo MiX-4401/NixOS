@@ -11,7 +11,7 @@
             close_when_open = false;
             disable_click_to_close = false;
             force_keyboard_focus = true;
-            terminal_title_flag = "App Launcher";
+            terminal_title_flag = "";
             theme = "default";
             timeout = 20;
         };
