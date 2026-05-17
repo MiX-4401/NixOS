@@ -12,6 +12,7 @@
                 ./Hyprpaper
                 ./Shell
                 ./Kitty
+                ./Ashell
             ];
             home.username = "${username}";
             home.homeDirectory = "/home/${username}";
@@ -22,6 +23,7 @@
                 pkgs.hyprpaper
                 pkgs.neofetch
                 pkgs.gnome-calculator
+                pkgs.ashell
             ];
         };
     };
