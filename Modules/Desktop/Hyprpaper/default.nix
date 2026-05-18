@@ -5,7 +5,10 @@
     #     source = ../Wallpapers;
     #     recursive = true;
     # };
-    home.file.".config/Wallpapers/" = config.lib.file.mkOutOfStoreSymlink ../Wallpapers;
+    home.file.".config/Wallpapers/" = {
+        source = config.lib.file.mkOutOfStoreSymlink ../Wallpapers;
+        recursive = true;
+    }
 
     services.hyprpaper = {
         enable = true;
