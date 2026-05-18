@@ -13,7 +13,7 @@
     services.xserver.xkb.variant = "";
 
     # Enable Ly as the disable manager
-    services.displayManager.ly.enable = true
+    services.displayManager.ly.enable = true;
 
     # System fonts
     fonts.packages = [
