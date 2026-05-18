@@ -23,7 +23,8 @@
                 border_size = 2;
                 # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 # "col.inactive_border" = "rgba(595959aa)";
-                "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base00}) rgba(${config.stylix.base16Scheme.base0D}) 45deg";
+                # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base00})";
+                "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base00}) rgb(${config.stylix.base16Scheme.base00}) 45deg";
                 resize_on_border = false; 
                 allow_tearing = false;
                 layout = "master";
