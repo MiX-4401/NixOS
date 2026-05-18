@@ -10,8 +10,6 @@
         
         image = ./Wallpapers/rainworld2.png;
 
-        homeManagerIntegration.followSystem = true;
-
         fonts = {
             serif = {
                 package = pkgs.noto-fonts;
