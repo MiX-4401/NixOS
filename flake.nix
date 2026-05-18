@@ -19,7 +19,7 @@
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
-    username = "ejradford";
+    username = "myuser";
   in {
     nixosConfigurations = {
       ejlaptop = lib.nixosSystem {
@@ -29,6 +29,14 @@
         modules = [
           ./Hosts/ejlaptop/configuration.nix
         ];
+      };
+    };
+
+    homeConfigurations = {
+      ejlaptop = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs username; };
+        modules = [ ./Modules/Desktop/home.nix ]; 
       };
     };
   };

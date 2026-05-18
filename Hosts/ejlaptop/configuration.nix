@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../Modules/Desktop/default.nix
     ../../Modules/System/base.nix
     ../../Modules/System/users.nix
     ../../Modules/System/boot.nix

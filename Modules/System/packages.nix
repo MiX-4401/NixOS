@@ -14,6 +14,5 @@
         htop.enable = true;
         nano.enable = true;
         zsh.enable = true;
-        hyprland.enable = true;
     };
 }
