@@ -102,12 +102,12 @@
                 preserve_split = true; 
             };
             
-            master {
+            master = {
                 new_status = "slave";
                 allow_small_split = true;
             };
 
-            misc {
+            misc = {
                 disable_hyprland_logo = true;
                 disable_splash_rendering = true;
                 animate_mouse_windowdragging = true;
