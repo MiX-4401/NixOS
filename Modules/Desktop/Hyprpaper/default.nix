@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                "~/Pictures/Wallpapers/rainworld2.png"
+                builtins.getEnv "WALLPAPER";
             ];
             wallpaper = [
-                ",~/Pictures/Wallpapers/rainworld2.png"
+                builtins.getEnv "WALLPAPER";
             ];
         };
     };
