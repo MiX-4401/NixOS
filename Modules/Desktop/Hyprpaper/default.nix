@@ -1,7 +1,7 @@
-{ ... }:
+{ username, ... }:
 
 {
-    home.file."/Pictures/Wallpapers/" = {
+    home.file.".config/Wallpapers/" = {
         source = ../Wallpapers;
         recursive = true;
     };
@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                builtins.getEnv "WALLPAPER";
+                "home/${username}/.config/Wallpapers/currentWallpaper"
             ];
             wallpaper = [
-                builtins.getEnv "WALLPAPER";
+                ",home/${username}/.config/Wallpapers/currentWallpaper"
             ];
         };
     };

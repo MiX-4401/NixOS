@@ -8,7 +8,7 @@
 
         polarity = "dark";
         
-        image = builtins.getEnv "WALLPAPER";
+        image = ./Wallpapers/rainworld2.png;
 
         fonts = {
             serif = {
