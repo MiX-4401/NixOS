@@ -1,4 +1,4 @@
-{ ... }:
+{ username, wallpaper, ... }:
 
 {
     home.file."/Pictures/Wallpapers/" = {
@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                "~/Pictures/Wallpapers/rainworld2.png"
+                "home/${username}/Pictures/Wallpapers/${wallpaper}"
             ];
             wallpaper = [
-                ",~/Pictures/Wallpapers/rainworld2.png"
+                ",home/${username}/Pictures/Wallpapers/${wallpaper}"
             ];
         };
     };

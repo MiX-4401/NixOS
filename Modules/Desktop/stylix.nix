@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, wallpaper, ... }:
 
 {
     imports = [ inputs.stylix.nixosModules.stylix ];
@@ -8,7 +8,7 @@
 
         polarity = "dark";
         
-        image = ./Wallpapers/rainworld2.png;
+        image = ./Wallpapers/${wallpaper};
 
         homeManagerIntegration.followSystem = true;
 

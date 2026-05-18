@@ -20,11 +20,12 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     username = "ejradford";
+    wallpaper = "rainworld3.jpg";
   in {
     nixosConfigurations = {
       ejlaptop = lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username; };
+        specialArgs = { inherit inputs username wallpaper; };
 
         modules = [
           ./Hosts/ejlaptop/configuration.nix
