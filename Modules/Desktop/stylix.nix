@@ -8,7 +8,7 @@
 
         polarity = "dark";
         
-        image = ./Wallpapers/currentWallpaper;
+        image = wallpaper;
 
         fonts = {
             serif = {

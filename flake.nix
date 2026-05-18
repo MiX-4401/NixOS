@@ -20,6 +20,7 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     username = "ejradford";
+    wallpaper = "home/${username}/.config/Wallpapers/rainworld3.jpg";
   in {
     nixosConfigurations = {
       ejlaptop = lib.nixosSystem {
@@ -35,7 +36,7 @@
     homeConfigurations = {
       ${username} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs username; };
+        extraSpecialArgs = { inherit inputs username wallpaper; };
         modules = [ ./Modules/Desktop/home.nix ]; 
       };
     };

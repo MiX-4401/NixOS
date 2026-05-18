@@ -1,4 +1,4 @@
-{ username, config, lib,... }:
+{ username, wallpaper, config, lib,... }:
 
 {
     home.file.".config/Wallpapers/" = {
@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                "home/${username}/.config/Wallpapers/currentWallpaper"
+                "${wallpaper}"
             ];
             wallpaper = [
-                ",home/${username}/.config/Wallpapers/currentWallpaper"
+                ",${wallpaper}"
             ];
         };
     };
