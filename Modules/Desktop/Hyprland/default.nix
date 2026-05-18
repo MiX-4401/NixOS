@@ -25,7 +25,7 @@
                 # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 # "col.inactive_border" = "rgba(595959aa)";
                 # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base00})";
-                "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base02}) rgb(${config.stylix.base16Scheme.base04}) 45deg";
+                "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base08}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
                 
                 resize_on_border = false; 
                 allow_tearing = false;
@@ -33,29 +33,68 @@
             }; 
 
             decoration = {
-                rounding = 10;
-                active_opacity = 1.0;
-                inactive_opacity = 1.0;
+                rounding = 5;
+                active_opacity = 0.8;
+                inactive_opacity = 0.7;
 
                 blur = {
                     enabled = true;
-                    size = 3;
-                    passes = 1;
+                    xray = true;
+                    ignore_opacity = true;
+
+                    size = 10;
+                    passes = 4;
+                    contrast = 2.0;
+                    vibrancy =  0.0;
+                    brightness = 0.4;
+                    vibrancy_darkness = 1.0;
+                    new_optimizations = true;
                 };
+
+                shadow = {
+                    enabled = true;
+                    range = 10;
+                    render_power = 2;
+                };
+
             };
 
             animation = { 
-                # enabled = true;
+                enabled = true;
+                
+                # bezier = [
+                #     "myBezier, 0.05, 0.9, 0.1, 1.05"
+                # ];
+                # animation = [
+                #     "windows, 1, 7, myBezier"
+                #     "windowsOut, 1, 7, default, popin 80%"
+                #     "border, 1, 10, default"
+                #     "borderangle, 1, 8, default"
+                #     "fade, 1, 7, default"
+                #     "workspaces, 1, 6, default"
+                # ];
+
                 bezier = [
-                    "myBezier, 0.05, 0.9, 0.1, 1.05"
+                    "default, 0.12, 0.92, 0.08, 1.0"
+                    "wind, 0.12, 0.92, 0.08, 1.0"
+                    "overshot, 0.18, 0.95, 0.22, 1.03"
+                    "liner, 1, 1, 1, 1"
                 ];
                 animation = [
-                    "windows, 1, 7, myBezier"
-                    "windowsOut, 1, 7, default, popin 80%"
-                    "border, 1, 10, default"
-                    "borderangle, 1, 8, default"
-                    "fade, 1, 7, default"
-                    "workspaces, 1, 6, default"
+                    "windows, 1, 8, wind, slide"
+                    "windowsIn, 1, 6, wind, slide"
+                    "windowsOut, 1, 6, wind, slide"
+                    "windowsMove, 1, 6, wind, slide"
+                    "layers, 1, 4, wind, popin"
+                    "fadeIn, 1, 1, wind"
+                    "fadeOut, 1, 1, wind"
+                    "fadeSwitch, 1, 7, wind"
+                    "fadeShadow, 1, 7, wind"
+                    "fadeDim, 1, 7, wind"
+                    "fadeLayers, 1, 7, wind"
+                    "workspaces, 1, 5, wind, slidevert"
+                    "border, 1, 15, overshot"
+                    "borderangle, 1, 15, linear, once"
                 ];
             };
             dwindle = {
@@ -63,13 +102,16 @@
                 preserve_split = true; 
             };
             
-            master = {
-                new_status = "master";
+            master {
+                new_status = "slave";
+                allow_small_split = true;
             };
 
-            misc = { 
-                force_default_wallpaper = -1;
-                # disable_hyprland_logo = false; 
+            misc {
+                disable_hyprland_logo = true;
+                disable_splash_rendering = true;
+                animate_mouse_windowdragging = true;
+                enable_swallow = false;
             };
     
             "$mainMod" = "SUPER"; 
