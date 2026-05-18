@@ -8,7 +8,7 @@
 
         polarity = "dark";
         
-        image = ./Wallpapers/${wallpaper};
+        image = ./Wallpapers + "/${wallpaper}";
 
         homeManagerIntegration.followSystem = true;
 
