@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
     wayland.windowManager.hyprland = {
@@ -6,25 +6,28 @@
         # package = null;
         # portalPackage = null;
 
-        extraConfig = 
-            ''
-            exec-once = hyprpaper
-            '';
+        # extraConfig = 
+        #     ''
+        #     exec-once = hyprpaper
+        #     '';
 
         settings = {
+
+            # Monitor settings
             monitor = [ ",preferred,auto,auto" ];
 
+            # General
             general = {
                 gaps_in = 5;
                 gaps_out = 20;
                 border_size = 2;
                 # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 # "col.inactive_border" = "rgba(595959aa)";
-                # "col.inactive_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base0E})";
+                "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base00})";
                 resize_on_border = false; 
                 allow_tearing = false;
-                layout = "dwindle";
-            };
+                layout = "master";
+            }; 
 
             decoration = {
                 rounding = 10;

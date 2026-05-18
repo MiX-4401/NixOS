@@ -4,6 +4,7 @@
     # NixOS
     system.stateVersion = "24.05";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
     # Time/language/keyboard settings
     time.timeZone = "Australia/Melbourne";
@@ -11,7 +12,8 @@
     services.xserver.xkb.layout = "au";
     services.xserver.xkb.variant = "";
 
-    environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
+    # Enable Ly as the display manager
+    services.displayManager.ly.enable = true;
 
     # System fonts
     fonts.packages = [
