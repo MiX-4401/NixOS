@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                "home/${username}/Pictures/Wallpapers/${wallpaper}"
+                "/home/${username}/Pictures/Wallpapers/${wallpaper}"
             ];
             wallpaper = [
-                ",home/${username}/Pictures/Wallpapers/${wallpaper}"
+                ",/home/${username}/Pictures/Wallpapers/${wallpaper}"
             ];
         };
     };
