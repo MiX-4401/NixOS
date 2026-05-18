@@ -14,6 +14,9 @@
         ./Kitty     # Terminal
         ./Ashell    # StatusBar
         ./Walker    # App launcher
+
+        stylix.homeModules.stylix
+        ./stylix.nix
     ];
 
     home.packages = [
