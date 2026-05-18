@@ -1,11 +1,11 @@
-{ username, inputs, pkgs, ... }:
+{ username, inputs, pkgs, wallpaper ... }:
 
 {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        extraSpecialArgs = { inherit inputs username; };
+        extraSpecialArgs = { inherit inputs username wallpaper; };
         users.${username} = {
             imports = [ 
                 ./Hyprland  # Compositor
