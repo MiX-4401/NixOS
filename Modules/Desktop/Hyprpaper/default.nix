@@ -24,10 +24,10 @@
             splash = false;
 
             preload = [
-                "${wallpaper}"
+                "/home/${username}/.config/Wallpapers/${wallpaper}"
             ];
             wallpaper = [
-                ",${wallpaper}"
+                ",/home/${username}/.config/Wallpapers/${wallpaper}"
             ];
         };
     };

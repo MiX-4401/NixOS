@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, wallpaper, ... }:
 
 {
     imports = [ inputs.stylix.homeModules.stylix ];
@@ -8,7 +8,7 @@
 
         polarity = "dark";
         
-        image = wallpaper;
+        image = ./Wallpapers/${wallpaper};
 
         fonts = {
             serif = {

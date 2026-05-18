@@ -20,7 +20,7 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     username = "ejradford";
-    wallpaper = "home/${username}/.config/Wallpapers/rainworld3.jpg";
+    wallpaper = "rainworld3.jpg";
   in {
     nixosConfigurations = {
       ejlaptop = lib.nixosSystem {
