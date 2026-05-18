@@ -8,7 +8,7 @@
 
         polarity = "dark";
         
-        image = ./Wallpapers/rainworld2.png;
+        image = ./Wallpapers/currentWallpaper;
 
         fonts = {
             serif = {

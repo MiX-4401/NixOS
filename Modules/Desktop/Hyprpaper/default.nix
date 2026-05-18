@@ -1,14 +1,10 @@
 { username, config, lib,... }:
 
 {
-    # home.file.".config/Wallpapers/" = {
-    #     source = ../Wallpapers;
-    #     recursive = true;
-    # };
     home.file.".config/Wallpapers/" = {
-        source = config.lib.file.mkOutOfStoreSymlink ../Wallpapers;
+        source = ../Wallpapers;
         recursive = true;
-    }
+    };
 
     services.hyprpaper = {
         enable = true;
