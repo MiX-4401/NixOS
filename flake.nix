@@ -19,7 +19,7 @@
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
-    username = "myuser";
+    username = "ejradford";
   in {
     nixosConfigurations = {
       ejlaptop = lib.nixosSystem {
@@ -34,7 +34,7 @@
 
     homeConfigurations = {
       ${username} = home-manager.lib.homeManagerConfiguration {
-        inherit nixpkgs;
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs username; };
         modules = [ ./Modules/Desktop/home.nix ]; 
       };
