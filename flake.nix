@@ -33,8 +33,8 @@
     };
 
     homeConfigurations = {
-      ejlaptop = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      ${username} = home-manager.lib.homeManagerConfiguration {
+        inherit nixpkgs;
         extraSpecialArgs = { inherit inputs username; };
         modules = [ ./Modules/Desktop/home.nix ]; 
       };
