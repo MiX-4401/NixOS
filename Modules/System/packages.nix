@@ -4,9 +4,7 @@
     environment.systemPackages = with pkgs; [
         ly
         timeshift
-        nethogs
-        btop
-        ncdu
+        htop
         home-manager
     ];
 

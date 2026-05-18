@@ -25,14 +25,10 @@ Hypridle
 Hyprpaper
 Hyprcursor
 QuickShell
-gtk3
-gtk4
-qt5-base
-qt6-base
+
 dunst
 rofi
 ly
-noto-fonts
 
 Gnome-caculator
 Gnome-clocks
