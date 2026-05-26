@@ -17,5 +17,7 @@
         nano.enable = true;
         zsh.enable = true;
         hyprland.enable = true;
+        steam.enable = true;
+        gamescope.enable = true;
     };
 }

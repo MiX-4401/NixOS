@@ -51,7 +51,6 @@
                 pkgs.gnome-weather
                 pkgs.gnome-disk-utility
                 pkgs.gnome-calendar
-                pkgs.steam
                 pkgs.bitwarden-desktop
                 pkgs.virt-manager
                 pkgs.discord
