@@ -112,7 +112,7 @@ in
                 min-height: 0;
                 font-family: 'Noto Sans Mono';
                 font-weight: normal;
-                font-size: 12px;
+                font-size: 20px;
             }
 
 
