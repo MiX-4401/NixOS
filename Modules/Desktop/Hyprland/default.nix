@@ -107,7 +107,7 @@
                     "windows, 1, 8, wind, slide"
                     "windowsIn, 1, 6, wind, slide"
                     "windowsOut, 1, 6, wind, slide"
-                    "windowsMove, 1, 6, linear, slide"
+                    "windowsMove, 1, 6, wind, slide"
                     "layers, 1, 4, wind, popin"
                     "fadeIn, 1, 1, wind"
                     "fadeOut, 1, 1, wind"
