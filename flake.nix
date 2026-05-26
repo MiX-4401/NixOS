@@ -29,7 +29,7 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     username = "ejradford";
-    wallpaper = "rainworld11.jpg";
+    wallpaper = "rainworld6.png";
   in {
     nixosConfigurations = {
       ejdesktop = lib.nixosSystem {
