@@ -100,7 +100,7 @@
                     "default, 0.12, 0.92, 0.08, 1.0"
                     "wind, 0.12, 0.92, 0.08, 1.0"
                     "overshot, 0.18, 0.95, 0.22, 1.03"
-                    "liner, 1, 1, 1, 1"
+                    "linear, 1, 1, 1, 1"
                 ];
 
                 animation = [
@@ -108,7 +108,7 @@
                     "windowsIn, 1, 6, wind, slide"
                     "windowsOut, 1, 6, wind, slide"
                     "windowsMove, 1, 6, wind, slide"
-                    "layers, 1, 4, wind, popin"
+                    "layers, 1, 4, linear, popin"
                     "fadeIn, 1, 1, wind"
                     "fadeOut, 1, 1, wind"
                     "fadeSwitch, 1, 7, wind"

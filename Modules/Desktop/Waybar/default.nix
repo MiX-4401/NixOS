@@ -12,7 +12,7 @@ in
             mainBar = {
                 layer = "top";
                 position = "top";
-                height = 5;
+                height = 20;
                 width = 900;
 
                 modules-left = [
