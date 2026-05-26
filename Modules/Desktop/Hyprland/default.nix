@@ -45,9 +45,11 @@
 
             # Monitor settings
             monitor = [ 
-                ",preferred,auto,auto"
-                # "DP-1, 1920x1080@144, 0x0, 1"
-                # "HDMI-A-1, 1920x1080@75, 1920x0, 1" # Placed to the right of DP-1 
+                # Left monitor
+                "HDMI-A-1,1920x1080@75,auto,1.2"
+
+                # Right monitor
+                "DP-2,1920x1080@144,0x0,1.2"
             ];
 
             xwayland = {
@@ -95,7 +97,8 @@
 
             };
 
-            animation = {                
+            animations = {       
+                enabled = true;         
                 bezier = [
                     "default, 0.12, 0.92, 0.08, 1.0"
                     "wind, 0.12, 0.92, 0.08, 1.0"

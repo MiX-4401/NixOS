@@ -19,5 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     microcode-amd
+    rocmPackages.rocm-smi
   ];
 }
