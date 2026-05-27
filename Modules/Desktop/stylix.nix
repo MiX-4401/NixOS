@@ -5,15 +5,17 @@
 
     stylix = {
         enable = true;
-
-        polarity = "dark";
-        targets = {
-            gnome.enable = false;
-        };
-        image = ./Wallpapers/${wallpaper};
-
         homeManagerIntegration.followSystem = true;
         
+        polarity = "dark";
+        image = ./Wallpapers/${wallpaper};
+        
+        # cursor = {
+        #     size = 12;
+        #     name = "Breeze_Hacked";
+        #     package = pkgs.breeze-hacked-cursor-theme;
+        # };
+
         fonts = {
             serif = {
                 package = pkgs.noto-fonts;

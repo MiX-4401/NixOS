@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-        home.pointerCursor = {
+        home.pointerCursor = lib.mkForce {
                 package = pkgs.breeze-hacked-cursor-theme;
                 name = "Breeze_Hacked";
                 enable = true;

@@ -16,7 +16,7 @@
                 ./Waybar    # StatusBar
                 ./Walker    # App launcher
                 #./Dunst     # Notification daemon
-                #./Cursor    # Cursor
+                ./Cursor    # Cursor
                 ./SwayNotificationCentre
                 ./Git
                 ./DefaultApplications
