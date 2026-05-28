@@ -16,10 +16,8 @@
   # Host specific configs
   services.sshd.enable = true;
   networking.firewall.enable = false;
-
   environment.systemPackages = with pkgs; [
     microcode-amd
     rocmPackages.rocm-smi
   ];
-  nixpkgs.config.allowUnfree = true;
 }

@@ -27,6 +27,7 @@
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
+
     username = "ejradford";
     wallpaper = "rainworld6.png";
   in {

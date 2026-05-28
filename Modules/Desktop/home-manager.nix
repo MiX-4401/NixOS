@@ -57,6 +57,7 @@
                 pkgs.spotify
                 pkgs.lutris
                 pkgs.prismlauncher
+                pkgs.gimp
 
                 # User TUI applications
                 pkgs.yazi
