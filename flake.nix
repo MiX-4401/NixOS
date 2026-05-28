@@ -38,6 +38,13 @@
           ./Hosts/ejdesktop/configuration.nix
         ];
       };
+      ejlaptop = lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs username wallpaper; };
+        modules = [
+          ./Hosts/ejlaptop/configuration.nix
+        ];
+      };
     };
   };
 }
