@@ -21,4 +21,5 @@
     microcode-amd
     rocmPackages.rocm-smi
   ];
+  nixpkgs.config.allowUnfree = true;
 }
