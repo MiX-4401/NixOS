@@ -14,7 +14,7 @@
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
                 ./Waybar    # StatusBar
-                ./Walker    # App launcher
+                ./Rofi    # App launcher
                 #./Dunst     # Notification daemon
                 ./Cursor    # Cursor
                 ./SwayNotificationCentre
