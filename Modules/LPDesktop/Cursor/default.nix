@@ -7,6 +7,6 @@
                 enable = true;
                 gtk.enable = true;
                 x11.enable = true;
-                size = 28;
+                size = 16;
         };
 }
