@@ -64,7 +64,7 @@
             };
 
             listview = {
-                background-color =  transparent;
+                background-color = "transparent";
 
                 margin = "12px 0 0";
                 lines = 8;
