@@ -62,7 +62,7 @@
 
       element-icon = {
         size = 1;
-        vertical-align = 0.5;
+        # vertical-align = 0.5;
       };
 
       element-text = {
