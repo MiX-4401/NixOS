@@ -60,7 +60,6 @@
                 pkgs.lutris
                 pkgs.prismlauncher
                 pkgs.gimp
-                pkgs-updated.rustdesk
 
                 # User TUI applications
                 pkgs.yazi
