@@ -10,7 +10,7 @@
             "*" = {
                 font = "Roboto 12";
 
-                background-color = "transparent";
+                # background-color = "transparent";
                 #text-color = @fg0;
 
                 margin = 0;
@@ -64,7 +64,7 @@
             };
 
             listview = {
-                background-color = "transparent";
+                # background-color = "transparent";
 
                 margin = "12px 0 0";
                 lines = 8;
