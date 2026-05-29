@@ -14,7 +14,7 @@
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
                 ./Waybar    # StatusBar
-                ./Walker    # App launcher
+                #./Walker    # App launcher
                 ./Cursor    # Cursor
                 ./Git       # Git configuration
                 ./SwayNotificationCentre    # Notification center
