@@ -18,7 +18,7 @@
                 ./Cursor    # Cursor
                 ./Git       # Git configuration
                 ./SwayNotificationCentre    # Notification center
-                ./DefaultApplications       # Default applications
+                #./DefaultApplications       # Default applications
             ];
 
             home.username = "${username}";
