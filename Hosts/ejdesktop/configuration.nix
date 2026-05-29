@@ -13,7 +13,7 @@
     ../../Modules/System/services.nix
   ];
 
-  networking.hostname = "ejdesktop";
+  networking.hostName = "ejdesktop";
 
   # Host specific configs
   services.sshd.enable = true;
