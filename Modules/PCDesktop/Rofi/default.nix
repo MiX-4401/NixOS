@@ -1,104 +1,74 @@
-{ ... }:
+{ pkgs, ... }:
 
+let
+  rofiTheme = pkgs.writeText "rofi-theme.rasi" ''
+    * {
+        font: "Roboto 12";
+
+        margin: 0;
+        padding: 0;
+        spacing: 0;
+    }
+
+    window {
+        location: north;
+        y-offset: calc(50% - 176px);
+        width: 480;
+        border-radius: 24px;
+    }
+
+    mainbox {
+        padding: 12px;
+    }
+
+    inputbar {
+        border: 2px;
+        border-radius: 16px;
+
+        padding: 8px 16px;
+        spacing: 8px;
+        children: [ prompt entry ];
+    }
+
+    entry {
+        placeholder: "Search";
+    }
+
+    message {
+        margin: 12px 0 0;
+        border-radius: 16px;
+    }
+
+    textbox {
+        padding: 8px 24px;
+    }
+
+    listview {
+        margin: 12px 0 0;
+        lines: 8;
+        columns: 1;
+        fixed-height: false;
+    }
+
+    element {
+        padding: 8px 16px;
+        spacing: 8px;
+        border-radius: 16px;
+    }
+
+    element-text {
+        text-color: inherit;
+    }
+
+    element-icon {
+        size: 1;
+        vertical-align: 0.5;
+    }
+  '';
+in
 {
-    # home.file.".config/rofi/myRofi.rasi" = {
-    #     source = ./rounded-template.rasi;
-    # };
-    programs.rofi = {
-        enable = true;
-        theme = {
-            "*" = {
-                font = "Roboto 12";
-
-                # background-color = "transparent";
-                #text-color = @fg0;
-
-                margin = 0;
-                padding = 0;
-                spacing = 0;
-            };
-
-            window = {
-                location = "north";
-                y-offset = "calc(50% - 176px)";
-                width = 480;
-                border-radius = "24px";
-
-                # background-color = @bg0;
-            };
-
-            mainbox = {
-                padding = "12px";
-            };
-
-            inputbar = {
-                # background-color = @bg1;
-                # border-color = @bg3;
-
-                border = "2px";
-                border-radius = "16px";
-
-                padding = "8px 16px";
-                spacing = "8px"; 
-                children = [ "prompt" "entry" ];
-            };
-
-            # prompt = {
-            #     text-color = @fg2;
-            # };
-
-            entry = {
-                placeholder = "Search";
-                # placeholder-color = @fg3;
-            };
-
-            message = {
-                margin = "12px 0 0";
-                border-radius = "16px";
-                # border-color = @bg2;
-                # background-color = @bg2;
-            };
-
-            textbox = {
-                padding = "8px 24px";
-            };
-
-            listview = {
-                # background-color = "transparent";
-
-                margin = "12px 0 0";
-                lines = 8;
-                columns = 1;
-
-                fixed-height =  false;
-            };
-
-            element = {
-                padding = "8px 16px";
-                spacing = "8px";
-                border-radius = "16px";
-            };
-
-            # element normal active = {
-            #     text-color = @bg3;
-            # };
-
-            # element alternate active = {
-            #     text-color = @bg3;
-            # };
-
-            # element selected normal, element selected active = {
-            #     background-color = @bg3;
-            # };
-
-            element-icon = {
-                size = 1;
-                vertical-align = 0.5;
-            };
-
-            element-text = {
-                text-color = "inherit";
-            };
-        };
-    };
+  programs.rofi = {
+    enable = true;
+    theme = rofiTheme;
+  };
 }
