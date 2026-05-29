@@ -41,6 +41,7 @@
                 pkgs.breeze-hacked-cursor-theme
                 pkgs.libnotify
                 pkgs.swaynotificationcenter
+                pkgs.rofi
 
                 # User GUI applications
                 pkgs.firefox
