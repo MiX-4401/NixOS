@@ -65,9 +65,9 @@
         # vertical-align = 0.5;
       };
 
-      element-text = {
-        text-color = "inherit";
-      };
+    #   element-text = {
+    #     text-color = "inherit";
+    #   };
     };
   };
 }
