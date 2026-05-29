@@ -1,4 +1,4 @@
-{ username, inputs, pkgs, wallpaper, ... }:
+{ username, inputs, pkgs, pkgs-updated, wallpaper, ... }:
 
 {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -58,6 +58,7 @@
                 pkgs.lutris
                 pkgs.prismlauncher
                 pkgs.gimp
+                pkgs-updated.rustdesk
 
                 # User TUI applications
                 pkgs.yazi

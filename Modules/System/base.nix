@@ -6,7 +6,11 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
-    nixpkgs.config.allowUnfree = true;
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 14d";
+    };
 
     # Time/language/keyboard settings
     time.timeZone = "Australia/Melbourne";

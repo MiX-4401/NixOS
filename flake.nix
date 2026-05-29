@@ -5,6 +5,7 @@
 
     # NixOS packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-updated.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     # Home Manager
     home-manager.url = "github:nix-community/home-manager/release-25.11";
@@ -23,23 +24,25 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-updated, home-manager, stylix, ... }@inputs:
   let 
-    lib = nixpkgs.lib;
     system = "x86_64-linux";
-
     username = "ejradford";
     wallpaper = "rainworld6.png";
+    pkgs-updated = import nixpkgs-updated { 
+      inherit system; 
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations = {
-      ejdesktop = lib.nixosSystem {
+      ejdesktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username wallpaper; };
+        specialArgs = { inherit inputs username wallpaper pkgs-updated; };
         modules = [
           ./Hosts/ejdesktop/configuration.nix
         ];
       };
-      ejlaptop = lib.nixosSystem {
+      ejlaptop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs username wallpaper; };
         modules = [
