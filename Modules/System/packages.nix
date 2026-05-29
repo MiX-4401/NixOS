@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+    # Global packages
     environment.systemPackages = with pkgs; [
         ly
         timeshift

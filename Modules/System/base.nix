@@ -6,6 +6,7 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
+    # Garbage collection
     nix.gc = {
         automatic = true;
         dates = "weekly";
