@@ -1,4 +1,4 @@
-{ config, username, wallpaper, ... }:
+{ config, inputs, username, wallpaper, ... }:
 
 {
   programs.hyprlock = {
@@ -21,7 +21,7 @@
         disable_loading_bar = false;
       };
 
-      input-field = [
+      input-field = lib.mkForce [
         {
           outline_thickness = 2;
 
