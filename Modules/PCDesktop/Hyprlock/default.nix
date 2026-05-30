@@ -21,30 +21,30 @@
         disable_loading_bar = false;
       };
 
-    #   input-field = [
-        # {
-        #   outline_thickness = 2;
+      input-field = [
+        {
+          outline_thickness = 2;
 
-        #   dots_size = 0.2;
-        #   dots_spacing = 0.2;
-        #   dots_center = true;
+          dots_size = 0.2;
+          dots_spacing = 0.2;
+          dots_center = true;
 
-        #   outer_color = "rgba(0, 0, 0, 0)";
-        #   inner_color = "rgba(100, 114, 125, 0.4)";
-        #   font_color = "rgb(200, 200, 200)";
+          outer_color = "rgba(0, 0, 0, 0)";
+          inner_color = "rgba(100, 114, 125, 0.4)";
+          font_color = "rgb(200, 200, 200)";
 
-        #   fade_on_empty = false;
-        #   font_family = "SF Pro Display Bold";
+          fade_on_empty = false;
+          font_family = "SF Pro Display Bold";
 
-        #   placeholder_text = "<i><span foreground=\"#ffffff99\">Password</span></i>";
+          placeholder_text = "<i><span foreground=\"#ffffff99\">Password</span></i>";
 
-        #   hide_input = false;
+          hide_input = false;
 
-        #   position = "0, -225";
-        #   halign = "center";
-        #   valign = "center";
-        # }
-    #   ];
+          position = "0, -225";
+          halign = "center";
+          valign = "center";
+        }
+      ];
 
       image = [
         {
