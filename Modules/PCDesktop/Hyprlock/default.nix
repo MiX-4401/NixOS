@@ -83,7 +83,7 @@
           font_size = 25;
           font_family = "SF Pro Display Bold";
 
-          position = "0, 130";
+          position = "0, 100";
           halign = "center";
           valign = "bottom";
         }
