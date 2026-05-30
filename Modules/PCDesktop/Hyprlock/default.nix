@@ -12,7 +12,7 @@
         vibrancy = 0.1696;
         vibrancy_darkness = 0.0;
 
-        path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
+        # path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
       };
 
       general = {
