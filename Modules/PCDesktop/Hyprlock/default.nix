@@ -102,7 +102,7 @@
 
           position = "0, -130";
           halign = "center";
-          valign = "center";
+          valign = "bottom";
         }
 
         # Movie quote
