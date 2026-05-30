@@ -23,7 +23,7 @@
 
       input-field = [
         {
-          outline_thickness = 2;
+        #   outline_thickness = 2;
 
         #   dots_size = 0.2;
         #   dots_spacing = 0.2;
@@ -36,9 +36,9 @@
         #   fade_on_empty = false;
         #   font_family = "SF Pro Display Bold";
 
-          placeholder_text = "<i><span foreground=\"#ffffff99\">Password</span></i>";
+        #   placeholder_text = "<i><span foreground=\"#ffffff99\">Password</span></i>";
 
-          hide_input = false;
+        #   hide_input = false;
 
           position = "0, -225";
         #   halign = "center";
