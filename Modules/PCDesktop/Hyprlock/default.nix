@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, username, wallpaper, ... }:
 
 {
   programs.hyprlock = {
@@ -12,7 +12,7 @@
         vibrancy = 0.1696;
         vibrancy_darkness = 0.0;
 
-        path = "${config.home.homeDirectory}/.config/hypr/Wallpapers/rainworld2.png";
+        path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
       };
 
       general = {
