@@ -152,6 +152,7 @@
                 "$mainMod, E, exec, kitty yazi"
                 "$mainMod, B, exec, zen"
                 "$mainMod, A, exec, walker"
+                "$mainMod, L, exec, hyprlock"
                 
                 # Window management
                 "$mainMod, Q, killactive,"
