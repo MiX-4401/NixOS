@@ -23,9 +23,9 @@
 
       input-field = lib.mkDefault [
         {
-          position = lib.mkForce "0, -225";
+          position = lib.mkForce "0, 225";
           halign = lib.mkForce "center";
-          valign = lib.mkForce "center";
+          valign = lib.mkForce "bottom";
         }
       ];
 
