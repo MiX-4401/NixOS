@@ -48,8 +48,7 @@
 
       image = [
         {
-          path =
-            "${config.home.homeDirectory}/.config/hypr/Wallpapers/rainworld9.jpg";
+          path = "${config.home.homeDirectory}/.config/hypr/Wallpapers/rainworld9.jpg";
 
         #   border_color = "0xffdddddd";
           border_size = 0;
@@ -84,9 +83,9 @@
         {
           text = "cmd[update:1000] echo \"$(date +'%A, %d %B')\"";
 
-        #   color = "rgba(216, 222, 233, 0.70)";
-        #   font_size = 30;
-        #   font_family = "SF Pro Display Bold";
+          color = "rgba(216, 222, 233, 0.70)";
+          font_size = 30;
+          font_family = "SF Pro Display Bold";
 
           position = "0, 105";
           halign = "center";
@@ -97,9 +96,9 @@
         {
           text = "Hi, $USER";
 
-        #   color = "rgba(216, 222, 233, 0.70)";
-        #   font_size = 25;
-        #   font_family = "SF Pro Display Bold";
+          color = "rgba(216, 222, 233, 0.70)";
+          font_size = 25;
+          font_family = "SF Pro Display Bold";
 
           position = "0, -130";
           halign = "center";
