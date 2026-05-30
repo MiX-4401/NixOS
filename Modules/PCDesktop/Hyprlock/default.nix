@@ -33,15 +33,15 @@
         #   inner_color = "rgba(100, 114, 125, 0.4)";
         #   font_color = "rgb(200, 200, 200)";
 
-          fade_on_empty = false;
-          font_family = "SF Pro Display Bold";
+        #   fade_on_empty = false;
+        #   font_family = "SF Pro Display Bold";
 
           placeholder_text = "<i><span foreground=\"#ffffff99\">Password</span></i>";
 
           hide_input = false;
 
           position = "0, -225";
-          halign = "center";
+        #   halign = "center";
           valign = "center";
         }
       ];
