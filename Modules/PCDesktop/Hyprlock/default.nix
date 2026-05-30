@@ -21,16 +21,11 @@
         disable_loading_bar = false;
       };
 
-      input-field = lib.mkForce [
+      input-field = [
         {
-          fade_on_empty = false;
-          font_family = "SF Pro Display Bold";
-
-          placeholder_text = "<i>Password</i>";
-
-          position = "0, -225";
-          halign = "center";
-          valign = "center";
+          position = lib.mkForce "0, -225";
+          halign = lib.mkForce "center";
+          valign = lib.mkForce "center";
         }
       ];
 
