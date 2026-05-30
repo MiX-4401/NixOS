@@ -1,4 +1,4 @@
-{ config, inputs, username, wallpaper, ... }:
+{ config, lib, username, wallpaper, ... }:
 
 {
   programs.hyprlock = {
