@@ -21,13 +21,13 @@
         disable_loading_bar = false;
       };
 
-    #   input-field = [
-    #     {
-    #       position = lib.mkForce "0, -225";
-    #       halign = lib.mkForce "center";
-    #       valign = lib.mkForce "center";
-    #     }
-    #   ];
+      input-field = lib.mkDefault [
+        {
+          position = lib.mkForce "0, -225";
+          halign = lib.mkForce "center";
+          valign = lib.mkForce "center";
+        }
+      ];
 
       image = [
         {
@@ -48,7 +48,7 @@
         }
       ];
 
-      label = lib.mkDefault[
+      label = [
         # Time
         {
           text = "cmd[update:1000] echo \"<span>$(date +'%H:%M')</span>\"";
