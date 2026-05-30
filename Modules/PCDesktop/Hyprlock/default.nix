@@ -23,22 +23,10 @@
 
       input-field = lib.mkForce [
         {
-          outline_thickness = 2;
-
-          dots_size = 0.2;
-          dots_spacing = 0.2;
-          dots_center = true;
-
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(100, 114, 125, 0.4)";
-          font_color = "rgb(200, 200, 200)";
-
           fade_on_empty = false;
           font_family = "SF Pro Display Bold";
 
           placeholder_text = "<i>Password</i>";
-
-          hide_input = false;
 
           position = "0, -225";
           halign = "center";
