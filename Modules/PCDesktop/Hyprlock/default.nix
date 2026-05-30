@@ -44,7 +44,7 @@
         #   halign = "center";
         #   valign = "center";
         # }
-      ];
+    #   ];
 
       image = [
         {
