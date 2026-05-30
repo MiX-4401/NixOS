@@ -21,13 +21,13 @@
         disable_loading_bar = false;
       };
 
-      input-field = lib.mkForce [
-        {
-          position = lib.mkForce "0, 225";
-          halign = lib.mkForce "center";
-          valign = lib.mkForce "bottom";
-        }
-      ];
+    #   input-field = lib.mkForce [
+    #     {
+    #       position = lib.mkForce "0, 225";
+    #       halign = lib.mkForce "center";
+    #       valign = lib.mkForce "bottom";
+    #     }
+    #   ];
 
       image = [
         {
