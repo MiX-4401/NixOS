@@ -40,9 +40,9 @@
 
         #   hide_input = false;
 
-          position = "0, -225";
+        #   position = "0, -225";
         #   halign = "center";
-          valign = "center";
+        #   valign = "center";
         }
       ];
 
