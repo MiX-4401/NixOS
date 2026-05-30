@@ -48,7 +48,7 @@
         }
       ];
 
-      label = [
+      label = lib.mkDefault[
         # Time
         {
           text = "cmd[update:1000] echo \"<span>$(date +'%H:%M')</span>\"";
@@ -87,20 +87,6 @@
           halign = "center";
           valign = "bottom";
         }
-
-        # Movie quote
-        # {
-        #   text =
-        #     "cmd[update:60000] echo \"$(${config.home.homeDirectory}/.config/hypr/Scripts/moviequotes.sh)\"";
-
-        #   color = "rgba(255, 255, 255, 0.7)";
-        #   font_size = 18;
-        #   font_family = "JetBrains Mono Nerd";
-
-        #   position = "0, 60";
-        #   halign = "center";
-        #   valign = "bottom";
-        # }
       ];
     };
   };
