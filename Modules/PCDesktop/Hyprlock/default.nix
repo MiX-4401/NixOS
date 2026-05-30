@@ -74,7 +74,7 @@
           font_size = 130;
           font_family = "SF Pro Display Bold";
 
-          position = "0, 240";
+          position = "0, 340";
           halign = "center";
           valign = "center";
         }
@@ -87,7 +87,7 @@
           font_size = 30;
           font_family = "SF Pro Display Bold";
 
-          position = "0, 105";
+          position = "0, 205";
           halign = "center";
           valign = "center";
         }
