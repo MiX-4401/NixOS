@@ -16,7 +16,7 @@
   networking.hostName = "ejdesktop";
 
   # Host specific configs
-  services.sshd.enable = false;
+  # services.sshd.enable = false;
   networking.firewall.enable = true;
 
   # Host specific global packages

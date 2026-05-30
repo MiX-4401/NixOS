@@ -10,6 +10,7 @@
             imports = [ 
                 ./Hyprland  # Compositor
                 ./Hyprpaper # Wallpaper engine
+                ./Hyprlock  # Lock screen
                 ./Waypaper  # Wallapaper engine
                 ./Shell     # Shell zsh
                 ./Kitty     # Terminal
