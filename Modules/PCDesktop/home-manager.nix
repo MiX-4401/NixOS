@@ -9,6 +9,7 @@
         users.${username} = {
             imports = [ 
                 ./Hyprland  # Compositor
+                ./Hyprlock  # Lockscreen 
                 ./Hyprpaper # Wallpaper engine
                 ./Waypaper  # Wallapaper engine
                 ./Shell     # Shell zsh
