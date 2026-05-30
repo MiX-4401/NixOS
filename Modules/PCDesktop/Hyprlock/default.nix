@@ -21,8 +21,8 @@
         disable_loading_bar = false;
       };
 
-      input-field = [
-        {
+    #   input-field = [
+        # {
         #   outline_thickness = 2;
 
         #   dots_size = 0.2;
@@ -43,7 +43,7 @@
         #   position = "0, -225";
         #   halign = "center";
         #   valign = "center";
-        }
+        # }
       ];
 
       image = [
