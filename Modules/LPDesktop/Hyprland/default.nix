@@ -131,7 +131,7 @@
                 sensitivity = -1.0;
 
                 touchpad = {
-                    scroll_factor = 0.2;
+                    scroll_factor = 0.1;
                     # disable_while_typing = false; # Good for gaming
                 };
             };
