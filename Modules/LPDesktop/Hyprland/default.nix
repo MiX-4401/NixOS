@@ -131,7 +131,7 @@
                 sensitivity = -0.1;
 
                 touchpad = {
-                    scroll_factor = 0.8;
+                    scroll_factor = 0.5;
                 };
             };
 
