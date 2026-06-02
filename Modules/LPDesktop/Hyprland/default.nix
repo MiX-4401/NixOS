@@ -125,13 +125,13 @@
             };
 
             input = {
-                touchpad.natural_scroll = true;
                 force_no_accel = true;
                 float_switch_override_focus = 0;
                 sensitivity = -1.0;
 
                 touchpad = {
                     scroll_factor = 0.1;
+                    natural_scroll = true;
                     # disable_while_typing = false; # Good for gaming
                 };
             };
