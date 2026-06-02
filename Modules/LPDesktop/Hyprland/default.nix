@@ -128,7 +128,7 @@
                 touchpad.natural_scroll = true;
                 force_no_accel = true;
                 float_switch_override_focus = 0;
-                sensitivity = -0.1;
+                sensitivity = -0.5;
 
                 touchpad = {
                     scroll_factor = 0.5;
