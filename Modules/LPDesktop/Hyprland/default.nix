@@ -126,7 +126,6 @@
 
             input = {
                 force_no_accel = true;
-                float_switch_override_focus = 0;
                 sensitivity = -1.0;
 
                 touchpad = {
