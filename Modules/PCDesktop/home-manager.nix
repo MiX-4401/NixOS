@@ -62,6 +62,7 @@
                 pkgs.prismlauncher
                 pkgs.gimp
                 pkgs-updated.rustdesk
+                pkgs-updated.prismlauncher
 
                 # User TUI applications
                 pkgs.yazi
