@@ -7,6 +7,7 @@
 
     virtualisation.libvirtd = {
         enable = true;
+        runAsRoot = true;
     };
 
     virtualisation.spiceUSBRedirection = {
@@ -30,15 +31,14 @@
             echo 0 > /sys/class/vtconsole/vtcon0/bind || true
             echo 0 > /sys/class/vtconsole/vtcon1/bind || true
 
-            echo efi-framebuffer.0 \
-                > /sys/bus/platform/drivers/efi-framebuffer/unbind
+            echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
 
             sleep 2
 
             modprobe -r amdgpu
 
-            virsh nodedev-detach pci_0000_2b_00_0
-            virsh nodedev-detach pci_0000_2b_00_1
+            /run/current-system/sw/bin/virsh nodedev-detach pci_0000_2b_00_0
+            /run/current-system/sw/bin/virsh nodedev-detach pci_0000_2b_00_1
 
             modprobe vfio
             modprobe vfio_iommu_type1
@@ -53,8 +53,8 @@
             modprobe -r vfio_iommu_type1
             modprobe -r vfio
 
-            virsh nodedev-reattach pci_0000_2b_00_0
-            virsh nodedev-reattach pci_0000_2b_00_1
+            /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_0
+            /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_1
 
             echo 1 > /sys/class/vtconsole/vtcon0/bind || true
             echo 1 > /sys/class/vtconsole/vtcon1/bind || true
