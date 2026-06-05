@@ -3,7 +3,7 @@
 {
     programs.virt-manager.enable = true;
     
-    users.groups.libvirtd.membrs = [ username ];
+    users.groups.libvirtd.members = [ username ];
 
     virtualisation.libvirtd = {
         enable = true;
