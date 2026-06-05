@@ -12,7 +12,6 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-
       qemu = {
         runAsRoot = true;
         swtpm.enable = true;
@@ -23,21 +22,13 @@
   };
 
   ##########################################################################
-  # VFIO / IOMMU (AMD GPU PASSTHROUGH CORE)
+  # VFIO SUPPORT (NO STATIC GPU BINDING)
   ##########################################################################
 
   boot = {
     kernelParams = [
-      # IOMMU
       "amd_iommu=on"
       "iommu=pt"
-
-      # Bind GPU + HDMI audio to VFIO at boot
-      "vfio-pci.ids=1002:731f,1002:ab38"
-
-      # Prevent EFI framebuffer / early GPU takeover
-      "video=efifb:off"
-      "video=vesafb:off"
     ];
 
     initrd.kernelModules = [
@@ -52,7 +43,7 @@
   };
 
   ##########################################################################
-  # OPTIONAL: MINIMAL VM HOOK (ONLY STOPS DISPLAY MANAGER)
+  # GPU SWITCH HOOK (CRITICAL PART)
   ##########################################################################
 
   virtualisation.libvirtd.hooks.qemu = {
@@ -63,18 +54,69 @@
       OP="$2"
       SUB="$3"
 
-      if [ "$VM" = "win10" ] && [ "$OP" = "prepare" ] && [ "$SUB" = "begin" ]; then
-        systemctl stop display-manager.service
-      fi
+      GPU="0000:2b:00.0"
+      AUDIO="0000:2b:00.1"
 
-      if [ "$VM" = "win10" ] && [ "$OP" = "release" ] && [ "$SUB" = "end" ]; then
-        systemctl start display-manager.service
-      fi
+      case "$OP:$SUB" in
+
+        prepare:begin)
+          echo "Stopping display manager..."
+          systemctl stop display-manager.service
+
+          echo "Unbinding GPU from amdgpu..."
+
+          # Detach console cleanly
+          echo 0 > /sys/class/vtconsole/vtcon0/bind || true
+          echo 0 > /sys/class/vtconsole/vtcon1/bind || true
+
+          echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind || true
+
+          # Unbind AMD driver
+          if [ -e /sys/bus/pci/devices/$GPU/driver ]; then
+            echo $GPU > /sys/bus/pci/devices/$GPU/driver/unbind
+          fi
+
+          if [ -e /sys/bus/pci/devices/$AUDIO/driver ]; then
+            echo $AUDIO > /sys/bus/pci/devices/$AUDIO/driver/unbind
+          fi
+
+          sleep 1
+
+          # Bind to VFIO
+          echo 1002 731f > /sys/bus/pci/drivers/vfio-pci/new_id || true
+          echo 1002 ab38 > /sys/bus/pci/drivers/vfio-pci/new_id || true
+        ;;
+
+        release:end)
+          echo "Releasing GPU back to host..."
+
+          # Remove vfio binding
+          echo $GPU > /sys/bus/pci/drivers/vfio-pci/unbind || true
+          echo $AUDIO > /sys/bus/pci/drivers/vfio-pci/unbind || true
+
+          echo 1002 731f > /sys/bus/pci/drivers/vfio-pci/remove_id || true
+          echo 1002 ab38 > /sys/bus/pci/drivers/vfio-pci/remove_id || true
+
+          # Rebind AMDGPU
+          modprobe amdgpu || true
+
+          echo $GPU > /sys/bus/pci/drivers/amdgpu/bind || true
+          echo $AUDIO > /sys/bus/pci/drivers/snd_hda_intel/bind || true
+
+          # Restore framebuffer + console
+          echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/bind || true
+
+          echo 1 > /sys/class/vtconsole/vtcon0/bind || true
+          echo 1 > /sys/class/vtconsole/vtcon1/bind || true
+
+          systemctl start display-manager.service
+        ;;
+      esac
     '';
   };
 
   ##########################################################################
-  # USEFUL PACKAGES
+  # PACKAGES
   ##########################################################################
 
   environment.systemPackages = with pkgs; [
