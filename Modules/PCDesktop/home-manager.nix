@@ -54,8 +54,7 @@
                 pkgs.gnome-weather
                 pkgs.gnome-disk-utility
                 pkgs.gnome-calendar
-                pkgs.bitwarden-desktop
-                pkgs.virt-manager
+                pkgs.bitwarden-desktop                
                 pkgs.discord
                 pkgs.spotify
                 pkgs.lutris
@@ -75,7 +74,6 @@
                 pkgs.python3
                 
                 # External flake packages
-                inputs.jolt.packages.${pkgs.stdenv.hostPlatform.system}.default
                 inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
             ];
         };

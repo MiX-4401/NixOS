@@ -55,7 +55,6 @@
                 pkgs.gnome-disk-utility
                 pkgs.gnome-calendar
                 pkgs.bitwarden-desktop
-                pkgs.virt-manager
                 pkgs.discord
                 pkgs.spotify
                 pkgs.lutris
