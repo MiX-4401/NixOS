@@ -7,7 +7,6 @@
 
     virtualisation.libvirtd = {
         enable = true;
-        runAsRoot = true;
     };
 
     virtualisation.spiceUSBRedirection = {
