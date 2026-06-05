@@ -1,80 +1,85 @@
 { pkgs, username, ... }:
 
 {
-    programs.virt-manager.enable = true;
-    
-    users.groups.libvirtd.members = [ username ];
+  ##########################################################################
+  # LIBVIRT / VIRT-MANAGER
+  ##########################################################################
 
-    virtualisation.libvirtd = {
-        enable = true;
+  programs.virt-manager.enable = true;
+
+  users.groups.libvirtd.members = [ username ];
+
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+
+      qemu = {
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
     };
 
-    virtualisation.spiceUSBRedirection = {
-        enable = true;
-    };
+    spiceUSBRedirection.enable = true;
+  };
 
-    virtualisation.libvirtd.hooks.qemu = {
-        win10-hook = pkgs.writeShellScript "win10-hook" ''
-            set -ex
+  ##########################################################################
+  # VFIO / IOMMU (AMD GPU PASSTHROUGH CORE)
+  ##########################################################################
 
-            VM="$1"
-            OPERATION="$2"
-            SUBOPERATION="$3"
+  boot = {
+    kernelParams = [
+      # IOMMU
+      "amd_iommu=on"
+      "iommu=pt"
 
-            if [ "$VM" = "win10" ] &&
-            [ "$OPERATION" = "prepare" ] &&
-            [ "$SUBOPERATION" = "begin" ]; then
+      # Bind GPU + HDMI audio to VFIO at boot
+      "vfio-pci.ids=1002:731f,1002:ab38"
 
-            systemctl stop display-manager.service
-
-            echo 0 > /sys/class/vtconsole/vtcon0/bind || true
-            echo 0 > /sys/class/vtconsole/vtcon1/bind || true
-
-            echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
-
-            sleep 2
-
-            modprobe -r amdgpu
-
-            /run/current-system/sw/bin/virsh nodedev-detach pci_0000_2b_00_0
-            /run/current-system/sw/bin/virsh nodedev-detach pci_0000_2b_00_1
-
-            modprobe vfio
-            modprobe vfio_iommu_type1
-            modprobe vfio_pci
-            fi
-
-            if [ "$VM" = "win10" ] &&
-            [ "$OPERATION" = "release" ] &&
-            [ "$SUBOPERATION" = "end" ]; then
-
-            modprobe -r vfio_pci
-            modprobe -r vfio_iommu_type1
-            modprobe -r vfio
-
-            /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_0
-            /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_1
-
-            echo 1 > /sys/class/vtconsole/vtcon0/bind || true
-            echo 1 > /sys/class/vtconsole/vtcon1/bind || true
-
-            echo efi-framebuffer.0 \
-                > /sys/bus/platform/drivers/efi-framebuffer/bind
-
-            modprobe amdgpu
-
-            systemctl start display-manager.service
-            fi
-        '';
-    };
-
-    boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" ];
-    boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
-
-    environment.systemPackages = with pkgs; [
-        dmidecode
-        OVMF
-        # dnsmasq
-        # iptables
+      # Prevent EFI framebuffer / early GPU takeover
+      "video=efifb:off"
+      "video=vesafb:off"
     ];
+
+    initrd.kernelModules = [
+      "vfio"
+      "vfio_pci"
+      "vfio_iommu_type1"
+    ];
+
+    kernelModules = [
+      "kvm-amd"
+    ];
+  };
+
+  ##########################################################################
+  # OPTIONAL: MINIMAL VM HOOK (ONLY STOPS DISPLAY MANAGER)
+  ##########################################################################
+
+  virtualisation.libvirtd.hooks.qemu = {
+    win10-hook = pkgs.writeShellScript "win10-hook" ''
+      set -e
+
+      VM="$1"
+      OP="$2"
+      SUB="$3"
+
+      if [ "$VM" = "win10" ] && [ "$OP" = "prepare" ] && [ "$SUB" = "begin" ]; then
+        systemctl stop display-manager.service
+      fi
+
+      if [ "$VM" = "win10" ] && [ "$OP" = "release" ] && [ "$SUB" = "end" ]; then
+        systemctl start display-manager.service
+      fi
+    '';
+  };
+
+  ##########################################################################
+  # USEFUL PACKAGES
+  ##########################################################################
+
+  environment.systemPackages = with pkgs; [
+    virt-manager
+    OVMF
+    dmidecode
+  ];
 }
