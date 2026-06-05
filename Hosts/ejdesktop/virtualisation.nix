@@ -75,7 +75,7 @@
     # boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" ];
     boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
 
-    kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm-amd" ];
+    boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm-amd" ];
 
     environment.systemPackages = with pkgs; [
         dmidecode
