@@ -1,9 +1,6 @@
 { config, pkgs, username, ... }:
 
 {
-    # Disable root account
-    users.users.root.hashedPassword = "!";
-
     # Users
     users.users.${username} = {
         isNormalUser = true;

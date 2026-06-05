@@ -1,10 +1,22 @@
 
-firewall
+* All
+Git hardening
 
-sudo and sudo hardening
-ssh and ssh hardening
+* ejdesktop
+virtualisation w/ gpu passthrough
 
-Hypridle
-------------------------------------------------------
+* ejlaptop
+hibernation
+powermanagement
 
-homepage w/ gamedig, navidome, time&date, (Glances, Resources), Greeting, Logo, (Open-Meteo, OpenWeatherMap), Search
+* Possibilites 
+NixOS Impermanence: Make / dir ephemeral (reset at boot)
+NixOS Homepage: Custom dashboard with widget support (gamedig, navidome, time&date, (Glances, Resources), Greeting, Logo, (Open-Meteo, OpenWeatherMap), Search)
+NixOS lanzaboote: Secure boot support
+NixOS disko: Declarative disk partitioning and formatting
+NixOS Agenix: Better secret management
+NixOS Plymouth: Animated boot
+
+BTRFS filesystem
+ISOify NixOS with nix-generators
+

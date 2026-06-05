@@ -15,10 +15,6 @@
 
   networking.hostName = "ejdesktop";
 
-  # Host specific configs
-  # services.sshd.enable = false;
-  networking.firewall.enable = true;
-
   # Host specific global packages
   environment.systemPackages = with pkgs; [
     microcode-amd
