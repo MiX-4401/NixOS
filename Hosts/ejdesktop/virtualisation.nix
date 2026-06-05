@@ -73,9 +73,26 @@
     };
 
     # boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" ];
-    boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
+    # boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
 
-    boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm-amd" ];
+    # boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm-amd" ];
+
+    boot = {
+        kernelParams = [
+            "amd_iommu=on"
+            "iommu=pt"
+        ];
+
+        initrd.kernelModules = [
+            "vfio"
+            "vfio_pci"
+            "vfio_iommu_type1"
+        ];
+
+        kernelModules = [
+            "kvm-amd"
+        ];
+    };
 
     environment.systemPackages = with pkgs; [
         dmidecode
