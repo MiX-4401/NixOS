@@ -125,14 +125,9 @@
             };
 
             input = {
+                touchpad.natural_scroll = true;
                 force_no_accel = true;
-                sensitivity = -1.0;
-
-                touchpad = {
-                    scroll_factor = 0.1;
-                    natural_scroll = true;
-                    # disable_while_typing = false; # Good for gaming
-                };
+                float_switch_override_focus = 0;
             };
 
             master = {
@@ -157,6 +152,7 @@
                 "$mainMod, E, exec, kitty yazi"
                 "$mainMod, B, exec, zen"
                 "$mainMod, A, exec, walker"
+                "$mainMod, L, exec, hyprlock"
                 
                 # Window management
                 "$mainMod, Q, killactive,"
