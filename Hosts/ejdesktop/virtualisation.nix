@@ -19,8 +19,6 @@
 
     virtualisation.libvirtd.hooks.qemu = {
         win10-hook = pkgs.writeShellScript "win10-hook" ''
-            set -ex
-
             VM="$1"
             OPERATION="$2"
             SUBOPERATION="$3"
@@ -80,23 +78,23 @@
         kernelParams = [
             "amd_iommu=on"
             "iommu=pt"
-            "vfio-pci.ids=1002:ab38,1002:731f"
+            # "vfio-pci.ids=1002:ab38,1002:731f" # If multi gpu this would isolate the device
         ];
 
-        initrd.kernelModules = [
-            "vfio"
-            "vfio_pci"
-            "vfio_iommu_type1"
-        ];
+        # initrd.kernelModules = [
+        #     "vfio"
+        #     "vfio_pci"
+        #     "vfio_iommu_type1"
+        # ];
 
         # kernelModules = [
         #     "kvm-amd"
         # ];
         kernelModules = [
             "kvm-amd"
-            "vfio"
-            "vfio_pci"
-            "vfio_iommu_type1"
+            # "vfio"
+            # "vfio_pci"
+            # "vfio_iommu_type1"
         ];
     };
 
