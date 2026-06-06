@@ -45,6 +45,8 @@
                 pkgs.libnotify
                 pkgs.swaynotificationcenter
 
+                pkgs.tigervnc
+
                 # User GUI applications
                 pkgs.firefox
                 pkgs.vscode
