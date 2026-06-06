@@ -16,6 +16,7 @@
 
   networking.hostName = "ejdesktop";
   services.openssh.enable = true;
+  networking.firewall.enable = false;
 
   # Host specific global packages
   environment.systemPackages = with pkgs; [
