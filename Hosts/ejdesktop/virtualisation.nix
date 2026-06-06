@@ -31,8 +31,8 @@
 
             systemctl stop display-manager.service
 
-            echo 0 > /sys/class/vtconsole/vtcon0/bind || true
-            echo 0 > /sys/class/vtconsole/vtcon1/bind || true
+            echo 0 > /sys/class/vtconsole/vtcon0/bind
+            echo 0 > /sys/class/vtconsole/vtcon1/bind
 
             echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
 
@@ -59,11 +59,10 @@
             /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_0
             /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_1
 
-            echo 1 > /sys/class/vtconsole/vtcon0/bind || true
-            echo 1 > /sys/class/vtconsole/vtcon1/bind || true
+            echo 1 > /sys/class/vtconsole/vtcon0/bind
+            echo 1 > /sys/class/vtconsole/vtcon1/bind
 
-            echo efi-framebuffer.0 \
-                > /sys/bus/platform/drivers/efi-framebuffer/bind
+            echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
 
             modprobe amdgpu
 
@@ -81,6 +80,7 @@
         kernelParams = [
             "amd_iommu=on"
             "iommu=pt"
+            "vfio-pci.ids=1002:ab38,1002:731f"
         ];
 
         initrd.kernelModules = [
@@ -89,8 +89,14 @@
             "vfio_iommu_type1"
         ];
 
+        # kernelModules = [
+        #     "kvm-amd"
+        # ];
         kernelModules = [
             "kvm-amd"
+            "vfio"
+            "vfio_pci"
+            "vfio_iommu_type1"
         ];
     };
 
