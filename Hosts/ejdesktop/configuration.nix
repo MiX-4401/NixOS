@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./virtualisation.nix
+    # ./virtualisation.nix
     ../../Modules/PCDesktop/default.nix
     ../../Modules/System/base.nix
     ../../Modules/System/hardening.nix
@@ -15,7 +15,7 @@
   ];
 
   networking.hostName = "ejdesktop";
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Host specific global packages
   environment.systemPackages = with pkgs; [
