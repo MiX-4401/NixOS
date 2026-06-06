@@ -51,7 +51,7 @@
             [ "$SUBOPERATION" = "end" ]; then
 
             modprobe -r vfio_pci
-            modprobe -r vfio_iommu_type1
+            modprobe -r vfio_iommu_type1v
             modprobe -r vfio
 
             /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_0
@@ -92,9 +92,9 @@
         # ];
         kernelModules = [
             "kvm-amd"
-            # "vfio"
-            # "vfio_pci"
-            # "vfio_iommu_type1"
+            "vfio"
+            "vfio_pci"
+            "vfio_iommu_type1"
         ];
     };
 
