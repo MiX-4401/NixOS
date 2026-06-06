@@ -3,10 +3,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./virtualisation.nix
+    ./virtualisation.nix
     ../../Modules/PCDesktop/default.nix
     ../../Modules/System/base.nix
-    ../../Modules/System/hardening.nix
+    # ../../Modules/System/hardening.nix
     ../../Modules/System/users.nix
     ../../Modules/System/boot.nix
     ../../Modules/System/network.nix
