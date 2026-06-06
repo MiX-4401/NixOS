@@ -33,7 +33,7 @@
     # Firewall settings
     networking.firewall = {
         enable = true;
-        logRefusedPackets = true # Log refused packets - accessible via: journalctl -u firewall
+        logRefusedPackets = true; # Log refused packets - accessible via: journalctl -u firewall
 
         # Allow specific incomming traffic
         # allowedTCPPorts = [ 
@@ -44,6 +44,4 @@
 
         # ];
     };
-
-
 }
