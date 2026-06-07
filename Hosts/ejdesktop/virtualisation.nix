@@ -23,7 +23,7 @@
             OPERATION="$2"
             SUBOPERATION="$3"
 
-            if [ "$VM" = "win10" ] &&
+            if [ "$VM" = "Windows11GPUPassthrough" ] &&
             [ "$OPERATION" = "prepare" ] &&
             [ "$SUBOPERATION" = "begin" ]; then
 
@@ -46,7 +46,7 @@
             modprobe vfio_pci
             fi
 
-            if [ "$VM" = "win10" ] &&
+            if [ "$VM" = "Windows11GPUPassthrough" ] &&
             [ "$OPERATION" = "release" ] &&
             [ "$SUBOPERATION" = "end" ]; then
 
@@ -60,7 +60,7 @@
             echo 1 > /sys/class/vtconsole/vtcon0/bind
             echo 1 > /sys/class/vtconsole/vtcon1/bind
 
-            echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
+            echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/bind
 
             modprobe amdgpu
 
