@@ -19,7 +19,7 @@
 
   SecurityHardenFirewall.enable = true;
   SecurityHardenSSH.enable = true;
-  SecurityhardenRoot.enable = true;
+  SecurityHardenRoot.enable = true;
   SecurityHardenSudo.enable = true;
 
   # Host specific global packages
