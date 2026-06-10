@@ -17,8 +17,7 @@
 
   # Base settings
   BaseSetAllowUnfreeSoftware.enable = true;
-  # BaseSetHostname.hostname = "ejdesktop";
-  BaseSetHostname.hostname = "mydesktop";
+  BaseSetHostname.hostname = "ejdesktop";
   BaseSetOSVersion.version = "24.05";
   BaseSetGarbageCollection.enable = true;
 
