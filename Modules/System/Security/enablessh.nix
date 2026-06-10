@@ -10,7 +10,7 @@
         # SSH settings
         services.openssh = {
             enable = true;
-            ports = 6814;
+            ports = 2910;
             settings = {
                 PasswordAuthentication = false;
                 PermitRootLogin = "no";
