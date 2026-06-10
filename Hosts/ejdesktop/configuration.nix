@@ -15,9 +15,10 @@
     ../../Modules/System/Security/moduleBundle.nix
   ];
 
-  config.BaseSetAllowUnfreeSoftware = "ejdesktop";
-  config.BaseSetHostname = "ejdesktop";
-  config.BaseSetOSVersion
+  # Base settings
+  BaseSetAllowUnfreeSoftware.enable = true;
+  BaseSetHostname.hostname = "ejdesktop";
+  BaseSetOSVersion.version = "24.05";
   BaseSetGarbageCollection.enable = true;
 
   # Security settings

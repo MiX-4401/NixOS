@@ -2,7 +2,7 @@
 
 {
     options = {
-        BaseSetHostname = lib.mkOption {
+        BaseSetHostname.hostname = lib.mkOption {
             type = lib.types.str;
             default = "${username}machine";
             description = "Set a device hostname";

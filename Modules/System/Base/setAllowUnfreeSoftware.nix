@@ -2,7 +2,7 @@
 
 {
     options = {
-        BaseSetAllowUnfreeSoftware = lib.mkOption {
+        BaseSetAllowUnfreeSoftware.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = "Allow unfree software";
