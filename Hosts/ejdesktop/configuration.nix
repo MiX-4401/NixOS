@@ -1,28 +1,30 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
+    # Host unique
     ./hardware-configuration.nix
     ./virtualisation.nix
-    ../../Modules/PCDesktop/default.nix
-    ../../Modules/System/base.nix
-    ../../Modules/System/users.nix
-    ../../Modules/System/boot.nix
-    ../../Modules/System/network.nix
-    ../../Modules/System/packages.nix
-    ../../Modules/System/services.nix
 
+    # System immutable
+    ../../Modules/System/bootstrap.nix
+    ../../Modules/PCDesktop/default.nix
+    
+    # System mutable
+    ../../Modules/System/Base/moduleBundle.nix
     ../../Modules/System/Security/moduleBundle.nix
   ];
 
-  networking.hostName = "ejdesktop";
+  config.BaseSetAllowUnfreeSoftware = "ejdesktop";
+  config.BaseSetHostname = "ejdesktop";
+  config.BaseSetOSVersion
+  BaseSetGarbageCollection.enable = true;
 
+  # Security settings
   SecurityHardenFirewall.enable = true;
   SecurityHardenSSH.enable = false;
   SecurityHardenRoot.enable = true;
   SecurityHardenSudo.enable = true;
-
-  enableopenssh.enable = true;
 
   # Host specific global packages
   environment.systemPackages = with pkgs; [
