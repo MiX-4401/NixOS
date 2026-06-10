@@ -2,7 +2,7 @@
 
 {
     options = {
-        BaseSetOSVersion = lib.mkOption {
+        BaseSetOSVersion.version = lib.mkOption {
             type = lib.types.str;
             description = "Set the NixOS version";
         };
