@@ -9,6 +9,6 @@
     };
 
     config = {
-        system.stateVersion = config.BaseSetOSVersion;
+        system.stateVersion = config.BaseSetOSVersion.version;
     };
 }

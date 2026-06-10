@@ -10,6 +10,6 @@
     };
 
     config = {
-        nixpkgs.config.allowUnfree = config.BaseSetAllowUnfreeSoftware;
+        nixpkgs.config.allowUnfree = config.BaseSetAllowUnfreeSoftware.enable;
     };
 }
