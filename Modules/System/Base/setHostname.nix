@@ -10,6 +10,6 @@
     };
 
     config = {
-        networking.hostname = config.BaseSetHostname;
+        networking.hostName = config.BaseSetHostname;
     };
 }
