@@ -51,7 +51,7 @@
             [ "$SUBOPERATION" = "end" ]; then
 
             modprobe -r vfio_pci
-            modprobe -r vfio_iommu_type1v
+            modprobe -r vfio_iommu_type1
             modprobe -r vfio
 
             /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_0
@@ -69,27 +69,13 @@
         '';
     };
 
-    # boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" ];
-    # boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
-
-    # boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm-amd" ];
-
     boot = {
         kernelParams = [
             "amd_iommu=on"
             "iommu=pt"
-            # "vfio-pci.ids=1002:ab38,1002:731f" # If multi gpu this would isolate the device
         ];
 
-        # initrd.kernelModules = [
-        #     "vfio"
-        #     "vfio_pci"
-        #     "vfio_iommu_type1"
-        # ];
 
-        # kernelModules = [
-        #     "kvm-amd"
-        # ];
         kernelModules = [
             "kvm-amd"
             "vfio"
