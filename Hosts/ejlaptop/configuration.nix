@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../Modules/LPDesktop/default.nix
+    ../../Modules/System/hardening.nix
     ../../Modules/System/base.nix
     ../../Modules/System/users.nix
     ../../Modules/System/boot.nix
@@ -15,8 +16,8 @@
   networking.hostName = "ejlaptop";
 
   # Host specific configs
-  services.sshd.enable = false;
-  networking.firewall.enable = true;
+  # services.sshd.enable = false;
+  # networking.firewall.enable = true;
 
   # Host specific global packages
   environment.systemPackages = with pkgs; [
