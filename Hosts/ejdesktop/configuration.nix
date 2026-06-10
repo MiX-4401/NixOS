@@ -18,9 +18,11 @@
   networking.hostName = "ejdesktop";
 
   SecurityHardenFirewall.enable = true;
-  SecurityHardenSSH.enable = true;
+  SecurityHardenSSH.enable = false;
   SecurityHardenRoot.enable = true;
   SecurityHardenSudo.enable = true;
+
+  enableopenssh.enable = true;
 
   # Host specific global packages
   environment.systemPackages = with pkgs; [
