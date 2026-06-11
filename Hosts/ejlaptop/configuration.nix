@@ -2,22 +2,29 @@
 
 {
   imports = [
+    # Host unique
     ./hardware-configuration.nix
+
+    # System immutable
+    ../../Modules/System/bootstrap.nix
     ../../Modules/LPDesktop/default.nix
-    ../../Modules/System/hardening.nix
-    ../../Modules/System/base.nix
-    ../../Modules/System/users.nix
-    ../../Modules/System/boot.nix
-    ../../Modules/System/network.nix
-    ../../Modules/System/packages.nix
-    ../../Modules/System/services.nix
+    
+    # System mutable
+    ../../Modules/System/Base/moduleBundle.nix
+    ../../Modules/System/Security/moduleBundle.nix
   ];
 
-  networking.hostName = "ejlaptop";
+  # Base settings
+  BaseSetAllowUnfreeSoftware.enable = true;
+  BaseSetHostname.hostname = "ejlaptop";
+  BaseSetOSVersion.version = "24.05";
+  BaseSetGarbageCollection.enable = true;
 
-  # Host specific configs
-  # services.sshd.enable = false;
-  # networking.firewall.enable = true;
+  # Security settings
+  SecurityHardenFirewall.enable = true;
+  SecurityHardenSSH.enable = false;
+  SecurityHardenRoot.enable = true;
+  SecurityHardenSudo.enable = true;
 
   # Host specific global packages
   environment.systemPackages = with pkgs; [
