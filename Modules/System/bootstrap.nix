@@ -39,9 +39,9 @@
         ntfs3g
     ];
 
-    imports = [
-        inputs.hyprland.nixosModules.default
-    ];
+    # imports = [
+    #     inputs.hyprland.nixosModules.default
+    # ];
 
     programs = {
         git.enable = true;
@@ -53,7 +53,7 @@
 
         hyprland = {
             enable = true;
-            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+            # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
     };
 
