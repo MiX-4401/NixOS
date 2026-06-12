@@ -13,7 +13,7 @@
 
     # Hyprland 
     hyprland.url = "github:hyprwm/Hyprland/0002f148c9a4fe421a9d33c0faa5528cdc411e62";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+    # hyprland.inputs.nixpkgs.follows = "nixpkgs";
 
     # Stylix
     stylix.url = "github:nix-community/stylix/release-24.11";

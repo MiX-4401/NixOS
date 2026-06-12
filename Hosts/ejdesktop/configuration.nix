@@ -20,6 +20,7 @@
   BaseSetHostname.hostname = "ejdesktop";
   BaseSetOSVersion.version = "24.05";
   BaseSetGarbageCollection.enable = true;
+  BaseSetDownloadBufferSize.size = 134217728;
 
   # Security settings
   SecurityHardenFirewall.enable = true;
