@@ -17,6 +17,7 @@ NixOS disko: Declarative disk partitioning and formatting
 NixOS Agenix: Better secret management
 NixOS Plymouth: Animated boot
 NixOS LUKs
+NixOS Borg: Timeshift equivilent - should be better on storage (https://nixos.org/manual/nixos/stable/#module-borgbase)
 
 BTRFS filesystem
 ISOify NixOS with nix-generators
