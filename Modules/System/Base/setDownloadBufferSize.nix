@@ -9,7 +9,7 @@
         };
     };
 
-    config = lib.mkIf config.BaseSetGarbageCollection.enable {
+    config = lib.mkIf config.BaseSetDownloadBufferSize.enable {
 
         # Set download buffer settings
         nix.settings.download-buffer-size = config.BaseSetDownloadBufferSize.size;
