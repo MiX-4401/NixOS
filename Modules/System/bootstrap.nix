@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: 
+{ inputs, pkgs, username, ... }: 
 
 {
 
@@ -39,14 +39,22 @@
         ntfs3g
     ];
 
+    imports = [
+        inputs.hyprland.nixosModules.default
+    ];
+
     programs = {
         git.enable = true;
         htop.enable = true;
         nano.enable = true;
         zsh.enable = true;
-        hyprland.enable = true;
         steam.enable = true;
         gamescope.enable = true;
+
+        hyprland = {
+            enable = true;
+            pacakge = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        };
     };
 
     # Services
