@@ -1,7 +1,7 @@
-{ ... }:
+{ inputs, ... }:
+
+# Import custom functions to extend functionality of NixOS 
 
 {
-    imports = [
-        ./mkHost.nix
-    ];
+    mkHost = import ./mkHost.nix { inherit inputs; };
 }
