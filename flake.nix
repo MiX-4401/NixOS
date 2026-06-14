@@ -33,7 +33,7 @@
             hostname = "ejdesktop";
             username = "ejradford";
             system = "x86_64-linux";
-            modules = [ ./Hosts/ejdesktop/configuration.nix ];
+            modules = [ ./Hosts/ejdesktop/V2/configuration.nix ];
             specialArgs = { };
         };
 
