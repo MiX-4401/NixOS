@@ -24,7 +24,7 @@
     outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
     let
         # Import my custom lib functions
-        myLib = import ./Lib/moduleBundle.nix { inherit inputs lib; };
+        myLib = import ./Lib/moduleBundle.nix { inherit inputs inputs.nixpkgs.lib; };
     in { 
         # Hosts
         
