@@ -9,7 +9,7 @@
     };
 
     config = {
-        home.packages = [ pkgs.hyprpaper ];
+        home.packages = with pkgs; [ hyprpaper ];
 
         home.file."/Pictures/Wallpapers/" = {
             source = ../Wallpapers;

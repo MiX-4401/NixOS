@@ -10,8 +10,7 @@
         ./Rofi
         ./Shell
         ./SwayNotificationCentre
-        ./Walker
-        ./Wallpapers
+        ./Walker        
         ./Waybar
         ./Waypaper
     ];

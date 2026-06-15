@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-    option.desktopPackageBundleGaming.enable = lib.mkOption {
+    options.desktopPackageBundleGaming.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Set the package bundle containing software relating to gaming";
@@ -12,8 +12,5 @@
             lutris
             prismlauncher
         ];
-
-        programs.steam.enable = true;
-        programs.gamescope.enable = true;
     };
 }
