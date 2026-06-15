@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, username, ... }:
 
 {
     options.desktopPackageBundleSocials.enable = lib.mkOption {
@@ -7,7 +7,7 @@
         description = "Set the package bundle containing software relating to socials";
     };
 
-    config = lib.mkIf config.desktopPackageBundleSocials.enable {
+    config = lib.mkIf home-manager.user.${username}.desktopPackageBundleSocials.enable {
         home.packages = with pkgs; [
             discord
             spotify        

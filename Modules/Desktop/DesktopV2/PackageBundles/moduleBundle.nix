@@ -3,7 +3,7 @@
 {
     imports = [
         ./Gaming
-        ./Social
+        # ./Social
         ./DesktopUtilities
         ./OfficeUtilities
         ./Extra

@@ -4,6 +4,8 @@
     # Import HomeManager libraries
     imports = [
         inputs.home-manager.nixosModules.home-manager
+
+        ./PacakgeBundles/Social/default.nix
     ];
 
     home-manager.useGlobalPkgs = true;
@@ -19,8 +21,6 @@
             ./Packages/moduleBundle.nix
             ./PackageBundles/moduleBundle.nix
         ]; 
-
-        desktopDefaultApps.enable = true;
     };
 
     # Forced applications
