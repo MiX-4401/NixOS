@@ -2,7 +2,7 @@
 
 {
 
-    options.dekstopHyprpaper.wallpaper = {
+    options.dekstopHyprpaper.wallpaper = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         default = [ "/home/${username}/Pictures/Wallpapers/rainworld2.png" ];
         description = "Set the Hyprpaper wallpaper";

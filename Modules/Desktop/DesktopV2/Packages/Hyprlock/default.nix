@@ -1,7 +1,7 @@
 { config, lib, username, wallpaper, ... }:
 
 {
-    options.desktopHyprlock.enable = {
+    options.desktopHyprlock.enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
         description = "Set whether the lockscreen should be enabled";

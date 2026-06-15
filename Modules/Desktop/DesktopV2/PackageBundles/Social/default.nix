@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-    options.desktopPackageBundleSocials.enable = {
+    options.desktopPackageBundleSocials.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Set the package bundle containing software relating to socials";

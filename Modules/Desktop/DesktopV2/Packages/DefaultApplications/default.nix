@@ -1,13 +1,13 @@
 { lib, config, ... }:
 
 {
-    options.desktopDefaultApps.enable = {
+    options.desktopDefaultApps.enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
         description = "Enable the default application handlers";
     };
 
-    options.desktopDefaultApps.defaultBrowser = {
+    options.desktopDefaultApps.defaultBrowser = lib.mkOption {
         type = lib.types.str;
         default = "zen.desktop";
     };

@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-    options.desktopPackageBundleExtra.enable = {
+    options.desktopPackageBundleExtra.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Set the package bundle containing software relating to misc extra software for fun";

@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 
 {
-    options.desktopHyprland.monitors = {
+    options.desktopHyprland.monitors = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         default = [ ", preferred, auto, 1" ];
         description = "List of monitors as per Hyprland monitor config";

@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-    option.desktopPackageBundleGaming.enable = {
+    option.desktopPackageBundleGaming.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Set the package bundle containing software relating to gaming";

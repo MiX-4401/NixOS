@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-    option.desktopPackageBundleOfficeUtilities.enable = {
+    option.desktopPackageBundleOfficeUtilities.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Set the package bundle containing software relating to the office suite";

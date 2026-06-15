@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-    options.desktopPackageBundleDesktopUtilities.enable = {
+    options.desktopPackageBundleDesktopUtilities.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Set the package bundle containing software relating to desktop utilities";
