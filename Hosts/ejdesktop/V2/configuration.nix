@@ -31,7 +31,7 @@
     bootSystemdBoot.kernel = "zen";
 
     # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
-    desktopDefaultApps.enable = false;
+    desktopDefaultApps.enable = true;
     desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
 
     desktopPackageBundleSocials.enable = true;
