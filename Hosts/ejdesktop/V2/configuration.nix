@@ -12,19 +12,33 @@
         ./virtualisation.nix            # Import of custom virtualisation configurations
     ];
 
+    # # Modular settings imported from ../../System/SystemV2/bootstrap.nix which declares imports to modular settings
+    # config.baseSetOSVersion.version = "25.11";
+    # config.bootSystemdBoot.kernel = "zen";
+
+    # # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
+    # config.desktopDefaultApps.enable = false;
+    # config.desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
+
+    # config.desktopPackageBundleSocials.enable = true;
+    # config.desktopPackageBundleOfficeUtilities.enable = true;
+    # config.desktopPackageBundleDesktopUtilities.enable = true;
+    # config.desktopPackageBundleGaming.enable = true;
+    # config.desktopPackageBundleExtra.enable = true;
+
     # Modular settings imported from ../../System/SystemV2/bootstrap.nix which declares imports to modular settings
-    config.baseSetOSVersion.version = "25.11";
-    config.bootSystemdBoot.kernel = "zen";
+    baseSetOSVersion.version = "25.11";
+    bootSystemdBoot.kernel = "zen";
 
     # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
-    config.desktopDefaultApps.enable = false;
-    config.desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
+    desktopDefaultApps.enable = false;
+    desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
 
-    config.desktopPackageBundleSocials.enable = true;
-    config.desktopPackageBundleOfficeUtilities.enable = true;
-    config.desktopPackageBundleDesktopUtilities.enable = true;
-    config.desktopPackageBundleGaming.enable = true;
-    config.desktopPackageBundleExtra.enable = true;
+    desktopPackageBundleSocials.enable = true;
+    desktopPackageBundleOfficeUtilities.enable = true;
+    desktopPackageBundleDesktopUtilities.enable = true;
+    desktopPackageBundleGaming.enable = true;
+    desktopPackageBundleExtra.enable = true;
 
 
     # Host specific software
