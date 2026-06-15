@@ -14,5 +14,5 @@
         ./Wallpapers
         ./Waybar
         ./Waypaper
-    ]
+    ];
 }
