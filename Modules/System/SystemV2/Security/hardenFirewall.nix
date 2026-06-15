@@ -26,7 +26,7 @@
             logRefusedPackets = true; # Log refused packets - accessible via: journalctl -u firewall
 
             # Allow specific incomming traffic
-            allowedTCPPorts = config.securityHardenFirewall.allowedTCPPorts ++ (if config.services.openssh.enable then [ sshPort ] else [ ]);   # Add SSH port by defaultif SSH is enabled
+            allowedTCPPorts = config.securityHardenFirewall.allowedTCPPorts ++ (if config.services.openssh.enable then config.services.openssh.ports else [ ]);   # Add SSH port by defaultif SSH is enabled
             allowedUDPPorts = config.securityHardenFirewall.allowedUDPPorts ++ [ ];
         };
     };
