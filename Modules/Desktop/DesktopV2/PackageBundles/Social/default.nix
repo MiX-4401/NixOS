@@ -1,10 +1,6 @@
 { lib, config, pkgs, username, ... }:
 
 {
-    imports = [
-        inputs.home-manager.nixosModules.home-manager
-    ];
-
     options.desktopPackageBundleSocials.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
