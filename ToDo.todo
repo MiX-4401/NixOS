@@ -1,1 +1,1 @@
-Need to have dekstop modules install their packages themselves. Also need to ensure wallpaper path is defined from the host configuration.nix files
+Need to resolve home manager desktop enviornment modular settings being accessible from the top level

@@ -4,11 +4,10 @@
 
     # imports = [
     #     (lib.mkAliasOptionModule
-    #         [ "desktopPackageBundleSocials" ]
-    #         [ "home-manager" "users" "ejradford" "desktopPackageBundleSocials" ]
+    #         [ ns "home-manager" ]
+    #         [ "home-manager" "users" username ns ]
     #     )
     # ];
-
     options.desktopPackageBundleSocials.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
