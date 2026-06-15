@@ -1,4 +1,4 @@
-{ inputs, username, ... }: 
+{ inputs, pkgs, username, ... }: 
 
 {
     # Import HomeManager libraries
@@ -22,29 +22,29 @@
     };
 
     # Forced applications
-    home.packages = [
+    home.packages = with pkgs; [
         
         # Destop environment
-        pkgs.clipse
-        pkgs.hyprshot
-        pkgs.pavucontrol
-        pkgs.wl-clipboard
-        pkgs.font-awesome_5
-        pkgs.breeze-hacked-cursor-theme
+        clipse
+        hyprshot
+        pavucontrol
+        wl-clipboard
+        font-awesome_5
+        breeze-hacked-cursor-theme
 
         # User GUI applications
-        pkgs.nautilus
-        pkgs.bitwarden-desktop                
-        pkgs.vscode
+        nautilus
+        bitwarden-desktop                
+        vscode
         
         # User TUI applications
-        pkgs.yazi
-        pkgs.btop
+        yazi
+        btop
 
         # User CLI applications
-        pkgs.python3
+        python3
         
         # External flake packages
-        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+        inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
     ];
 }
