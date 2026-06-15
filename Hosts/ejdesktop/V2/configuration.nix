@@ -18,22 +18,18 @@
 
     # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
     desktopDefaultApps.enable = false;
-    desktopHyprland.monitors = [
-        # Left monitor
-        "HDMI-A-1,1920x1080@75,auto,1.2"
+    desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
 
-        # Right monitor
-        "DP-2,1920x1080@144,0x0,1.2"
-    ];
+    desktopPackageBundleSocials.enable = true;
+    desktopPackageBundleOfficeUtilities.enable = true;
+    desktopPackageBundleDesktopUtilities.enable = true;
+    desktopPackageBundleGaming.enable = true;
+    desktopPackageBundleExtra.enable = true;
+
 
     # Host specific software
     environment.systemPackages = with pkgs; [
         microcode.amd
         rocmPackages.rocm-smi
     ];
-
-    programs = {
-        steam.enable = true;
-        gamescope.enable = true;
-    };
 }

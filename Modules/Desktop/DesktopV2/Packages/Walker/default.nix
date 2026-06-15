@@ -1,6 +1,7 @@
 { ... }: 
 
 {
+    home.packages = [ pkgs.walker ];
     services.walker = {
         enable = true;
         systemd.enable = true;

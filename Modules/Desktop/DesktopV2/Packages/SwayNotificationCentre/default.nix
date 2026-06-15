@@ -7,6 +7,7 @@ let
     base0A base0B base0C base0D base0E base0F;
 in
 {
+    home.packages = [ pkgs.libnotify pkgs.swaynotificationcenter ];
     services.swaync = {
         enable = true;
 

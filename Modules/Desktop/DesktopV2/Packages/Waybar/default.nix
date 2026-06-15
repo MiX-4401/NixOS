@@ -4,6 +4,7 @@ let
     colours = config.lib.stylix.colors;
 in
 {
+    home.packages = [ pkgs.waybar ];
     programs.waybar = {
         enable = true;
         systemd.enable = true;
