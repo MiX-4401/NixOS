@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 { hostname, username, system, modules ? [], specialArgs ? {}, ... }:
 
 # Function for creating new hosts
