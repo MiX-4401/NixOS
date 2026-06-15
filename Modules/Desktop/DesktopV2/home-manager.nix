@@ -35,7 +35,6 @@
     home.packages = [
         
         # Destop environment
-        pkgs.hyprpaper
         pkgs.waybar
         pkgs.clipse
         pkgs.hyprshot

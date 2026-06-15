@@ -1,34 +1,29 @@
-{ username, wallpaper, ... }:
+{ pkgs, ... }:
 
 {
-    home.file."/Pictures/Wallpapers/" = {
-        source = ../Wallpapers;
-        recursive = true;
+
+    options.dekstopHyprpaper.wallpaper = {
+        type = lib.types.listOf lib.types.str;
+        default = [ "/home/${username}/Pictures/Wallpapers/rainworld2.png" ];
+        description = "Set the Hyprpaper wallpaper";
     };
 
-    services.hyprpaper = {
-        enable = true;
-    
-        # settings = {
-        #     splash = false;
+    config = {
+        home.packages = [ pkgs.hyprpaper ];
 
-        #     wallpaper = [
-        #         {
-        #             monitor = "";
-        #             path = "~/Pictures/Wallpapers/rainworld3.jpg";
-        #         }
-        #     ];
-        # };
+        home.file."/Pictures/Wallpapers/" = {
+            source = ../Wallpapers;
+            recursive = true;
+        };
 
-        settings = {
-            splash = false;
+        services.hyprpaper = {
+            enable = true;
+            settings = {
+                splash = false;
 
-            preload = [
-                "/home/${username}/Pictures/Wallpapers/${wallpaper}"
-            ];
-            wallpaper = [
-                ",/home/${username}/Pictures/Wallpapers/${wallpaper}"
-            ];
+                preload = config.desktopHyprpaper.wallpaper;
+                wallpaper = config.desktopHyprpaper.wallpaper;
+            };
         };
     };
 }
