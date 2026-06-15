@@ -21,6 +21,7 @@
         ]; 
 
         desktopDefaultApps.enable = true;
+    };
 
     # Forced applications
     home.packages = with pkgs; [
