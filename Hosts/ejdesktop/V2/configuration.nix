@@ -4,8 +4,8 @@
     imports = [
         
         # Bootstrap imports
-        ../../Modules/System/SystemV2/bootstrap.nix   # Import of the systems environment configurations
-        ../../Modules/Desktop/DesktopV2/bootstrap.nix # Import of the desktop environment configurations
+        ../../../Modules/System/SystemV2/bootstrap.nix   # Import of the systems environment configurations
+        ../../../Modules/Desktop/DesktopV2/bootstrap.nix # Import of the desktop environment configurations
         
         # Host specific imports
         ./hardware-configuration.nix    # Import of the physical storage systems 
