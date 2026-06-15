@@ -34,7 +34,7 @@
     # desktopDefaultApps.enable = true;
     # desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
 
-    # desktopPackageBundleSocials.enable = true;
+    desktopPackageBundleSocials.enable = true;
     # desktopPackageBundleOfficeUtilities.enable = true;
     # desktopPackageBundleDesktopUtilities.enable = true;
     # desktopPackageBundleGaming.enable = true;
