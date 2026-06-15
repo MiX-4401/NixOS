@@ -16,11 +16,11 @@
         xdg.mimeApps = {
             enable = config.desktopDefaultApps.enable;
             defaultApplications = {
-                "text/html" = options.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/http" = options.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/https" = options.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/about" = options.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/unknown" = options.desktopDefaultApps.defaultBrowser;
+                "text/html" = config.desktopDefaultApps.defaultBrowser;
+                "x-scheme-handler/http" = config.desktopDefaultApps.defaultBrowser;
+                "x-scheme-handler/https" = config.desktopDefaultApps.defaultBrowser;
+                "x-scheme-handler/about" = config.desktopDefaultApps.defaultBrowser;
+                "x-scheme-handler/unknown" = config.desktopDefaultApps.defaultBrowser;
             };
         };
     };

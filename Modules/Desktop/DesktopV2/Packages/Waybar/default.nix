@@ -1,10 +1,10 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
     colours = config.lib.stylix.colors;
 in
 {
-    home.packages = [ pkgs.waybar ];
+    home.packages = with pkgs; [ waybar ];
     programs.waybar = {
         enable = true;
         systemd.enable = true;

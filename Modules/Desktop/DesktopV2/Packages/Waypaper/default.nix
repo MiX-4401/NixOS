@@ -1,7 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-    home.packages = [ pkgs.waypaper ];
+    home.packages = with pkgs; [ waypaper ];
     home.file.".config/waypaper/config.ini" = {
         source = ./config.ini;
     };

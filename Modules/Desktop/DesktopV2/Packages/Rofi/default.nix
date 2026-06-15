@@ -1,7 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-    home.packages = [ pkgs.rofi ];
+    home.packages = with pkgs; [ rofi ];
     programs.rofi = {
         enable = true;
 
