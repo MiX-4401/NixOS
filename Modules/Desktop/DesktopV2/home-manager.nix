@@ -18,8 +18,9 @@
         imports = [
             ./Packages/moduleBundle.nix
             ./PackageBundles/moduleBundle.nix
-        ];
-    };
+        ]; 
+
+        desktopDefaultApps.enable = true;
 
     # Forced applications
     home.packages = with pkgs; [
