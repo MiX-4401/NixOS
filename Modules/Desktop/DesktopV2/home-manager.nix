@@ -5,7 +5,7 @@
     imports = [
         inputs.home-manager.nixosModules.home-manager
 
-        ./PacakgeBundles/Social/default.nix
+        ./PackageBundles/Social/default.nix
     ];
 
     home-manager.useGlobalPkgs = true;
