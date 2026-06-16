@@ -33,7 +33,8 @@
 
             # User GUI applications
             nautilus
-            bitwarden-desktop                
+            # bitwarden-desktop      
+            # (bitwarden-desktop.override { electron_39 = electron_40; })     
             vscode
             
             # User TUI applications

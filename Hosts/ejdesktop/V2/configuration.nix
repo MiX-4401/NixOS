@@ -29,6 +29,7 @@
     # Modular settings imported from ../../System/SystemV2/bootstrap.nix which declares imports to modular settings
     baseSetOSVersion.version = "25.11";
     bootSystemdBoot.kernel = "zen";
+    baseSetAllowUnfreeSoftware.enable = true;
 
     # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
     # desktopDefaultApps.enable = true;
@@ -43,7 +44,7 @@
 
     # Host specific software
     environment.systemPackages = with pkgs; [
-        microcode.amd
+        microcode-amd
         rocmPackages.rocm-smi
     ];
 

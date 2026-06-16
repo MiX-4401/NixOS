@@ -8,8 +8,8 @@
     };
 
     options.securityHardenSSH.port = lib.mkOption {
-        type = lib.types.int;
-        default = 6814;
+        type = lib.types.listOf lib.types.int;
+        default = [ 6814 ];
         description = "Int of the TCP port for OpenSSH";
     };
 

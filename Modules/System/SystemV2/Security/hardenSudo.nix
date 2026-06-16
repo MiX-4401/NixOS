@@ -2,7 +2,7 @@
 
 {
     options.securityHardenSudo.enable = lib.mkOption {
-        type = lib.types.str;
+        type = lib.types.bool;
         default = true;
         description = "Enable the hardening of sudo"; 
     };

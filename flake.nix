@@ -5,11 +5,12 @@
     inputs = {
 
         # NixOS nixpkgs contains: Software packages, helper libraries
+        # nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
         # Home manager contains: Software package, helper libraries
-        home-manager.url = "github:nix-community/home-manager";
+        home-manager.url = "github:nix-community/home-manager/release-26.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
         # Stylix contains: Software package, helper libraries

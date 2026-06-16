@@ -1,1 +1,15 @@
 Need to resolve home manager desktop enviornment modular settings being accessible from the top level
+
+
+imports = [
+  (lib.mkAliasOptionModule
+    [ ns "home-manager" ]
+    [ "home-manager" "users" username ns ]
+  )
+];
+
+users.users.${username}.packages = (with pkgs; [
+  (bitwarden-desktop.override {
+    electron_39 = electron_40;
+  })
+]
