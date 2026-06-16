@@ -63,8 +63,8 @@
                     gaps_out = 20;
                     border_size = 2;
 
-                    "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base03}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
-                    "col.inactive_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base08}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
+                    # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base03}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
+                    # "col.inactive_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base08}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
 
                     resize_on_border = false; 
                     allow_tearing = false;

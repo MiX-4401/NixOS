@@ -5,7 +5,6 @@
     inputs = {
 
         # NixOS nixpkgs contains: Software packages, helper libraries
-        # nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     

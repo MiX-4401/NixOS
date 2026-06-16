@@ -1,9 +1,11 @@
-{ inputs, pkgs, username, ... }: 
+{ inputs, lib, pkgs, username, ... }: 
 
 {
     # Import HomeManager libraries
     imports = [
         inputs.home-manager.nixosModules.home-manager
+        ./Packages/moduleBridge.nix
+        ./PackageBundles/moduleBridge.nix
     ];
 
     home-manager.useGlobalPkgs = true;
@@ -19,7 +21,7 @@
             ./Packages/moduleBundle.nix
             ./PackageBundles/moduleBundle.nix
         ]; 
-
+        # desktopPackageBundleSocials.enable = true;
         # Forced applications
         home.packages = with pkgs; [
             
@@ -33,8 +35,7 @@
 
             # User GUI applications
             nautilus
-            # bitwarden-desktop      
-            # (bitwarden-desktop.override { electron_39 = electron_40; })     
+            # bitwarden-desktop          
             vscode
             
             # User TUI applications

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ lib, username, pkgs, config, ... }:
 
 {
     imports = [
@@ -12,35 +12,24 @@
         ./virtualisation.nix            # Import of custom virtualisation configurations
     ];
 
-    # # Modular settings imported from ../../System/SystemV2/bootstrap.nix which declares imports to modular settings
-    # config.baseSetOSVersion.version = "25.11";
-    # config.bootSystemdBoot.kernel = "zen";
-
-    # # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
-    # config.desktopDefaultApps.enable = false;
-    # config.desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
-
-    # config.desktopPackageBundleSocials.enable = true;
-    # config.desktopPackageBundleOfficeUtilities.enable = true;
-    # config.desktopPackageBundleDesktopUtilities.enable = true;
-    # config.desktopPackageBundleGaming.enable = true;
-    # config.desktopPackageBundleExtra.enable = true;
-
     # Modular settings imported from ../../System/SystemV2/bootstrap.nix which declares imports to modular settings
     baseSetOSVersion.version = "25.11";
     bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
 
     # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
-    # desktopDefaultApps.enable = true;
-    # desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
-
-    # desktopPackageBundleSocials.enable = true;
-    # desktopPackageBundleOfficeUtilities.enable = true;
-    # desktopPackageBundleDesktopUtilities.enable = true;
-    # desktopPackageBundleGaming.enable = true;
-    # desktopPackageBundleExtra.enable = true;
-
+    desktopDefaultApps.enable = true;
+    desktopDefaultApps.defaultBrowser = "zen.desktop";
+    desktopGit.enable = true;
+    desktopGit.username = "MiX4401";
+    desktopGit.email = "ej.radford@outlook.com.au";
+    desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
+    dekstopHyprpaper.wallpaper = "/home/${username}/Pictures/Wallpapers/rainworld2.png";
+    desktopPackageBundleDesktopUtilities.enable = true;
+    desktopPackageBundleExtra.enable = true;
+    desktopPackageBundleGaming.enable = true;
+    desktopPackageBundleOfficeUtilities.enable = true;
+    desktopPackageBundleSocials.enable = true;
 
     # Host specific software
     environment.systemPackages = with pkgs; [

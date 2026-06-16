@@ -19,8 +19,6 @@
                     brightness = 0.8172;
                     vibrancy = 0.1696;
                     vibrancy_darkness = 0.0;
-
-                    # path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
                 };
 
                 general = {
@@ -28,14 +26,6 @@
                     grace = 0;
                     disable_loading_bar = false;
                 };
-
-                #   input-field = lib.mkForce [
-                #     {
-                #       position = lib.mkForce "0, 225";
-                #       halign = lib.mkForce "center";
-                #       valign = lib.mkForce "bottom";
-                #     }
-                #   ];
 
                 image = [
                     {

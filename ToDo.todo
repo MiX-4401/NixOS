@@ -1,5 +1,5 @@
-Need to resolve home manager desktop enviornment modular settings being accessible from the top level
-
+need to ensure hyprlock grabs the wallpaper dyanmically 
+need to ensure hyprlock grabs colours from stylix
 
 imports = [
   (lib.mkAliasOptionModule
@@ -13,3 +13,13 @@ users.users.${username}.packages = (with pkgs; [
     electron_39 = electron_40;
   })
 ]
+
+desktopDefaultApps
+desktopGit
+desktopHyprland
+dekstopHyprpaper
+desktopPackageBundleDesktopUtilities
+desktopPackageBundleExtra
+desktopPackageBundleGaming
+desktopPackageBundleOfficeUtilities
+desktopPackageBundleSocials
