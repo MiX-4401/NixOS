@@ -21,7 +21,7 @@
             ./Packages/moduleBundle.nix
             ./PackageBundles/moduleBundle.nix
         ]; 
-        # desktopPackageBundleSocials.enable = true;
+
         # Forced applications
         home.packages = with pkgs; [
             

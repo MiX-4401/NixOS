@@ -9,7 +9,7 @@
 
     config = lib.mkIf config.desktopPackageBundleExtra.enable {
         home.packages = with pkgs; [
-            neofetch
+            fastfetch
             cbonsai
             cmatrix
             cava
