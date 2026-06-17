@@ -5,6 +5,7 @@
         ./DefaultApplications
         ./Git
         ./Hyprland
+        ./hyprpaper
         ./Hyprlock
         ./Kitty
         ./Rofi
