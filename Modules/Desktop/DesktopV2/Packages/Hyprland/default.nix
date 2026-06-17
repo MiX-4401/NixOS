@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ inputs, pkgs, config, lib, ... }:
 
 {
     options.desktopHyprland.monitors = lib.mkOption {
