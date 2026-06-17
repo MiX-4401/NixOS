@@ -13,8 +13,12 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
         # Stylix contains: Software package, helper libraries
-        stylix.url = "github:nix-community/stylix/release-24.11";
+        # stylix.url = "github:nix-community/stylix/release-24.11";
+        stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+        hyprland.url = "github:hyprwm/hyprland/0002f148c9a4fe421a9d33c0faa5528cdc411e62";
+        hyprland.inputs.nixpkgs.follows = "nixpkgs";
 
         # Additional software
         zen-browser.url = "github:youwen5/zen-browser-flake";

@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: 
+{ inputs, pkgs, username, ... }: 
 
 {
 
@@ -57,5 +57,7 @@
         htop.enable = true;     # Simple TUI resource monitor
         nano.enable = true;     # Simple TUI text editor
         hyprland.enable = true; # GUI Desktop environment
+        hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        hyprland.portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 }

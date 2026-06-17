@@ -46,7 +46,7 @@
             python3
             
             # External flake packages
-            inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
+            inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
     };
 }
