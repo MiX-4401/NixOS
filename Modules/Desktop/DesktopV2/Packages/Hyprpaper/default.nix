@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, desktopSetWallpaper, ... }:
 
 {
     home.packages = with pkgs; [ hyprpaper ];
@@ -8,8 +8,8 @@
         settings = {
             splash = false;
 
-            preload = [ config.desktopSetWallpaper.wallpaper ];
-            wallpaper = [ config.desktopSetWallpaper.wallpaper ];
+            preload = [ "${desktopSetWallpaper.wallpaper}" ];
+            wallpaper = [ "${desktopSetWallpaper.wallpaper}" ];
         };
     };
 }

@@ -11,6 +11,6 @@
 inputs.nixpkgs.lib.nixosSystem {
     inherit system;
      
-    specialArgs = specialArgs // { inherit inputs username; };     # SpecialArgs: Joins some specialArgs boilerplate with custom arguments to simplfy specialArgs
-    modules = modules ++ [{ networking.hostName = hostname; }];    # modules: Joins auto setting hostname with custom mdoules to simplfy networking modules
+    specialArgs = specialArgs // { inherit inputs username; };                                  # SpecialArgs: Joins some specialArgs boilerplate with custom arguments to simplfy specialArgs
+    modules = modules ++ [{ networking.hostName = inputs.nixpkgs.lib.mkDefault hostname; }];    # modules: Joins auto setting hostname with custom mdoules to simplfy networking modules
 }

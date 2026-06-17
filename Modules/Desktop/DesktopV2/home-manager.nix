@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, username, ... }: 
+{ inputs, config, lib, pkgs, username, ... }: 
 
 {
     # Import HomeManager libraries
@@ -10,7 +10,10 @@
 
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
-    home-manager.extraSpecialArgs = { inherit inputs; };
+    home-manager.extraSpecialArgs = { 
+        inherit inputs; 
+        desktopSetWallpaper = config.desktopSetWallpaper;   # Passthrough toplevel value to home-manager's scope
+    };
     
     home-manager.users.${username} = {
         home.username = "${username}";
