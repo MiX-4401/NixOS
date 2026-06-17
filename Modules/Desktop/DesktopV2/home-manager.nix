@@ -15,7 +15,7 @@
     home-manager.users.${username} = {
         home.username = "${username}";
         home.homeDirectory = "/home/${username}";
-        home.stateVersion = "24.05";
+        home.stateVersion = "26.05";
         imports = [
             # Import desktop modules impacting the desktop environment (all modular settings)
             ./Packages/moduleBundle.nix
