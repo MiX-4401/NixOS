@@ -34,3 +34,5 @@ hyprland = {
       submodules = true;
       inputs.nixpkgs.follows = "nixpkgs";
 };
+
+systemctl --user status dbus-broker.service
