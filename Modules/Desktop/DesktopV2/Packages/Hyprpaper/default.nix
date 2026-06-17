@@ -8,8 +8,8 @@
         settings = {
             splash = false;
 
-            preload = config.desktopSetWallpaper.wallpaper;
-            wallpaper = config.desktopSetWallpaper.wallpaper;
+            preload = [ config.desktopSetWallpaper.wallpaper ];
+            wallpaper = [ config.desktopSetWallpaper.wallpaper ];
         };
     };
 }
