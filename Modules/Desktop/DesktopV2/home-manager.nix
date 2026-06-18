@@ -12,6 +12,7 @@
     home-manager.useUserPackages = true;
     home-manager.extraSpecialArgs = { 
         inherit inputs; 
+        inherit username;
         desktopSetWallpaper = config.desktopSetWallpaper;   # Passthrough toplevel value to home-manager's scope
     };
     

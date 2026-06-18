@@ -10,7 +10,7 @@
         homeManagerIntegration.followSystem = true;
         
         polarity = "dark";
-        image = config.desktopSetWallpaper.wallpaper;
+        image = ./Packages/Wallpapers/${config.desktopSetWallpaper.wallpaper};
         
         # cursor = {
         #     size = 12;

@@ -15,8 +15,8 @@
             extraConfig = 
                 ''
                 exec-once = hyprpaper
-                exec-once = kitty
-                exec-once = waybar
+                # exec-once = kitty
+                # exec-once = waybar
                 exec-once = clipse -listen
                 '';
 
