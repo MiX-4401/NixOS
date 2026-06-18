@@ -14,5 +14,6 @@
         ./Walker        
         ./Waybar
         ./Waypaper
+        ./Cursor
     ];
 }
