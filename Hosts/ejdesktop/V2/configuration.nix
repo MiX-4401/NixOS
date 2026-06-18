@@ -24,7 +24,7 @@
     desktopGit.username = "MiX4401";
     desktopGit.email = "ej.radford@outlook.com.au";
     desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
-    # dekstopHyprpaper.wallpaper = "/home/${username}/Pictures/Wallpapers/rainworld2.png";
+    dekstopHyprpaper.wallpaper = "rainworld1.png";
     desktopPackageBundleDesktopUtilities.enable = true;
     desktopPackageBundleExtra.enable = true;
     desktopPackageBundleGaming.enable = true;
