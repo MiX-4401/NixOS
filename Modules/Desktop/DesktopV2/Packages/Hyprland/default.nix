@@ -7,6 +7,12 @@
         description = "List of monitors as per Hyprland monitor config";
     };
 
+    options.desktopHyprland.layout = lib.mkOption {
+        type = lib.types.str;
+        default = "master";
+        description = "Set the Hyprland window layout of either string 'dwindle' or 'master'";
+    };
+
     config = {
         wayland.windowManager.hyprland = {
             enable = true;
@@ -70,7 +76,7 @@
 
                     resize_on_border = false; 
                     allow_tearing = false;
-                    layout = "master";
+                    layout = config.desktopHyprland;
                 }; 
 
                 decoration = {
