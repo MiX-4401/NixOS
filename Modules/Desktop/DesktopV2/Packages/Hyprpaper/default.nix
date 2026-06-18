@@ -19,21 +19,13 @@
             # preload = [ /home/ejradford/Pictures/Wallpapers/rainworld2.png ];
             # wallpaper = [ "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}" ];
             wallpaper = [
-                # {
-                #     monitor = "HDMI-A-1";
-                #     path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
-                # }
-                # {
-                #     monitor = "DP-2";
-                #     path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
-                # }
                 {
                     monitor = "HDMI-A-1";
-                    path = "/home/ejradford/Pictures/Wallpapers/rainworld2.png";
+                    path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
                 }
                 {
                     monitor = "DP-2";
-                    path = "/home/ejradford/Pictures/Wallpapers/rainworld2.png";
+                    path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
                 }
             ];
         };
