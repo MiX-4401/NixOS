@@ -10,13 +10,14 @@
     config = {
         wayland.windowManager.hyprland = {
             enable = true;
+            configType = "hyprlang";    # Latest version of Home-manager defaults this to "lua" if not set explicitly 
+            
             package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
             extraConfig = 
                 ''
                 exec-once = hyprpaper
-                # exec-once = kitty
-                # exec-once = waybar
+                exec-once = waybar
                 exec-once = clipse -listen
                 '';
 
