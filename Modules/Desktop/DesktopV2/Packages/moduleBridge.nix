@@ -20,16 +20,5 @@
             [ "desktopHyprland" ]
             [ "home-manager" "users" username "desktopHyprland" ]
         )
-
-        (lib.mkAliasOptionModule
-            [ "dekstopHyprpaper" ]
-            [ "home-manager" "users" username "dekstopHyprpaper" ]
-        )
-
-        (lib.mkAliasOptionModule
-            [ "desktopHyprland" ]
-            [ "home-manager" "users" username "desktopHyprland" ]
-        )
-        
     ];
 }
