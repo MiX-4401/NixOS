@@ -9,6 +9,7 @@
         
         # Host specific imports
         ./hardware-configuration.nix    # Import of the physical storage systems 
+        ./disko.nix                     # Import of declared paritioning schemes
         ./virtualisation.nix            # Import of custom virtualisation configurations
     ];
 
