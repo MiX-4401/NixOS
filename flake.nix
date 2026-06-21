@@ -8,6 +8,10 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
+        # Diskio contains: Helper libraries for declarative disk management
+        disko.url = "github:nix-community/disko";
+        disko.inputs.nixpkgs.follows = "nixpkgs";
+
         # Home manager contains: Software package, helper libraries
         home-manager.url = "github:nix-community/home-manager/release-26.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,9 +21,7 @@
         stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-        # hyprland.url = "github:hyprwm/hyprland/0002f148c9a4fe421a9d33c0faa5528cdc411e62";
-        # hyprland.inputs.nixpkgs.follows = "nixpkgs";
-
+        # Verion pinned Hyprland for beautiful desktop environmnet 
         hyprland = {
             type = "git";
             url = "https://github.com/hyprwm/Hyprland";
@@ -33,7 +35,7 @@
         zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
+    outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: 
     let
         # Import my custom lib functions
         myLib = import ./Lib/moduleBundle.nix { inherit inputs; };
