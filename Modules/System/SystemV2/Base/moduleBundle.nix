@@ -9,8 +9,3 @@
         ./setDownloadBufferSize.nix
     ];
 }
-
-  # # Networking
-  #   networking.networkmanager = {
-  #       enable = true;
-  #   };

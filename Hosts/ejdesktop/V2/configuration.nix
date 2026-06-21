@@ -13,7 +13,7 @@
     ];
 
     # Modular settings imported from ../../System/SystemV2/bootstrap.nix which declares imports to modular settings
-    baseSetOSVersion.version = "25.11";
+    baseSetOSVersion.version = "26.05";
     bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
 

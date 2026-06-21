@@ -60,4 +60,23 @@
 #     programs.hyprland.enable = true;
 # }
 
-# 
+# Aliasing options for easier imports
+# First list defines the new namespace
+# Second list defines the path to the options being aliased
+
+# imports = [
+#   (lib.mkAliasOptionModule
+#     [ ns "home-manager" ]     # Turns into ${ns}.home-manager"
+#     [ "home-manager" "users" username ns ] # Turns into "home-manger.users.${username}.${ns}"
+#   )
+# ];
+
+# Version pinning inputs
+
+# inputs.hyprland = {
+#     type = "git";
+#     url = "https://github.com/hyprwm/Hyprland";
+#     rev = "882f7ad7d2bbfc7440d0ccaef93b1cdd78e8e3ff"; # Full sha256 of commit, choose a tagged version for plugin compatibility
+#     submodules = true;
+#     inputs.nixpkgs.follows = "nixpkgs";
+# };
