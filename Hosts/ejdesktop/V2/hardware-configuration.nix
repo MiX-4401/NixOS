@@ -8,39 +8,39 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e3b9a04a-b4f1-422b-a505-e67313d1cbb1";
+    { device = "/dev/disk/by-uuid/667d3132-1096-4f03-8fdb-53e666702586";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C338-5727";
+    { device = "/dev/disk/by-uuid/5916-0333";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/mnt/SO" =
+  fileSystems."/media/SO" =
     { device = "/dev/disk/by-uuid/cf0fb9dc-8c18-4064-90b3-c95ff324667a";
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/GA" =
-    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/BU" =
+  fileSystems."/media/BU" =
     { device = "/dev/disk/by-uuid/b6abf207-ddc0-46ee-8e35-fbb670f0db5a";
       fsType = "ext4";
     };
 
+  fileSystems."/media/GA" =
+    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
+      fsType = "ext4";
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/5460bcfb-4e60-4d1e-a2a4-39aca6e38f56"; }
+    [ { device = "/dev/disk/by-uuid/88566a7b-f81f-474c-a2f1-009a7adbcc5e"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
