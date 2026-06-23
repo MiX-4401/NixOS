@@ -3,7 +3,7 @@
 {
     options.securityHardenRoot.enable = lib.mkOption {
         type = lib.types.bool;
-        default = true;
+        default = false;
         description = "Enable the hardening of the root account";
     };
 

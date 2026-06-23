@@ -27,16 +27,19 @@
   fileSystems."/media/GA" =
     { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
       fsType = "ext4";
+      options = [ "rw" ];
     };
 
   fileSystems."/media/SO" =
     { device = "/dev/disk/by-uuid/cf0fb9dc-8c18-4064-90b3-c95ff324667a";
       fsType = "ext4";
+      options = [ "rw" ];
     };
 
   fileSystems."/media/BU" =
     { device = "/dev/disk/by-uuid/b6abf207-ddc0-46ee-8e35-fbb670f0db5a";
       fsType = "ext4";
+      options = [ "rw" ];
     };
 
   swapDevices =
