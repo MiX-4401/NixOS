@@ -16,7 +16,7 @@
     baseSetOSVersion.version = "26.05";
     bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
-
+    securityHardenRoot.enable = false;
     # Modular settings imported from ../../Desktop/DesktopV2/bootstrap.nix which declares imports to modular settings
     
     # Default applications
