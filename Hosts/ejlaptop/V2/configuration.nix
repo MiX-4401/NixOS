@@ -9,13 +9,13 @@
         
         # Host specific imports
         ./hardware-configuration.nix    # Import of the physical storage systems 
-        ./virtualisation.nix            # Import of custom virtualisation configurations
     ];
 
     # Modular settings imported from ../../System/V2/bootstrap.nix which declares imports to modular settings
     baseSetOSVersion.version = "26.05";
     bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
+    securityHarndenRoot = false;
 
     # Modular settings imported from ../../Desktop/V2/bootstrap.nix which declares imports to modular settings
     
@@ -29,7 +29,7 @@
     desktopGit.email = "ej.radford@outlook.com.au";
 
     # Hyprland
-    desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
+    desktopHyprland.monitors = [ ",preferred,auto,1.2" ];
     desktopHyprland.windowLayout = "master";
     desktopSetWallpaper.wallpaper = "rainworld8.jpg";
     
@@ -42,10 +42,6 @@
 
     # Host specific software
     environment.systemPackages = with pkgs; [
-        microcode-amd
-        rocmPackages.rocm-smi
+        microcode-intel
     ];
-
-    programs.steam.enable = true;
-    programs.gamescope.enable = true;
 }

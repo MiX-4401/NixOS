@@ -39,6 +39,7 @@
 
             # User GUI applications
             nautilus
+
             # bitwarden-desktop          
             vscode
             
@@ -48,6 +49,8 @@
 
             # User CLI applications
             python3
+            wineWow64Packages.stable
+            winetricks
             
             # External flake packages
             inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

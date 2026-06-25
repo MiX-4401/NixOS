@@ -52,7 +52,13 @@
         };
 
         # My general use, office laptop
-
+        nixosConfigurations.ejlaptop = myLib.mkHost {    # Uses my custom mkHost function to take care of boilerplate
+            hostname = "ejlaptop";
+            username = "ejradford";
+            system = "x86_64-linux";
+            modules = [ ./Hosts/ejlaptop/V2/configuration.nix ];
+            specialArgs = { };
+        };
         # ...
         
         # My server

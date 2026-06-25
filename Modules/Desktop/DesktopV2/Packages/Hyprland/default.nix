@@ -23,7 +23,6 @@
             extraConfig = 
                 ''
                 exec-once = hyprpaper
-                exec-once = waybar
                 exec-once = clipse -listen
                 '';
 
