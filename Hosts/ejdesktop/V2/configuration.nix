@@ -16,6 +16,8 @@
     baseSetOSVersion.version = "26.05";
     bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
+    securityHardenSSH.enable = true;
+    securityHardenSSH.harden = false;
 
     # Modular settings imported from ../../Desktop/V2/bootstrap.nix which declares imports to modular settings
     

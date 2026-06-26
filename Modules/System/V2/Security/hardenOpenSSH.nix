@@ -1,7 +1,14 @@
 { lib, config, ... }:
 
 {
+
     options.securityHardenSSH.enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Enable OpenSSH without hardening";
+    };
+
+    options.securityHardenSSH.harden = lib.mkOption {
         type = lib.types.bool;
         default = true;
         description = "Enable the hardening of OpenSSH";
@@ -20,11 +27,13 @@
         services.openssh = {
             enable = config.securityHardenSSH.enable;
             ports = config.securityHardenSSH.port;
-            settings = {
+
+            
+            settings = lib.mkIf (config.securityHardenSSH.harden) {
                 PasswordAuthentication = false;
                 PermitRootLogin = "no";
-            };
-            extraConfig = ''
+            }; 
+            extraConfig = lib.mkIf (config.securityHardenSSH.harden) ''
                 AllowTcpForwarding yes
                 X11Forwarding no
                 AllowAgentForwarding no

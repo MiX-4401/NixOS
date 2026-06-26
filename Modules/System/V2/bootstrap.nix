@@ -28,6 +28,10 @@
         displayManager.ly.enable = true;
     };
 
+    networking.networkmanager = {
+        enable = true;
+    };
+
     # Users
     users.users.${username} = {
         isNormalUser = true;
