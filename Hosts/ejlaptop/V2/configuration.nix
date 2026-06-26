@@ -39,6 +39,7 @@
     desktopPackageBundleGaming.enable = true;
     desktopPackageBundleOfficeUtilities.enable = true;
     desktopPackageBundleSocials.enable = true;
+    desktopPackageBundleLaptopPackages = true;
 
     # Host specific software
     environment.systemPackages = with pkgs; [

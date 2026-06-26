@@ -30,5 +30,9 @@
             [ "desktopPackageBundleSocials" ]
             [ "home-manager" "users" username "desktopPackageBundleSocials" ]
         )
+        (lib.mkAliasOptionModule
+            [ "desktopPackageBundleLaptopPackages" ]
+            [ "home-manager" "users" username "desktopPackageBundleLaptopPackages" ]
+        )
     ];
 }

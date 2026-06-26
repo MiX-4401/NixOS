@@ -17,7 +17,9 @@
     bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
     securityHardenSSH.enable = true;
-    securityHardenSSH.harden = false;
+    securityHardenSSH.harden = true;
+    securityHardenFirewall.enable = true;
+    # securityHardenFirewall.allowedTCPPorts = [ 5900 ];
 
     # Modular settings imported from ../../Desktop/V2/bootstrap.nix which declares imports to modular settings
     
