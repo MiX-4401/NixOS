@@ -37,7 +37,7 @@
     desktopHyprland.windowLayout = "master";
     desktopSetWallpaper.wallpaper = "rainworld8.jpg";
     
-    # Desktop packages
+    # Desktop package bundles
     desktopPackageBundleDesktopUtilities.enable = true;
     desktopPackageBundleExtra.enable = true;
     desktopPackageBundleGaming.enable = true;
@@ -49,4 +49,9 @@
         microcode-amd
         rocmPackages.rocm-smi
     ];
+
+    programs.steam.enable = true;
+    # programs.gamemode.enable = true;
+    programs.gamescope.enable = true;
+    programs.steam.gamescopeSession.enable = true;
 }

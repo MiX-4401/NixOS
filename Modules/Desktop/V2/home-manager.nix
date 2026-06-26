@@ -49,8 +49,6 @@
 
             # User CLI applications
             python3
-            wineWowPackages.stagingFull
-            winetricks
             
             # External flake packages
             inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
