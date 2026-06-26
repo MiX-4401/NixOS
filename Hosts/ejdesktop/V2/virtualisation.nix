@@ -57,12 +57,14 @@
             /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_0
             /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_2b_00_1
 
-            echo 1 > /sys/class/vtconsole/vtcon0/bind
-            echo 1 > /sys/class/vtconsole/vtcon1/bind
+            modprobe amdgpu
+
+            sleep 2
 
             echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/bind
 
-            modprobe amdgpu
+            echo 1 > /sys/class/vtconsole/vtcon0/bind
+            echo 1 > /sys/class/vtconsole/vtcon1/bind
 
             systemctl start display-manager.service
             fi

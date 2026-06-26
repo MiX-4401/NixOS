@@ -49,7 +49,4 @@
         microcode-amd
         rocmPackages.rocm-smi
     ];
-
-    programs.steam.enable = true;
-    programs.gamescope.enable = true;
 }

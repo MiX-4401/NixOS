@@ -49,7 +49,7 @@
 
             # User CLI applications
             python3
-            wineWow64Packages.stable
+            wineWowPackages.stagingFull
             winetricks
             
             # External flake packages
