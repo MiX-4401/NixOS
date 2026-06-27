@@ -8,6 +8,6 @@
     };
 
     config = {
-        nixpkgs.config.allowUnfree = config.core.system.nix.allowUnfreeSoftware.enable;
+        nixpkgs.config.allowUnfree = config.core.system.nix.allowUnfreeSoftware;
     };
 }
