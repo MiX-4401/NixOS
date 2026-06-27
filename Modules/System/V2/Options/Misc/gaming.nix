@@ -1,7 +1,7 @@
 { lib, config, ... }:
 
 {
-    config.core.system.misc.gaming = {
+    options.core.system.misc.gaming = {
         enable = lib.mkOption {
             type = lib.types.bool;
             default = false;

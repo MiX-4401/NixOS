@@ -2,9 +2,9 @@
 
 {
     imports = [
-        ./hardenFirewall
-        ./hardenOpenSSH
-        ./hardenRoot
-        ./hardenSudo
+        ./hardenFirewall.nix
+        ./hardenOpenSSH.nix
+        ./hardenRoot.nix
+        ./hardenSudo.nix
     ];
 }

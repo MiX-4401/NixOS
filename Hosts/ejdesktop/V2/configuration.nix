@@ -18,14 +18,13 @@
     core.system.security.hardenSudo.enable = true;
     core.system.security.hardenOpenSSH.enable = true;
     core.system.security.hardenOpenSSH.harden = true;
-    core.system.security.hardenOpenSSH.enable = true;
     core.system.security.hardenRoot.enable = true;
     core.system.security.hardenFirewall.enable = true;
     core.system.nix.allowUnfreeSoftware = true;
     core.system.nixos.hostname = "ejdesktop";
     core.system.nixos.garbageCollection.enable = true;
     core.system.nixos.garbageCollection.period = "daily";
-    core.system.nixos.gaming.enable = true;
+    core.system.misc.gaming.enable = true;
 
     # Core desktop modular settings
 
@@ -56,5 +55,5 @@
         rocmPackages.rocm-smi
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_zen.kernel
+    boot.kernelPackages = pkgs.linuxPackages_zen.kernel;
 }
