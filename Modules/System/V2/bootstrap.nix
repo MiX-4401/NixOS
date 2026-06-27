@@ -4,9 +4,10 @@
 
     # Import modular settings
     imports = [
-        ./Base/moduleBundle.nix
-        ./Boot/moduleBundle.nix
-        ./Security/moduleBundle.nix
+        ./Options/NixOS/moduleBundle.nix
+        ./Options/nix/moduleBundle.nix
+        ./Options/Security/moduleBundle.nix
+        ./Options/misc/moduleBundle.nix
     ];
 
     # NixOS

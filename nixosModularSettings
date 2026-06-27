@@ -1,0 +1,29 @@
+core
+	system
+		security
+			hardenSudo
+				bool enable
+			hardenOpenSSH
+				bool enable
+				bool harden
+				list ports
+			hardenRoot
+				bool enable
+			hardenFirewall
+				bool enable
+				list allowedTCPPorts
+				list allowedUDPPorts
+		nix
+			int downloadBufferSize
+			bool allowUnfreeSoftware
+		nixos
+			str hostname
+			garbageCollection
+				bool enable
+				str period
+			str osVersion
+		misc
+			gaming
+				bool enable
+	desktop
+		...	

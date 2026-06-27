@@ -2,6 +2,6 @@
 
 {
     imports = [
-        ./setKernel.nix
+        ./gaming.nix
     ];
 }

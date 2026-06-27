@@ -1,13 +1,13 @@
 { pkgs, lib, config, ... }:
 
 {
-    options.baseSetAllowUnfreeSoftware.enable = lib.mkOption {
+    options.core.system.nix.allowUnfreeSoftware = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Allow unfree software";
     };
 
     config = {
-        nixpkgs.config.allowUnfree = config.baseSetAllowUnfreeSoftware.enable;
+        nixpkgs.config.allowUnfree = config.systemV2.nixos.nix.allowUnfreeSoftware.enable;
     };
 }

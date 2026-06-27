@@ -13,7 +13,6 @@
 
     # Modular settings imported from ../../System/V2/bootstrap.nix which declares imports to modular settings
     baseSetOSVersion.version = "26.05";
-    bootSystemdBoot.kernel = "zen";
     baseSetAllowUnfreeSoftware.enable = true;
     securityHardenRoot.enable = false;
 
@@ -45,4 +44,6 @@
     environment.systemPackages = with pkgs; [
         microcode-intel
     ];
+    
+    boot.kernelPackages = pkgs.linuxPackages_zen.kernel
 }

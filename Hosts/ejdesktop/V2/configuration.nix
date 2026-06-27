@@ -12,17 +12,23 @@
         ./virtualisation.nix            # Import of custom virtualisation configurations
     ];
 
-    # Modular settings imported from ../../System/V2/bootstrap.nix which declares imports to modular settings
-    baseSetOSVersion.version = "26.05";
-    bootSystemdBoot.kernel = "zen";
-    baseSetAllowUnfreeSoftware.enable = true;
-    securityHardenSSH.enable = true;
-    securityHardenSSH.harden = true;
-    securityHardenFirewall.enable = true;
-    # securityHardenFirewall.allowedTCPPorts = [ 5900 ];
-
-    # Modular settings imported from ../../Desktop/V2/bootstrap.nix which declares imports to modular settings
+    # Core system modular settings
     
+    # Security options
+    core.system.security.hardenSudo.enable = true;
+    core.system.security.hardenOpenSSH.enable = true;
+    core.system.security.hardenOpenSSH.harden = true;
+    core.system.security.hardenOpenSSH.enable = true;
+    core.system.security.hardenRoot.enable = true;
+    core.system.security.hardenFirewall.enable = true;
+    core.system.nix.allowUnfreeSoftware = true;
+    core.system.nixos.hostname = "ejdesktop";
+    core.system.nixos.garbageCollection.enable = true;
+    core.system.nixos.garbageCollection.period = "daily";
+    core.system.nixos.gaming.enable = true;
+
+    # Core desktop modular settings
+
     # Default applications
     desktopDefaultApps.enable = true;
     desktopDefaultApps.defaultBrowser = "zen.desktop";
@@ -50,8 +56,5 @@
         rocmPackages.rocm-smi
     ];
 
-    programs.steam.enable = true;
-    # programs.gamemode.enable = true;
-    programs.gamescope.enable = true;
-    programs.steam.gamescopeSession.enable = true;
+    boot.kernelPackages = pkgs.linuxPackages_zen.kernel
 }
