@@ -211,8 +211,9 @@
                     "$mainMod SHIFT, 0, movetoworkspace, 10"
 
                     # Special workspace
-                    "$mainMod, S, togglespecialworkspace, magic"
-                    "$mainMod SHIFT, S, movetoworkspace, special:magic"
+                    # "$mainMod, S, togglespecialworkspace, magic"
+                    # "$mainMod SHIFT, S, movetoworkspace, special:magic"
+                    "$mainMod SHIFT, S, exec hyprshot -m region -o ~/Pictures/Screenshots"
                     
                     # Brightness keybinds
                     ",XF86MonBrightnessUp, exec, brightnessctl set +10%"
