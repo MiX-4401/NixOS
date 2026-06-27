@@ -24,6 +24,7 @@
     core.system.nixos.hostname = "ejdesktop";
     core.system.nixos.garbageCollection.enable = true;
     core.system.nixos.garbageCollection.period = "daily";
+    core.system.nixos.osVersion = "26.05";
     core.system.misc.gaming.enable = true;
 
     # Core desktop modular settings
@@ -55,5 +56,5 @@
         rocmPackages.rocm-smi
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_zen.kernel;
+    boot.kernelPackages = pkgs.linuxPackages_zen;
 }
