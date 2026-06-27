@@ -41,7 +41,7 @@
     # Hyprland
     desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
     desktopHyprland.windowLayout = "master";
-    desktopSetWallpaper.wallpaper = "rainworld8.jpg";
+    desktopSetWallpaper.wallpaper = "rainworld04.png";
     
     # Desktop package bundles
     desktopPackageBundleDesktopUtilities.enable = true;
