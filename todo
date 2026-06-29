@@ -4,7 +4,6 @@ TODO: Git hardening
 TODO: ejlaptop hibernation
 TODO: ejlaptop power management
 TODO: Automatic backups possible with borg
-TODO: Move wallpapers to a sensible location
 
 BUG:
 FIXME: ejdesktop host virtulisation not seemlessly returning back to Linux
