@@ -29,7 +29,7 @@
 
                 image = [
                     {
-                        path = "${config.home.homeDirectory}/.config/hypr/Wallpapers/rainworld9.jpg";
+                        # path = "${config.home.homeDirectory}/.config/hypr/Wallpapers/rainworld9.jpg";
 
                         #   border_color = "0xffdddddd";
                         border_size = 0;

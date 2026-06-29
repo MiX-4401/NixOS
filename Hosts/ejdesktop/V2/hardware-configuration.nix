@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -25,19 +25,13 @@
     };
 
   fileSystems."/media/GA" =
-    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
-      fsType = "ext4";
-      options = [ "rw" ];
-    };
-
-  fileSystems."/media/SO" =
-    { device = "/dev/disk/by-uuid/cf0fb9dc-8c18-4064-90b3-c95ff324667a";
+    { device = "/dev/md127";
       fsType = "ext4";
       options = [ "rw" ];
     };
 
   fileSystems."/media/BU" =
-    { device = "/dev/disk/by-uuid/b6abf207-ddc0-46ee-8e35-fbb670f0db5a";
+    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
       fsType = "ext4";
       options = [ "rw" ];
     };
@@ -48,4 +42,7 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  boot.swraid.enable = true;
+
+
 }

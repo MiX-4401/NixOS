@@ -4,7 +4,7 @@
     home.packages = with pkgs; [ hyprpaper ];
     
     home.file."/Pictures/Wallpapers/" = {
-        source = ../Wallpapers;
+        source = ../../Wallpapers;
         recursive = true;
     };
     
@@ -20,13 +20,13 @@
             # wallpaper = [ "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}" ];
             wallpaper = [
                 {
-                    monitor = "HDMI-A-1";
+                    monitor = ",";
                     path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
                 }
-                {
-                    monitor = "DP-2";
-                    path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
-                }
+                # {
+                #     monitor = "DP-2";
+                #     path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
+                # }
             ];
         };
     };

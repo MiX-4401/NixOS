@@ -39,7 +39,7 @@
     desktopGit.email = "ej.radford@outlook.com.au";
 
     # Hyprland
-    desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-2,1920x1080@144,0x0,1.2" ]; # Right, left monitors
+    desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-1,1920x1080@144,0x0,1.2" ]; # Right, left monitors
     desktopHyprland.windowLayout = "dwindle";
     desktopSetWallpaper.wallpaper = "scorn02.jpg";
     
@@ -54,6 +54,8 @@
     environment.systemPackages = with pkgs; [
         microcode-amd
         rocmPackages.rocm-smi
+        mdadm
+        radeontop
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;

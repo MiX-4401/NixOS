@@ -11,13 +11,23 @@
         ./hardware-configuration.nix    # Import of the physical storage systems 
     ];
 
-    # Modular settings imported from ../../System/V2/bootstrap.nix which declares imports to modular settings
-    baseSetOSVersion.version = "26.05";
-    baseSetAllowUnfreeSoftware.enable = true;
-    securityHardenRoot.enable = false;
-
-    # Modular settings imported from ../../Desktop/V2/bootstrap.nix which declares imports to modular settings
+    # Core system modular settings
     
+    # Security options
+    core.system.security.hardenSudo.enable = true;
+    core.system.security.hardenOpenSSH.enable = true;
+    core.system.security.hardenOpenSSH.harden = true;
+    core.system.security.hardenRoot.enable = true;
+    core.system.security.hardenFirewall.enable = true;
+    core.system.nix.allowUnfreeSoftware = true;
+    core.system.nixos.hostname = "ejlaptop";
+    core.system.nixos.garbageCollection.enable = true;
+    core.system.nixos.garbageCollection.period = "daily";
+    core.system.nixos.osVersion = "26.05";
+    core.system.misc.gaming.enable = false;
+
+    # Core desktop modular settings
+
     # Default applications
     desktopDefaultApps.enable = true;
     desktopDefaultApps.defaultBrowser = "zen.desktop";
@@ -28,17 +38,17 @@
     desktopGit.email = "ej.radford@outlook.com.au";
 
     # Hyprland
-    desktopHyprland.monitors = [ ",preferred,auto,1.2" ];
-    desktopHyprland.windowLayout = "master";
-    desktopSetWallpaper.wallpaper = "rainworld8.jpg";
+    desktopHyprland.monitors = [ ",preferred,auto,1.2" ]; 
+    desktopHyprland.windowLayout = "dwindle";
+    desktopSetWallpaper.wallpaper = "scorn02.jpg";
     
-    # Desktop packages
+    # Desktop package bundles
     desktopPackageBundleDesktopUtilities.enable = true;
     desktopPackageBundleExtra.enable = true;
-    desktopPackageBundleGaming.enable = true;
+    desktopPackageBundleGaming.enable = false;
     desktopPackageBundleOfficeUtilities.enable = true;
-    desktopPackageBundleSocials.enable = true;
-    desktopPackageBundleLaptopPackages = true;
+    desktopPackageBundleSocials.enable = false;
+
 
     # Host specific software
     environment.systemPackages = with pkgs; [
