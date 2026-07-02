@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -24,14 +24,14 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/media/BU" =
-    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
+  fileSystems."/media/GA" =
+    { device = "/dev/md127";
       fsType = "ext4";
       options = [ "rw" ];
     };
 
-  fileSystems."/media/GA" =
-    { device = "/dev/mapper/raid5Storage-GA";
+  fileSystems."/media/BU" =
+    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
       fsType = "ext4";
       options = [ "rw" ];
     };
@@ -43,4 +43,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   boot.swraid.enable = true;
+
+
 }

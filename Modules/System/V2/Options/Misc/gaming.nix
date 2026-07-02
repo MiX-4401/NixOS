@@ -14,5 +14,7 @@
         # programs.gamemode.enable = true;
         programs.gamescope.enable = true;
         programs.steam.gamescopeSession.enable = true;
+        hardware.opengl.enable = true;
+        hardware.opengl.driSupport32Bit = true;
     };
 }
