@@ -44,21 +44,21 @@
         ])]);
 
         # Hibernate device to resume from 
-        swapDevices = [{ device = config.core.system.nixos.hibernateDevice; }]; 
-        boot.resumeDevice = config.core.system.nixos.hibernateDevice;
+        swapDevices = [{ device = config.core.system.nixos.hibernation.hibernateDevice; }]; 
+        boot.resumeDevice = config.core.system.nixos.hibernation.hibernateDevice;
 
         # Allow sleep
         systemd.sleep.settings.Sleep = {
             AllowSuspend = "yes";
             AllowHibernation = "yes";
-            HibernateDelaySec = config.core.system.nixos.hibernateAfter;
+            HibernateDelaySec = config.core.system.nixos.hibernation.hibernateAfter;
             AllowHybridSleep = "yes";
             AllowSuspendThenHibernate = "yes";
         };
 
-        services.logind.extraConfig = ''
-            IdleAction=suspend
-            IdleActionSec=${config.core.system.nixos.sleepAfter}
-        '';
+        services.logind.settings.Login = {
+            IdleAction="suspend";
+            IdleActionSec=config.core.system.nixos.hibernation.sleepAfter;
+        };
     };
 }
