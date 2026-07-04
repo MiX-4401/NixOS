@@ -28,8 +28,8 @@
     core.system.misc.gaming.enable = true;
     core.system.nixos.hibernation.enable = true;
     core.system.nixos.hibernation.hibernateDevice = "/dev/sdc3";
-    core.system.nixos.hibernation.hibernateAfter = "10m";
-    core.system.nixos.hibernation.sleepAfter = "5m";
+    core.system.nixos.hibernation.hibernateAfter = "2min";
+    core.system.nixos.hibernation.sleepAfter = "1min";
 
     # Core desktop modular settings
 
@@ -45,7 +45,7 @@
     # Hyprland
     desktopHyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-1,1920x1080@144,0x0,1.2" ]; # Right, left monitors
     desktopHyprland.windowLayout = "dwindle";
-    desktopSetWallpaper.wallpaper = "scorn02.jpg";
+    desktopSetWallpaper.wallpaper = "scorn06.jpeg";
     
     # Desktop package bundles
     desktopPackageBundleDesktopUtilities.enable = true;
