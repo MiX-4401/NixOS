@@ -26,6 +26,10 @@
     core.system.nixos.garbageCollection.period = "daily";
     core.system.nixos.osVersion = "26.05";
     core.system.misc.gaming.enable = true;
+    core.system.nixos.hibernation.enable = true;
+    core.system.nixos.hibernation.hibernateDevice = "/dev/sdc3";
+    core.system.nixos.hibernation.hibernateAfter = "10m";
+    core.system.nixos.hibernation.sleepAfter = "5m";
 
     # Core desktop modular settings
 

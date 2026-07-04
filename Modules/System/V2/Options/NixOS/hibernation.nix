@@ -18,7 +18,13 @@
             type = lib.types.str;
             default = "1h";
             description = "How long after sleeping should the system hibernate (1h)";
-        }
+        };
+        
+        sleepAfter = lib.mkOption {
+            type = lib.types.str;
+            default = "30min";
+            description = "How long after idling should the system sleep (30min)";
+        }; 
     };
 
 
@@ -38,21 +44,21 @@
         ])]);
 
         # Hibernate device to resume from 
-        swapDevices = [{ device = config.core.system.nixos.hibernatDevice; }]; 
-        boot.resumeDevice = config.core.system.nixos.hibernatDevice;
+        swapDevices = [{ device = config.core.system.nixos.hibernateDevice; }]; 
+        boot.resumeDevice = config.core.system.nixos.hibernateDevice;
 
         # Allow sleep
         systemd.sleep.settings.Sleep = {
             AllowSuspend = "yes";
             AllowHibernation = "yes";
-            HibernateDelaySec = "10min";
+            HibernateDelaySec = config.core.system.nixos.hibernateAfter;
             AllowHybridSleep = "yes";
             AllowSuspendThenHibernate = "yes";
         };
 
         services.logind.extraConfig = ''
             IdleAction=suspend
-            IdleActionSec=5min
+            IdleActionSec=${config.core.system.nixos.sleepAfter}
         '';
     };
 }
