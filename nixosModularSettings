@@ -22,8 +22,16 @@ core
 				bool enable
 				str period
 			str osVersion
+			hibernation						# Requires core.desktop.idleController.enable to be set to 'true'
+				bool enable
+				str hibernateDevice
+				str hibernateAfter
 		misc
 			gaming
 				bool enable
 	desktop
-		...	
+		idleController						# Requires core.system.hibernation.enable to be set to 'true'
+			bool enable
+			int sleepAfter
+			int lockAfter
+

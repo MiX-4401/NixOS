@@ -26,10 +26,14 @@
     core.system.nixos.garbageCollection.period = "daily";
     core.system.nixos.osVersion = "26.05";
     core.system.misc.gaming.enable = true;
+    
+    # Sleep & hibernation
     core.system.nixos.hibernation.enable = true;
     core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/3b56c352-90da-455f-964d-3d43564682c6";  # Do not need this one anymore
-    core.system.nixos.hibernation.hibernateAfter = "2min";
-    core.system.nixos.hibernation.sleepAfter = "1min";
+    core.system.nixos.hibernation.hibernateAfter = "5min";
+    core.desktop.idleController.enable = true;
+    core.desktop.idleController.lockAfter = 60;
+    core.desktop.idleController.sleepAfter = 120;
 
     # Core desktop modular settings
 

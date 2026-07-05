@@ -17,14 +17,8 @@
         hibernateAfter = lib.mkOption {
             type = lib.types.str;
             default = "30min";
-            description = "How long after sleeping should the system hibernate (1h)";
+            description = "How long after sleeping should the system hibernate (30min)";
         };
-        
-        sleepAfter = lib.mkOption {
-            type = lib.types.str;
-            default = "30min";
-            description = "How long after idling should the system sleep (30min)";
-        }; 
     };
 
 
@@ -33,6 +27,25 @@
         # Enable hibernation and suspend options
         powerManagement.enable = true;
 
+        # Hibernate device to resume from 
+        swapDevices = [{ device = config.core.system.nixos.hibernation.hibernateDevice; }]; 
+        boot.resumeDevice = config.core.system.nixos.hibernation.hibernateDevice;
+
+        # Basic sleep & hibernation settings
+        systemd.sleep.settings.Sleep = {
+            
+            # Allow sleep and hibernation options
+            AllowSuspend = true;
+            AllowHibernation = true;
+            AllowSuspendThenHibernate = true;
+            
+            # Sleep mode
+            SuspendState = "mem";   # Either 'mem' or 'freeze' for a deepsleep
+
+            # Hibernation timeout
+            HibernateDelaySec = config.core.system.nixos.hibernation.hibernateAfter;
+        };
+        
         # # Pulled from https://wiki.nixos.org/wiki/Power_Management#Hibernation (I do not know how it works)
         # services.udev.extraRules = 
         # let
@@ -45,23 +58,5 @@
         #     ''ATTR{queue/rotational}=="1"''
         #     ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 41 /dev/%k"''
         # ])]);
-
-        # Hibernate device to resume from 
-        swapDevices = [{ device = config.core.system.nixos.hibernation.hibernateDevice; }]; 
-        boot.resumeDevice = config.core.system.nixos.hibernation.hibernateDevice;
-
-        # Allow sleep
-        systemd.sleep.settings.Sleep = {
-            AllowSuspend = true;
-            AllowHibernation = true;
-            AllowSuspendThenHibernate = true;
-            SuspendState = "mem";
-            HibernateDelaySec = config.core.system.nixos.hibernation.hibernateAfter;
-        };
-
-        services.logind.settings.Login = {
-            IdleAction = "suspend-then-hibernate";
-            IdleActionSec = config.core.system.nixos.hibernation.sleepAfter;
-        };
     };
 }
