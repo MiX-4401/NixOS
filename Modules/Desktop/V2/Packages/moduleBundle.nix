@@ -7,6 +7,7 @@
         ./Hyprland
         ./Hyprpaper
         ./Hyprlock
+        ./Hypridle
         ./Kitty
         ./Rofi
         ./Shell
