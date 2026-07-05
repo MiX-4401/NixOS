@@ -16,7 +16,7 @@
 
         hibernateAfter = lib.mkOption {
             type = lib.types.str;
-            default = "1h";
+            default = "30min";
             description = "How long after sleeping should the system hibernate (1h)";
         };
         
@@ -30,18 +30,21 @@
 
     config = lib.mkIf config.core.system.nixos.hibernation.enable {
         
-        # Pulled from https://wiki.nixos.org/wiki/Power_Management#Hibernation (I do not know how it works)
-        services.udev.extraRules = 
-        let
-            mkRule = as: lib.concatStringsSep ", " as;
-            mkRules = rs: lib.concatStringsSep "\n" rs;
-        in mkRules ([( mkRule [
-            ''ACTION=="add|change"''
-            ''SUBSYSTEM=="block"''
-            ''KERNEL=="sd[a-z]"''
-            ''ATTR{queue/rotational}=="1"''
-            ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 41 /dev/%k"''
-        ])]);
+        # Enable hibernation and suspend options
+        powerManagement.enable = true;
+
+        # # Pulled from https://wiki.nixos.org/wiki/Power_Management#Hibernation (I do not know how it works)
+        # services.udev.extraRules = 
+        # let
+        #     mkRule = as: lib.concatStringsSep ", " as;
+        #     mkRules = rs: lib.concatStringsSep "\n" rs;
+        # in mkRules ([( mkRule [
+        #     ''ACTION=="add|change"''
+        #     ''SUBSYSTEM=="block"''
+        #     ''KERNEL=="sd[a-z]"''
+        #     ''ATTR{queue/rotational}=="1"''
+        #     ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 41 /dev/%k"''
+        # ])]);
 
         # Hibernate device to resume from 
         swapDevices = [{ device = config.core.system.nixos.hibernation.hibernateDevice; }]; 
@@ -49,16 +52,16 @@
 
         # Allow sleep
         systemd.sleep.settings.Sleep = {
-            AllowSuspend = "yes";
-            AllowHibernation = "yes";
+            AllowSuspend = true;
+            AllowHibernation = true;
+            AllowSuspendThenHibernate = true;
+            SuspendState = "mem";
             HibernateDelaySec = config.core.system.nixos.hibernation.hibernateAfter;
-            AllowHybridSleep = "yes";
-            AllowSuspendThenHibernate = "yes";
         };
 
         services.logind.settings.Login = {
-            IdleAction="suspend";
-            IdleActionSec=config.core.system.nixos.hibernation.sleepAfter;
+            IdleAction = "suspend-then-hibernate";
+            IdleActionSec = config.core.system.nixos.hibernation.sleepAfter;
         };
     };
 }

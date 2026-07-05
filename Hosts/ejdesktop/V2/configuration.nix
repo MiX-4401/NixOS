@@ -10,6 +10,7 @@
         # Host specific imports
         ./hardware-configuration.nix    # Import of the physical storage systems 
         ./virtualisation.nix            # Import of custom virtualisation configurations
+        
     ];
 
     # Core system modular settings
@@ -27,7 +28,7 @@
     core.system.nixos.osVersion = "26.05";
     core.system.misc.gaming.enable = true;
     # core.system.nixos.hibernation.enable = true;
-    # core.system.nixos.hibernation.hibernateDevice = "/dev/sdc3";
+    # core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/3b56c352-90da-455f-964d-3d43564682c6";  # Do not need this one anymore
     # core.system.nixos.hibernation.hibernateAfter = "2min";
     # core.system.nixos.hibernation.sleepAfter = "1min";
 

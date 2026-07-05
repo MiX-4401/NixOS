@@ -1,8 +1,6 @@
 { ... }:
 
 {
-    # Enable power saving features
-    powerManagement.enable = true;
 
     # Sleep on lid close
     services.logind.settings.Login = {

@@ -9,7 +9,7 @@
         
         # Host specific imports
         ./hardware-configuration.nix    # Import of the physical storage systems 
-        ./powermanagement.nix           # Laptop power management 
+        ./powermanagement.nix           # Import of suspend and hibernation power modules
     ];
 
     # Core system modular settings
