@@ -161,6 +161,7 @@
                     "$mainMod, B, exec, zen"
                     "$mainMod, A, exec, walker"
                     "$mainMod, L, exec, hyprlock"
+                    "$mainMod, R, exec, gpu-screen-recorder-gtk"
                     
                     # Window management
                     "$mainMod, Q, killactive,"

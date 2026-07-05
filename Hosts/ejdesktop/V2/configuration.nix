@@ -31,9 +31,9 @@
     core.system.nixos.hibernation.enable = true;
     core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/3b56c352-90da-455f-964d-3d43564682c6";  # Do not need this one anymore
     core.system.nixos.hibernation.hibernateAfter = "5min";
-    core.desktop.idleController.enable = true;
-    core.desktop.idleController.lockAfter = 60;
-    core.desktop.idleController.sleepAfter = 120;
+    desktop.idleController.enable = true;
+    desktop.idleController.lockAfter = 60;
+    desktop.idleController.sleepAfter = 120;
 
     # Core desktop modular settings
 
@@ -64,7 +64,9 @@
         rocmPackages.rocm-smi
         mdadm
         radeontop
+	gpu-screen-recorder-gtk
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
+    programs.gpu-screen-recorder.enable = true;
 }

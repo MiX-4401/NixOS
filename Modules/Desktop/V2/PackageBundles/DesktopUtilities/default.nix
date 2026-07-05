@@ -14,6 +14,7 @@
             gnome-weather
             gnome-disk-utility
             gnome-calendar
+            showtime
         ];
     };
 }

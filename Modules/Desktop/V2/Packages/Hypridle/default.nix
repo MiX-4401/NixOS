@@ -23,7 +23,7 @@
         };
     };
 
-    config = lib.mkIf options.desktop.idleController.enable {
+    config = lib.mkIf config.desktop.idleController.enable {
 
         # Hyperland idler services as Hyprland does not directly communicate with systemd idle services on it's own        
         home.packages = with pkgs; [ hypridle ];

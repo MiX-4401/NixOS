@@ -20,5 +20,10 @@
             [ "desktopHyprland" ]
             [ "home-manager" "users" username "desktopHyprland" ]
         )
+
+        (lib.mkAliasOptionModule
+            [ "desktop" ]
+            [ "home-manager" "users" username "desktop" ]
+        )
     ];
 }
