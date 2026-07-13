@@ -38,16 +38,21 @@
     outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: 
     let
         # Import my custom lib functions
-        myLib = import ./Lib/moduleBundle.nix { inherit inputs; };
+        system = "x86_64-linux";
         pkgs = import nixpkgs { system = "x86_64-linux"; };
+        myLib = import ./Lib/moduleBundle.nix { inherit inputs; };
     in { 
+        
+        # Devopment shells
+        devShells.${system}.forensics = import ./Modules/Shells/Forensics/default.nix { inherit pkgs; };    # Forensics development shell
+
         # Hosts
         
         # My general use, gaming desktop
         nixosConfigurations.ejdesktop = myLib.mkHost {    # Uses my custom mkHost function to take care of boilerplate
             hostname = "ejdesktop";
             username = "ejradford";
-            system = "x86_64-linux";
+            system = system;
             modules = [ ./Hosts/ejdesktop/V2/configuration.nix ];
             specialArgs = { };
         };
@@ -56,7 +61,7 @@
         nixosConfigurations.ejlaptop = myLib.mkHost {    # Uses my custom mkHost function to take care of boilerplate
             hostname = "ejlaptop";
             username = "ejradford";
-            system = "x86_64-linux";
+            system = system;
             modules = [ ./Hosts/ejlaptop/V2/configuration.nix ];
             specialArgs = { };
         };
@@ -65,7 +70,5 @@
         # My server
 
         # ...
-
-        devShells.x86_64-linux.forensics = import ./Modules/Shells/Forensics/default1.nix { inherit pkgs; };
     };
 }
