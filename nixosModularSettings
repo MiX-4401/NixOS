@@ -29,6 +29,11 @@ core
 		misc
 			gaming
 				bool enable
+
+	shells
+		forensics
+			bool enable
+
 	desktop
 		idleController						# Requires core.system.hibernation.enable to be set to 'true'
 			bool enable

@@ -39,6 +39,7 @@
     let
         # Import my custom lib functions
         myLib = import ./Lib/moduleBundle.nix { inherit inputs; };
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
     in { 
         # Hosts
         
@@ -64,5 +65,7 @@
         # My server
 
         # ...
+
+        devShells.x86_64-linux.forensics = import ./Modules/Shells/Forensics/default1.nix { inherit pkgs; };
     };
 }
