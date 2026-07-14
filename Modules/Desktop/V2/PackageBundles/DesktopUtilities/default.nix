@@ -15,6 +15,7 @@
             gnome-disk-utility
             gnome-calendar
             showtime
+            libreoffice
         ];
     };
 }

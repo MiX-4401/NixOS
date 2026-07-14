@@ -24,7 +24,7 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/media/BU" =
+  fileSystems."/media/DA" =
     { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
       fsType = "ext4";
       options = [ "rw" ];
