@@ -10,6 +10,6 @@ pkgs.mkShell {
 	    yazi	    # TUI file manager
         xxd         # Hex dump viewer
         libewf      # Forensics tool suite
-        fleuthkit   # Forensics tool suite
+        sleuthkit   # Forensics tool suite
     ];
 }
