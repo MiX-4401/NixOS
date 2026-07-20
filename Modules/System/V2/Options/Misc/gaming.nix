@@ -11,10 +11,14 @@
 
     config = lib.mkIf (config.core.system.misc.gaming.enable) {
         programs.steam.enable = true;
-        # programs.gamemode.enable = true;
-        programs.gamescope.enable = true;
         programs.steam.gamescopeSession.enable = true;
+
+        programs.gamescope.enable = true;
+        programs.gamescope.capSysNice = true;
+        
         hardware.opengl.enable = true;
         hardware.opengl.driSupport32Bit = true;
+    
+        # programs.gamemode.enable = true;
     };
 }
