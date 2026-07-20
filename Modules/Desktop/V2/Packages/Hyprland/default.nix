@@ -16,51 +16,28 @@
     config = {
         wayland.windowManager.hyprland = {
             enable = true;
-            configType = "hyprlang";    # Latest version of Home-manager defaults this to "lua" if not set explicitly 
+            configType = "lua";    # Latest version of Home-manager defaults this to "lua" if not set explicitly 
             
-            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+            # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
-            extraConfig = 
-                ''
-                exec-once = hyprpaper
-                exec-once = clipse -listen
-                '';
+            # extraConfig = 
+            #     ''
+            #     exec-once = hyprpaper
+            #     exec-once = clipse -listen
+            #     '';
 
-            
-            plugins = [
-                pkgs.hyprlandPlugins.hypr-dynamic-cursors
-            ];
+            # };
 
             settings = {
 
-                # Plugin configs
-                "plugin:hypr-dynamic-cursors" = {
-                    enabled = true;
-                    mode = "tilt";
-                    threshold = 2;
-                    rotate = {
-                        length = 20;
-                        offset = 0.0;
-                    };
-
-                    tilt = {
-                        limit = 2000;
-                        function = "negative_quadratic";
-                        window = 100;
-                    };
-
-                    hyprcursor = {
-                        nearest = true;
-                        enabled = true;
-                        resolution = -1;
-                        fallback = "clientside";
-                    };
-                };
+                # Super key
+                mod._var = "SUPER"; 
 
                 # Monitor settings
                 monitor = config.desktopHyprland.monitors;
                 
                 xwayland = {
+                    enabled = true;
                     force_zero_scaling = true;
                 };
 
@@ -78,6 +55,7 @@
                     layout = config.desktopHyprland.windowLayout;
                 }; 
 
+                # Decorations
                 decoration = {
                     rounding = 5;
                     active_opacity = 0.8;
@@ -105,6 +83,7 @@
 
                 };
 
+                # Animation
                 animations = {       
                     enabled = true;         
                     bezier = [
@@ -132,17 +111,20 @@
                     ];
                 };
 
+                # Inputs
                 input = {
                     touchpad.natural_scroll = true;
                     force_no_accel = true;
                     float_switch_override_focus = 0;
                 };
 
+                # Master
                 master = {
                     new_status = "slave";
                     allow_small_split = true;
                 };
 
+                # Misc
                 misc = {
                     disable_hyprland_logo = true;
                     disable_splash_rendering = true;
@@ -151,100 +133,65 @@
                     animate_manual_resizes = true;
                 };
         
-                "$mainMod" = "SUPER"; 
-                
+                # Binds        
                 bind = [
+                    # Application shortcuts
+                    {
+                        _args = [
+                        "SUPER + T"
+                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty")'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + E"
+                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty yazi")'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + B"
+                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + A"
+                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("walker")'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + L"
+                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprlock")'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + R"
+                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("gpu-screen-recorder-gtk")'')
+                        ];
+                    }
 
-                    # Application key shortcuts
-                    "$mainMod, T, exec, kitty"
-                    "$mainMod, E, exec, kitty yazi"
-                    "$mainMod, B, exec, zen"
-                    "$mainMod, A, exec, walker"
-                    "$mainMod, L, exec, hyprlock"
-                    "$mainMod, R, exec, gpu-screen-recorder-gtk"
-                    
                     # Window management
-                    "$mainMod, Q, killactive,"
-                    "$mainMod, F, fullscreen"
-                    "$mainMod, M, exit,"
-                    "$mainMod, TAB, cyclenext"
-                    "$mainMod, RETURN, layoutmsg, swapwithmaster"
-                    "$mainMod, V, togglefloating,"
-                    "$mainMod, P, pseudo, "
-
-                    # Application shift key shortcuts
-                    "$mainMod+SHIFT, N, exec, kitty --title nmtui nmtui"
-                    "$mainMod+SHIFT, V, exec, kitty --title clipse clipse"
-                    "$mainMod+SHIFT, P, exec, kitty --title jolt jolt"
-
-                    # Window navigation
-                    "$mainMod, left, movefocus, l"
-                    "$mainMod, right, movefocus, r"
-                    "$mainMod, up, movefocus, u"
-                    "$mainMod, down, movefocus, d"
-
-                    # Workspace navigation - keyboard
-                    "$mainMod, 1, workspace, 1"
-                    "$mainMod, 2, workspace, 2"
-                    "$mainMod, 3, workspace, 3"
-                    "$mainMod, 4, workspace, 4"
-                    "$mainMod, 5, workspace, 5"
-                    "$mainMod, 6, workspace, 6"
-                    "$mainMod, 7, workspace, 7"
-                    "$mainMod, 8, workspace, 8"
-                    "$mainMod, 9, workspace, 9"
-                    "$mainMod, 0, workspace, 10"
-                    
-                    # Workspace navigation mousebinds 
-                    "$mainMod, mouse_down, workspace, e+1"
-                    "$mainMod, mouse_up, workspace, e-1"
-
-                    # Workspace management
-                    "$mainMod SHIFT, 1, movetoworkspace, 1"
-                    "$mainMod SHIFT, 2, movetoworkspace, 2"
-                    "$mainMod SHIFT, 3, movetoworkspace, 3"
-                    "$mainMod SHIFT, 4, movetoworkspace, 4"
-                    "$mainMod SHIFT, 5, movetoworkspace, 5"
-                    "$mainMod SHIFT, 6, movetoworkspace, 6"
-                    "$mainMod SHIFT, 7, movetoworkspace, 7"
-                    "$mainMod SHIFT, 8, movetoworkspace, 8"
-                    "$mainMod SHIFT, 9, movetoworkspace, 9"
-                    "$mainMod SHIFT, 0, movetoworkspace, 10"
-
-                    # Special workspace
-                    # "$mainMod, S, togglespecialworkspace, magic"
-                    # "$mainMod SHIFT, S, movetoworkspace, special:magic"
-                    "$mainMod SHIFT, S, exec, hyprshot -m region -o ~/Pictures/Screenshots"
-                    
-                    # Brightness keybinds
-                    ",XF86MonBrightnessUp, exec, brightnessctl set +10%"
-                    ",XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-                ];
-
-                bindm = [
-                    # Workspace navigation - mouse 
-                    "$mainMod, mouse:272, movewindow"
-                    "$mainMod SHIFT, mouse:272, resizewindow"
-                ]; 
-
-                bindel = [
-                    # Volume keybinds
-                    ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-                    ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-                    ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-                    ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-                    
-                    # # Brightness keybinds
-                    # ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-                    # ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
-                ];
-
-                bindl = [
-                    # Music keybinds
-                    ",XF86AudioNext, exec, playerctl next"
-                    ",XF86AudioPause, exec, playerctl play-pause"
-                    ",XF86AudioPlay, exec, playerctl play-pause"
-                    ",XF86AudioPrev, exec, playerctl previous"
+                    {
+                        _args = [
+                        "SUPER + Q"
+                        (lib.generators.mkLuaInline ''hl.dsp.window.close()'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + F"
+                        (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen()'')
+                        ];
+                    }
+                    {
+                        _args = [
+                        "SUPER + RETURN"
+                        (lib.generators.mkLuaInline ''hl.dsp.layout.message("swapwithmaster")'')
+                        ];
+                    }
                 ];
             };
         };
