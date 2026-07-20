@@ -24,3 +24,4 @@ ISOify NixOS with nix-generators
 [x] autostart
 [x] inputs
 [x] misc
+[ ] layouts

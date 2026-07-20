@@ -16,10 +16,10 @@
             [ "home-manager" "users" username "desktopGit" ]
         )
 
-        (lib.mkAliasOptionModule
-            [ "desktopHyprland" ]
-            [ "home-manager" "users" username "desktopHyprland" ]
-        )
+        # (lib.mkAliasOptionModule
+        #     [ "desktopHyprland" ]
+        #     [ "home-manager" "users" username "desktopHyprland" ]
+        # )
 
         (lib.mkAliasOptionModule
             [ "desktop" ]

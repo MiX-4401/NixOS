@@ -4,7 +4,7 @@
 
     # Source files
     home.file."/.config/hypr/" = {
-        source = "./Configs";
+        source = ./Configs;
         recursive = true;
     };
 
