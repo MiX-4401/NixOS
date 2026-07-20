@@ -14,8 +14,8 @@
         programs.steam.gamescopeSession.enable = true;
 
         programs.gamescope.enable = true;
-        programs.gamescope.capSysNice = true;
-        
+        programs.gamescope.capSysNice = false;
+
         hardware.opengl.enable = true;
         hardware.opengl.driSupport32Bit = true;
     
