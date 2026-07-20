@@ -16,3 +16,9 @@ NixOS Borg: Timeshift equivilent - should be better on storage (https://nixos.or
 BTRFS filesystem
 ISOify NixOS with nix-generators
 
+* Hyprland
+[x] monitors
+[x] keybinds
+[ ] animations
+[ ] decorations
+[x] autostart

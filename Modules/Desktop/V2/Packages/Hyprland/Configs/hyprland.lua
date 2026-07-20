@@ -1,0 +1,6 @@
+require("autostart")
+require("monitors")
+require("animation")
+require("decoration")
+require("inputs")
+require("misc")
