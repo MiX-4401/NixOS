@@ -149,63 +149,64 @@
         
                 # Binds        
                 bind = [
+                    
                     # Application shortcuts
                     {
                         _args = [
-                        "SUPER + T"
-                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty")'')
+                            "SUPER + T"
+                            (lib.generators.mkLuaInline "hl.dsp.exec_cmd(\"kitty\")")
                         ];
                     }
-                    {
-                        _args = [
-                        "SUPER + E"
-                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty yazi")'')
-                        ];
-                    }
-                    {
-                        _args = [
-                        "SUPER + B"
-                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
-                        ];
-                    }
-                    {
-                        _args = [
-                        "SUPER + A"
-                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("walker")'')
-                        ];
-                    }
-                    {
-                        _args = [
-                        "SUPER + L"
-                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprlock")'')
-                        ];
-                    }
-                    {
-                        _args = [
-                        "SUPER + R"
-                        (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("gpu-screen-recorder-gtk")'')
-                        ];
-                    }
+                    # {
+                    #     _args = [
+                    #     "SUPER + E"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty yazi")'')
+                    #     ];
+                    # }
+                    # {
+                    #     _args = [
+                    #     "SUPER + B"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
+                    #     ];
+                    # }
+                    # {
+                    #     _args = [
+                    #     "SUPER + A"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("walker")'')
+                    #     ];
+                    # }
+                    # {
+                    #     _args = [
+                    #     "SUPER + L"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprlock")'')
+                    #     ];
+                    # }
+                    # {
+                    #     _args = [
+                    #     "SUPER + R"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("gpu-screen-recorder-gtk")'')
+                    #     ];
+                    # }
 
-                    # Window management
+                    # # Window management
                     {
                         _args = [
-                        "SUPER + Q"
-                        (lib.generators.mkLuaInline ''hl.dsp.window.close()'')
+                            "SUPER + Q"
+                            (lib.generators.mkLuaInline "hl.dsp.window.close()")
                         ];
                     }
-                    {
-                        _args = [
-                        "SUPER + F"
-                        (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen()'')
-                        ];
-                    }
-                    {
-                        _args = [
-                        "SUPER + RETURN"
-                        (lib.generators.mkLuaInline ''hl.dsp.layout.message("swapwithmaster")'')
-                        ];
-                    }
+                    # {
+                    #     _args = [
+                    #     "SUPER + F"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen()'')
+                    #     ];
+                    # }
+                    # {
+                    #     _args = [
+                    #     "SUPER + RETURN"
+                    #     (lib.generators.mkLuaInline ''hl.dsp.layout.message("swapwithmaster")'')
+                    #     ];
+                    # }
                 ];
             };
         };
