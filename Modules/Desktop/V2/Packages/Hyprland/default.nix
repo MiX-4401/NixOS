@@ -34,7 +34,21 @@
                 mod._var = "SUPER"; 
 
                 # Monitor settings
-                monitor = config.desktopHyprland.monitors;
+                # monitor = config.desktopHyprland.monitors;
+                monitor = [
+                    {   # Right monitor
+                        output = "HDMI-A-1";
+                        mode = "1920x1080@75";
+                        position = "auto";
+                        scale = 1.2;
+                    }
+                    {   # Left monitor
+                        output = "DP-1";
+                        mode = "1920x1080@144";
+                        position = "0x0";
+                        scale = 1.2;
+                    }
+                ];
                 
                 xwayland = {
                     enabled = true;
@@ -47,8 +61,8 @@
                     gaps_out = 20;
                     border_size = 2;
 
-                    "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base03}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
-                    "col.inactive_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base08}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
+                    col.active_border = lib.mkForce "rgb(${config.stylix.base16Scheme.base03}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
+                    col.inactive_border = lib.mkForce "rgb(${config.stylix.base16Scheme.base08}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
 
                     resize_on_border = false; 
                     allow_tearing = false;
@@ -86,29 +100,29 @@
                 # Animation
                 animations = {       
                     enabled = true;         
-                    bezier = [
-                        "default, 0.12, 0.92, 0.08, 1.0"
-                        "wind, 0.12, 0.92, 0.08, 1.0"
-                        "overshot, 0.18, 0.95, 0.22, 1.03"
-                        "linear, 1, 1, 1, 1"
-                    ];
+                    # bezier = [
+                    #     "default, 0.12, 0.92, 0.08, 1.0"
+                    #     "wind, 0.12, 0.92, 0.08, 1.0"
+                    #     "overshot, 0.18, 0.95, 0.22, 1.03"
+                    #     "linear, 1, 1, 1, 1"
+                    # ];
 
-                    animation = [
-                        "windows, 1, 8, wind, slide"
-                        "windowsIn, 1, 6, wind, slide"
-                        "windowsOut, 1, 6, wind, slide"
-                        "windowsMove, 1, 6, wind, slide"
-                        "layers, 1, 4, wind, popin"
-                        "fadeIn, 1, 1, wind"
-                        "fadeOut, 1, 1, wind"
-                        "fadeSwitch, 1, 7, wind"
-                        "fadeShadow, 1, 7, wind"
-                        "fadeDim, 1, 7, wind"
-                        "fadeLayers, 1, 7, wind"
-                        "workspaces, 1, 5, wind, slidevert"
-                        "border, 1, 15, overshot"
-                        "borderangle, 1, 15, linear, once"
-                    ];
+                    # animation = [
+                    #     "windows, 1, 8, wind, slide"
+                    #     "windowsIn, 1, 6, wind, slide"
+                    #     "windowsOut, 1, 6, wind, slide"
+                    #     "windowsMove, 1, 6, wind, slide"
+                    #     "layers, 1, 4, wind, popin"
+                    #     "fadeIn, 1, 1, wind"
+                    #     "fadeOut, 1, 1, wind"
+                    #     "fadeSwitch, 1, 7, wind"
+                    #     "fadeShadow, 1, 7, wind"
+                    #     "fadeDim, 1, 7, wind"
+                    #     "fadeLayers, 1, 7, wind"
+                    #     "workspaces, 1, 5, wind, slidevert"
+                    #     "border, 1, 15, overshot"
+                    #     "borderangle, 1, 15, linear, once"
+                    # ];
                 };
 
                 # Inputs
