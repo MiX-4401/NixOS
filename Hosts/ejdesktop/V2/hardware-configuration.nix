@@ -33,7 +33,7 @@
   fileSystems."/media/GA" =
     { device = "/dev/mapper/raid5Storage-GA";
       fsType = "ext4";
-      options = [ "rw" ];
+      options = [ "rw" "umask=000" ];
     };
 
   swapDevices =
