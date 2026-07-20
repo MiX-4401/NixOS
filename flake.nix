@@ -22,13 +22,13 @@
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
         # Verion pinned Hyprland for beautiful desktop environmnet 
-        hyprland = {
-            type = "git";
-            url = "https://github.com/hyprwm/Hyprland";
-            rev = "0002f148c9a4fe421a9d33c0faa5528cdc411e62";
-            # submodules = true;
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        # hyprland = {
+        #     type = "git";
+        #     url = "https://github.com/hyprwm/Hyprland";
+        #     rev = "0002f148c9a4fe421a9d33c0faa5528cdc411e62";
+        #     # submodules = true;
+        #     inputs.nixpkgs.follows = "nixpkgs";
+        # };
 
         # Additional software
         zen-browser.url = "github:youwen5/zen-browser-flake";
