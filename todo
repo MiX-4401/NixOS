@@ -19,6 +19,8 @@ ISOify NixOS with nix-generators
 * Hyprland
 [x] monitors
 [x] keybinds
-[ ] animations
-[ ] decorations
+[x] animations
+[x] decorations
 [x] autostart
+[x] inputs
+[x] misc
