@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
 
@@ -9,16 +9,17 @@
     };
 
     # Hyprland sources
-    # wayland.windowManager.hyprland = {
-    #     enable = true;
-    #     configType = "lua";
-        
-    #     extraConfig = ""
-        
-    #     "";
+    wayland.windowManager.hyprland = {
+        enable = true;
+        configType = "lua";
 
-    #     settings = {
+        extraConfig = ''
+            require("my")
+        '';
 
-    #     };
-    # }
+        # settings = {
+        #     # input.sensitivity = -1.0;
+        #     "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base03}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
+        # };
+    };
 }

@@ -39,9 +39,9 @@
     desktopGit.email = "ej.radford@outlook.com.au";
 
     # Hyprland
-    desktopHyprland.monitors = [ ",preferred,auto,1.2" ]; 
-    desktopHyprland.windowLayout = "dwindle";
-    desktopSetWallpaper.wallpaper = "scorn02.jpg";
+    # desktopHyprland.monitors = [ ",preferred,auto,1.2" ]; 
+    # desktopHyprland.windowLayout = "dwindle";
+    desktopSetWallpaper.wallpaper = "rainworld01.jpg";
     
     # Desktop package bundles
     desktopPackageBundleDesktopUtilities.enable = true;
@@ -56,5 +56,5 @@
         microcode-intel
     ];
     
-    boot.kernelPackages = pkgs.linuxPackages_zen.kernel
+    # boot.kernelPackages = pkgs.linuxPackages_zen.kernel
 }

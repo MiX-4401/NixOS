@@ -2,7 +2,7 @@ hl.config = ({
     input = {
 
         -- Mouse
-        sensitivity = -1.0;
+        -- sensitivity = -1.0;
         natural_scroll = true;
         force_no_accel = true;
         scroll_factor = 1.0;
