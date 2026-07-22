@@ -34,10 +34,10 @@ core
 		forensics
 			bool enable
 
-	desktop
-		idleController						# Requires core.system.hibernation.enable to be set to 'true'
-			bool enable
-			int sleepAfter
-			int lockAfter
-		hyprland
-			int sensitivity
+desktop
+	idleController						# Requires core.system.hibernation.enable to be set to 'true'
+		bool enable
+		int sleepAfter
+		int lockAfter
+	hyprland
+		int sensitivity

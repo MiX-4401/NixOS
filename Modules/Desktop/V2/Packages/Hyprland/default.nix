@@ -2,24 +2,62 @@
 
 {
 
-    # Source files
-    home.file."/.config/hypr/" = {
-        source = ./Configs;
-        recursive = true;
+    options.desktop.hyprland.sensitivity = lib.mkOption {
+        type = lib.types.float;
+        default = 0.0;
+        description = "Mouse and touchpad sensitivity";
     };
 
-    # Hyprland sources
-    wayland.windowManager.hyprland = {
-        enable = true;
-        configType = "lua";
+    options.desktop.hyprland.monitors = lib.mkOption {
+        type = lib.types.float;
+        default = 0.2;
+        description = "Mouse and touchpad sensitivity";
+    };
 
-        extraConfig = ''
-            require("my")
-        '';
+    # options.desktop.hyprland.sensitivity = lib.mkOption {
+    #     type = lib.types.float;
+    #     default = 0.2;
+    #     description = "Mouse and touchpad sensitivity";
+    # };
 
-        # settings = {
-        #     # input.sensitivity = -1.0;
-        #     "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base03}) rgb(${config.stylix.base16Scheme.base0A}) 45deg";
-        # };
+    config = {
+
+        # Source files
+        home.file."/.config/hypr/" = {
+            source = ./Configs;
+            recursive = true;
+        };
+
+        # Hyprland sources
+        wayland.windowManager.hyprland = {
+            enable = true;
+            configType = "lua";
+
+            extraConfig = ''
+                require("my")
+            '';
+
+            settings = {
+                config = { 
+                    
+                    # Mouse settings
+                    input = {
+                        # Mouse
+                        sensitivity = -0.2;
+                        natural_scroll = false;
+                        # force_no_accel = true;
+                        scroll_factor = 0.0;
+                        
+                        # Keyboard
+                        numlock_by_default = true;
+                        
+                        # Touchpad
+                        touchpad.disable_while_typing = false;
+                        touchpad.natural_scroll = false;
+                        touchpad.scroll_factor = 0.0;
+                    };
+                };
+            };
+        };
     };
 }
