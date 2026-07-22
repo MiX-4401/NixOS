@@ -20,10 +20,12 @@
     };
 
     config = {
-        programs.git = { 
+        programs.git = {
             enable = config.desktopGit.enable;
-            userName = config.desktopGit.username;
-            userEmail = config.desktopGit.email;
+            settings = {
+                user.name = config.desktopGit.username;
+                user.email = config.desktopGit.email;
+            };
         };
     };
 }

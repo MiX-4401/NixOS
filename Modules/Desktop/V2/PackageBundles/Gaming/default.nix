@@ -9,10 +9,21 @@
 
     config = lib.mkIf config.desktopPackageBundleGaming.enable {
         home.packages = with pkgs; [
-            lutris
+            heroic
             prismlauncher
-            wineWowPackages.stable
+            wineWow64Packages.full
             winetricks
+            # proton-ge-bin
         ];
+
+        # programs.lutris = {
+        #     enable = true;
+        #     protonPackages = with pkgs; [
+        #         proton-ge-bin
+        #     ];
+        #     winePackages = with pkgs; [
+        #         wineWow64Packages.full
+        #     ];
+        # };
     };
 }
