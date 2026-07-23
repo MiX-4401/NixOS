@@ -24,6 +24,12 @@
         description = "Monitor settings";
     };
 
+    options.config.desktop.hyprland.layout = lib.mkOption {
+        type = lib.types.str;
+        default = "dwindle";
+        description = "Hypland layout (dwindle, master, ...)";
+    };
+
     config = {
 
         # Source files
@@ -47,6 +53,9 @@
                 
                 # Monitors settings
                 # monitor = desktop.hyprland.monitors;
+
+                # Layout settings
+                general.layout = config.desktop.hyprland.layout;
 
                 # Inputs settings
                 config.input = {
