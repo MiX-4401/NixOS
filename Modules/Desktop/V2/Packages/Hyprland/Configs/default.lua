@@ -1,6 +1,6 @@
 require("autostart")
 require("keybinds")
-require("monitors")
+-- require("monitors")
 require("animations")
 require("decorations")
 require("inputs")
