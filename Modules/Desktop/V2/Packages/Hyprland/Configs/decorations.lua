@@ -1,4 +1,6 @@
 hl.config({
+
+    -- Looks
     general = {
         layout = "dwindle";
 
@@ -53,6 +55,7 @@ hl.config({
     --     color_inactive   
     -- }
     
+    -- Misc
     misc = {
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
@@ -72,5 +75,11 @@ hl.config({
     ecosystem = {
         no_update_news = true;
         no_donation_nag = true;
+    };
+
+    -- Layouts
+    master = {
+        new_status = "slave";
+        mfact = 0.70;
     };
 })

@@ -55,7 +55,7 @@
                 # monitor = desktop.hyprland.monitors;
 
                 # Layout settings
-                general.layout = config.desktop.hyprland.layout;
+                config.general.layout = config.desktop.hyprland.layout;
 
                 # Inputs settings
                 config.input = {
@@ -69,15 +69,13 @@
                 };
 
                 # Decoration settings
-                config.general = {
-                    col.active_border = lib.mkForce {
-                        colors = [ "rgb(${config.stylix.base16Scheme.base03})" "rgb(${config.stylix.base16Scheme.base0B})" ];
-                        angle = 45;
-                    };
-                    col.inactive_border = lib.mkForce {
-                        colors = [ "rgb(${config.stylix.base16Scheme.base01})" "rgb(${config.stylix.base16Scheme.base02})" ];
-                        angle = 45;
-                    };
+                config.general.col.active_border = lib.mkForce {
+                    colors = [ "rgb(${config.stylix.base16Scheme.base03})" "rgb(${config.stylix.base16Scheme.base0B})" ];
+                    angle = 45;
+                };
+                config.general.col.inactive_border = lib.mkForce {
+                    colors = [ "rgb(${config.stylix.base16Scheme.base01})" "rgb(${config.stylix.base16Scheme.base02})" ];
+                    angle = 45;
                 };
                 
                 # Temp - to be removed
