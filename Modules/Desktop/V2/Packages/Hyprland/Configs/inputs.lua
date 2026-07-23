@@ -2,10 +2,8 @@ hl.config = ({
     input = {
 
         -- Mouse
-        -- sensitivity = -1.0;
         natural_scroll = false;
-        force_no_accel = true;
-        scroll_factor = 1.0;
+        accel_profile = "flat";
         
         -- Keyboard
         numlock_by_default = true;
@@ -13,8 +11,7 @@ hl.config = ({
         -- Touchpad
         touchpad = {
             disable_while_type = false;
-            natural_scroll = false;
-            scroll_factor = 0.5;  
+            natural_scroll = false; 
         };      
     };
 })

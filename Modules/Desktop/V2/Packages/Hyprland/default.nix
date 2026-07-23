@@ -8,17 +8,17 @@
         description = "Mouse and touchpad sensitivity";
     };
 
-    options.desktop.hyprland.monitors = lib.mkOption {
+    options.desktop.hyprland.scrollFactor = lib.mkOption {
         type = lib.types.float;
-        default = 0.2;
-        description = "Mouse and touchpad sensitivity";
+        default = 0.0;
+        description = "Mouse and touchpad scroll factor";
     };
 
-    # options.desktop.hyprland.sensitivity = lib.mkOption {
-    #     type = lib.types.float;
-    #     default = 0.2;
-    #     description = "Mouse and touchpad sensitivity";
-    # };
+    options.desktop.hyprland.monitors = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ ", preferred, auto, 1" ];
+        description = "Monitor settings";
+    };
 
     config = {
 
@@ -34,29 +34,24 @@
             configType = "lua";
 
             extraConfig = ''
-                require("my")
+                require("default")
             '';
 
-            settings = {
-                config = { 
-                    
+            # Variable settings
+            settings.config = {
+
+                # Input
+                input = {
                     # Mouse settings
-                    input = {
-                        # Mouse
-                        sensitivity = -0.2;
-                        natural_scroll = false;
-                        # force_no_accel = true;
-                        scroll_factor = 0.0;
-                        
-                        # Keyboard
-                        numlock_by_default = true;
-                        
-                        # Touchpad
-                        touchpad.disable_while_typing = false;
-                        touchpad.natural_scroll = false;
-                        touchpad.scroll_factor = 0.0;
-                    };
+                    input.sensitivity = config.desktop.hyprland.sensitivity;
+                    input.scroll_factor = config.desktop.hyprland.scrollFactor;
+                    
+                    # Touchpad settings
+                    input.touchpad.scroll_factor = config.desktop.hyprland.scrollFactor;
                 };
+
+                # Monitors
+                monitor = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-1,1920x1080@144,0x0,1.2" ]; # Right, left monitors;
             };
         };
     };
