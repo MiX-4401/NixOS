@@ -1,0 +1,6 @@
+require("Configs.autostart")
+require("Configs.keybinds")
+require("Configs.animations")
+require("Configs.decorations")
+require("Configs.inputs")
+-- require("Configs.layouts")
