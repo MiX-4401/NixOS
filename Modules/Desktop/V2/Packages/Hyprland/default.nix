@@ -24,7 +24,7 @@
         description = "Monitor settings";
     };
 
-    options.config.desktop.hyprland.layout = lib.mkOption {
+    options.desktop.hyprland.layout = lib.mkOption {
         type = lib.types.str;
         default = "dwindle";
         description = "Hypland layout (dwindle, master, ...)";
