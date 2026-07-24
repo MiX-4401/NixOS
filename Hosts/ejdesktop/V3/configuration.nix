@@ -35,6 +35,9 @@
     desktop.packages.hypridle.lockAfter = 60;
     desktop.packages.hypridle.sleepAfter = 600;
 
+    # Misc
+    core.system.misc.wallpaper.filename = "rainworld12.png";
+
     # Core desktop modular settings
 
     # Default applications
@@ -50,8 +53,6 @@
     desktop.packages.hyprland.layout = "dwindle";
     desktop.packages.hyprland.sensitivity = -1.0;
     desktop.packages.hyprland.scrollFactor = 1.0;
-    
-    desktopSetWallpaper.wallpaper = "rainworld12.png";
     
     # Desktop package bundles
     desktop.bundles.office.enable   = true; 

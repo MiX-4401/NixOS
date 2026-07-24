@@ -29,6 +29,8 @@ core										# NixOS modules
 		misc
 			gaming
 				bool enable
+			wallpaper
+				str filename
 
 	shells
 		forensics

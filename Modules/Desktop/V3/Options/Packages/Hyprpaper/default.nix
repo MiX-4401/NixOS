@@ -1,4 +1,4 @@
-{ config, pkgs, username, desktopSetWallpaper, ... }:
+{ config, pkgs, username, wallpaper, ... }:
 
 {
     home.packages = with pkgs; [ hyprpaper ];
@@ -16,7 +16,7 @@
             wallpaper = [
                 {
                     monitor = ",";
-                    path = "/home/${username}/Pictures/Wallpapers/${desktopSetWallpaper.wallpaper}";
+                    path = "/home/${username}/Pictures/Wallpapers/${wallpaper.wallpaper}";
                 }
             ];
         };

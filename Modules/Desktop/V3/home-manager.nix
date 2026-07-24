@@ -11,7 +11,7 @@
     home-manager.extraSpecialArgs = { 
         inherit inputs; 
         inherit username;
-        desktopSetWallpaper = config.desktopSetWallpaper;   # Passthrough toplevel value to home-manager's scope
+        wallpaper = config.core.system.misc.wallpaper.filename;   # Passthrough toplevel value to home-manager's scope
     };
     
     home-manager.users.${username} = {
