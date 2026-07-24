@@ -54,7 +54,7 @@
             settings = {
                 
                 # Monitors settings
-                monitor = desktop.hyprland.monitors;
+                monitor = config.desktop.hyprland.monitors;
 
                 # Layout settings
                 config.general.layout = config.desktop.packages.hyprland.layout;

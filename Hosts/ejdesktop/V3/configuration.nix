@@ -49,7 +49,10 @@
     desktop.packages.git.email = "ej.radford@outlook.com.au";
 
     # Hyprland
-    desktop.packages.hyprland.monitors = [ "HDMI-A-1,1920x1080@75,auto,1.2" "DP-1,1920x1080@144,0x0,1.2" ]; # Right, left monitors
+    desktop.packages.hyprland.monitor = [ 
+        { output = "HDMI-A-1"; mode = "1920x1080@75"; position = "auto"; scale = 1.2; } 
+        { output = "DP-1"; mode = "1920x1080@144"; position = "0x0"; scale = 1.2; }
+    ];
     desktop.packages.hyprland.layout = "dwindle";
     desktop.packages.hyprland.sensitivity = -1.0;
     desktop.packages.hyprland.scrollFactor = 1.0;

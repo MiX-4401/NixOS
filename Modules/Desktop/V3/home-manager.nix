@@ -4,6 +4,7 @@
     # Import HomeManager libraries
     imports = [
         inputs.home-manager.nixosModules.home-manager
+        ./Options/moduleBundle.nix
     ];
 
     home-manager.useGlobalPkgs = true;
