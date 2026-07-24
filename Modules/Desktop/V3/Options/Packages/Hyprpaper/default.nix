@@ -16,7 +16,7 @@
             wallpaper = [
                 {
                     monitor = ",";
-                    path = "/home/${username}/Pictures/Wallpapers/${wallpaper.wallpaper}";
+                    path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
                 }
             ];
         };
