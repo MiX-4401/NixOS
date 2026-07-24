@@ -4,8 +4,6 @@
     # Import HomeManager libraries
     imports = [
         inputs.home-manager.nixosModules.home-manager
-        ./Software/Packages/moduleBridge.nix
-        ./Software/PackageBundles/moduleBridge.nix
     ];
 
     home-manager.useGlobalPkgs = true;
@@ -21,9 +19,7 @@
         home.homeDirectory = "/home/${username}";
         home.stateVersion = "26.05";
         imports = [
-            # Import desktop modules impacting the desktop environment (all modular settings)
-            ./Packages/moduleBundle.nix
-            ./PackageBundles/moduleBundle.nix
+            ./Options/moduleBundle.nix
         ]; 
 
         # Forced applications

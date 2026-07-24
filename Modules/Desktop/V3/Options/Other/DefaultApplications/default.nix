@@ -1,26 +1,21 @@
 { lib, config, ... }:
 
 {
-    options.desktopDefaultApps.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = true;
-        description = "Enable the default application handlers";
-    };
-
-    options.desktopDefaultApps.defaultBrowser = lib.mkOption {
+    options.desktop.other.defaultApplications.browser = lib.mkOption {
         type = lib.types.str;
         default = "zen.desktop";
+        description = "Set the default browser";
     };
 
     config = {
         xdg.mimeApps = {
-            enable = config.desktopDefaultApps.enable;
+            enable = true;
             defaultApplications = {
-                "text/html" = config.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/http" = config.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/https" = config.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/about" = config.desktopDefaultApps.defaultBrowser;
-                "x-scheme-handler/unknown" = config.desktopDefaultApps.defaultBrowser;
+                "text/html" = config.desktop.other.defaultApplications.browser;                    # HTML
+                "x-scheme-handler/http" = config.desktop.other.defaultApplications.browser;        # HTTP
+                "x-scheme-handler/https" = config.desktop.other.defaultApplications.browser;       # HTTPS
+                "x-scheme-handler/about" = config.desktop.other.defaultApplications.browser;       # ABOUT
+                "x-scheme-handler/unknown" = config.desktop.other.defaultApplications.browser;     # UNKNOWN
             };
         };
     };

@@ -12,5 +12,6 @@
         ./Walker        
         ./Waybar
         ./Waypaper
+        ./Git
     ];
 }

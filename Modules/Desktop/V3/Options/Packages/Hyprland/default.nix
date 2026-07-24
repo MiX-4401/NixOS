@@ -6,28 +6,30 @@
 
 {
 
-    options.desktop.hyprland.sensitivity = lib.mkOption {
-        type = lib.types.float;
-        default = -1.0;
-        description = "Mouse and touchpad sensitivity";
-    };
+    options = {
+        desktop.packages.hyprland.sensitivity = lib.mkOption {
+            type = lib.types.float;
+            default = -1.0;
+            description = "Mouse and touchpad sensitivity";
+        };
 
-    options.desktop.hyprland.scrollFactor = lib.mkOption {
-        type = lib.types.float;
-        default = 1.0;
-        description = "Mouse and touchpad scroll factor";
-    };
+        desktop.packages.hyprland.scrollFactor = lib.mkOption {
+            type = lib.types.float;
+            default = 1.0;
+            description = "Mouse and touchpad scroll factor";
+        };
 
-    options.desktop.hyprland.monitors = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [ ", preferred, auto, 1" ];
-        description = "Monitor settings";
-    };
+        desktop.packages.hyprland.monitors = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ ", preferred, auto, 1" ];
+            description = "Monitor settings";
+        };
 
-    options.desktop.hyprland.layout = lib.mkOption {
-        type = lib.types.str;
-        default = "dwindle";
-        description = "Hypland layout (dwindle, master, ...)";
+        desktop.packages.hyprland.layout = lib.mkOption {
+            type = lib.types.str;
+            default = "dwindle";
+            description = "Hypland layout (dwindle, master, ...)";
+        };
     };
 
     config = {
@@ -55,17 +57,17 @@
                 # monitor = desktop.hyprland.monitors;
 
                 # Layout settings
-                config.general.layout = config.desktop.hyprland.layout;
+                config.general.layout = config.desktop.packages.hyprland.layout;
 
                 # Inputs settings
                 config.input = {
 
                     # Mouse settings
-                    sensitivity = config.desktop.hyprland.sensitivity;
-                    scroll_factor = config.desktop.hyprland.scrollFactor;
+                    sensitivity = config.desktop.packages.hyprland.sensitivity;
+                    scroll_factor = config.desktop.packages.hyprland.scrollFactor;
                     
                     # Touchpad settings
-                    touchpad.scroll_factor = config.desktop.hyprland.scrollFactor;
+                    touchpad.scroll_factor = config.desktop.packages.hyprland.scrollFactor;
                 };
 
                 # Decoration settings

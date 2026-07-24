@@ -21,7 +21,7 @@
         };
     };
 
-    config = lib.mkIf config.desktop.idleController.enable {
+    config = lib.mkIf config.desktop.packages.hypridle.enable {
 
         # Hyperland idler services as Hyprland does not directly communicate with systemd idle services on it's own        
         home.packages = with pkgs; [ hypridle ];
@@ -41,13 +41,13 @@
                     # Idle lock listener
                     {
                         on-timeout = "hyprlock";
-                        timeout = config.desktop.idleController.lockAfter;
+                        timeout = config.desktop.packages.hypridle.lockAfter;
                     }
 
                     # Idle sleep listener
                     {
                         on-timeout = "systemctl suspend-then-hibernate";
-                        timeout = config.desktop.idleController.sleepAfter;
+                        timeout = config.desktop.packages.hypridle.sleepAfter;
                     }
                 ];
             };

@@ -4,8 +4,9 @@
     imports = [
         ./Gaming
         ./Social
-        ./DesktopUtilities
-        ./OfficeUtilities
+        ./Desktop
+        ./Office
         ./Extra
+        ./Troubleshooting
     ];
 }
