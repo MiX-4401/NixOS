@@ -4,6 +4,6 @@
     imports = [
         ./DefaultApplications
         ./Shell
-        ./Cursor
+        # ./Cursor
     ];
 }
