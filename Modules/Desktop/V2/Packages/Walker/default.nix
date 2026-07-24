@@ -6,6 +6,7 @@
         enable = true;
         systemd.enable = true;
         enableElephantIntegration = true;
+        runAsService = true;
 
         # settings = {
         #     app_launch_prefix = "";
