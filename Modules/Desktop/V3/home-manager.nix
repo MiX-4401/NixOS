@@ -4,7 +4,7 @@
     # Import HomeManager libraries
     imports = [
         inputs.home-manager.nixosModules.home-manager
-        ./Options/moduleBundle.nix
+        # ./Options/moduleBundle.nix
         ./Options/moduleBridge.nix
         
     ];
@@ -23,7 +23,7 @@
         home.stateVersion = "26.05";
         imports = [
             ./Options/moduleBundle.nix
-            ./Options/moduleBridge.nix
+            # ./Options/moduleBridge.nix
         ]; 
 
         # Forced applications
