@@ -70,7 +70,6 @@
         rocmPackages.rocm-smi
         mdadm
         radeontop
-	    gpu-screen-recorder-gtk
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
