@@ -6,15 +6,15 @@
 
 {
     imports = [
-        (lib.mkAliasOptionModule
-            [ "desktopDefaultApps" ]
-            [ "home-manager" "users" username "desktopDefaultApps" ]
-        )
+        # (lib.mkAliasOptionModule
+        #     [ "desktopDefaultApps" ]
+        #     [ "home-manager" "users" username "desktopDefaultApps" ]
+        # )
 
-        (lib.mkAliasOptionModule
-            [ "desktopGit" ]
-            [ "home-manager" "users" username "desktopGit" ]
-        )
+        # (lib.mkAliasOptionModule
+        #     [ "desktopGit" ]
+        #     [ "home-manager" "users" username "desktopGit" ]
+        # )
 
         # (lib.mkAliasOptionModule
         #     [ "desktopHyprland" ]
