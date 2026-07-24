@@ -1,4 +1,4 @@
-core
+core										# NixOS modules
 	system
 		security
 			hardenSudo
@@ -29,15 +29,47 @@ core
 		misc
 			gaming
 				bool enable
+			wallpaper
+				str filename
 
 	shells
 		forensics
 			bool enable
 
 desktop
-	idleController						# Requires core.system.hibernation.enable to be set to 'true'
-		bool enable
-		int sleepAfter
-		int lockAfter
-	hyprland
-		int sensitivity
+	other									# Global values which multiple packages may access
+		# str wallpaper	
+		defaultApplications
+			str browser														
+	bundles
+		extra
+			bool enable
+		gaming
+			bool enable
+		laptop
+			bool enable
+		office
+			bool enable
+		social
+			bool enable
+		desktop
+			bool enable
+		troubleshooting
+			bool enable
+	packages
+		hyprland
+			float sensitivity
+			float scrollFactor
+			str layout
+			list monitors
+		hypridle 							# Requires core.system.hibernation.enable to be set to 'true'
+			bool enable
+			int sleepAfter
+			int lockAfter
+		git
+			bool enable
+			str username
+			str email
+		
+
+	

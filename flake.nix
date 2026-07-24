@@ -53,7 +53,7 @@
             hostname = "ejdesktop";
             username = "ejradford";
             system = system;
-            modules = [ ./Hosts/ejdesktop/V2/configuration.nix ];
+            modules = [ ./Hosts/ejdesktop/V3/configuration.nix ];
             specialArgs = { };
         };
 

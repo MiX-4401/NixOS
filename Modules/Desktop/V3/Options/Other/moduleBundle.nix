@@ -1,0 +1,9 @@
+{ ... }:
+
+{
+    imports = [
+        ./DefaultApplications
+        ./Shell
+        ./Cursor
+    ];
+}
