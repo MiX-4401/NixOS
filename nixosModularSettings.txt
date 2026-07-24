@@ -1,4 +1,4 @@
-core
+core										# NixOS modules
 	system
 		security
 			hardenSudo
@@ -35,9 +35,19 @@ core
 			bool enable
 
 desktop
-	idleController						# Requires core.system.hibernation.enable to be set to 'true'
-		bool enable
-		int sleepAfter
-		int lockAfter
-	hyprland
-		int sensitivity
+	other								# Global values which multiple packages may access
+		str wallpaper															
+	bundles
+	packages
+		hyprland
+			float sensitivity
+			float scrollFactor
+			str layout
+			list monitors
+		hypridle 						# Requires core.system.hibernation.enable to be set to 'true'
+			bool enable
+			int sleepAfter
+			int lockAfter
+		
+
+	

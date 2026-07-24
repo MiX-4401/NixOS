@@ -4,8 +4,8 @@
     # Import HomeManager libraries
     imports = [
         inputs.home-manager.nixosModules.home-manager
-        ./Packages/moduleBridge.nix
-        ./PackageBundles/moduleBridge.nix
+        ./Software/Packages/moduleBridge.nix
+        ./Software/PackageBundles/moduleBridge.nix
     ];
 
     home-manager.useGlobalPkgs = true;

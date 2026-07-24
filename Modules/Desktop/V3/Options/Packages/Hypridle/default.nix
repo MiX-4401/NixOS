@@ -2,24 +2,22 @@
 
 {
     options = {
-        desktop.idleController = {
-            enable = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-                description = "Enable desktop idle for sleep and hibernation";
-            };
+        desktop.packages.hypridle.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Enable desktop idle for sleep and hibernation";
+        };
 
-            lockAfter = lib.mkOption {
-                type = lib.types.int;
-                default = 60;
-                description = "Seconds until the computer locks";
-            };
+        desktop.packages.hypridle.lockAfter = lib.mkOption {
+            type = lib.types.int;
+            default = 60;
+            description = "Seconds until the computer locks";
+        };
 
-            sleepAfter = lib.mkOption {
-                type = lib.types.int;
-                default = 120;
-                description = "Seconds until the computer suspends";
-            };
+        desktop.packages.hypridle.sleepAfter = lib.mkOption {
+            type = lib.types.int;
+            default = 120;
+            description = "Seconds until the computer suspends";
         };
     };
 
