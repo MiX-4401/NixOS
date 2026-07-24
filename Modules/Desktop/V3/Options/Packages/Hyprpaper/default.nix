@@ -4,7 +4,7 @@
     home.packages = with pkgs; [ hyprpaper ];
     
     home.file."/Pictures/Wallpapers/" = {
-        source = ../../Wallpapers;
+        source = ../../../Wallpapers;
         recursive = true;
     };
     
