@@ -27,6 +27,7 @@
     services = {
         upower.enable = true;
         displayManager.ly.enable = true;
+        displayManager.ly.settings = { save = false; };
     };
 
     networking.networkmanager = {
