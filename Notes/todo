@@ -15,13 +15,3 @@ NixOS Plymouth: Animated boot
 NixOS Borg: Timeshift equivilent - should be better on storage (https://nixos.org/manual/nixos/stable/#module-borgbase)
 BTRFS filesystem
 ISOify NixOS with nix-generators
-
-* Hyprland
-[x] monitors
-[x] keybinds
-[x] animations
-[x] decorations
-[x] autostart
-[x] inputs
-[x] misc
-[ ] layouts
