@@ -9,8 +9,8 @@
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
         # Diskio contains: Helper libraries for declarative disk management
-        disko.url = "github:nix-community/disko";
-        disko.inputs.nixpkgs.follows = "nixpkgs";
+        # disko.url = "github:nix-community/disko";
+        # disko.inputs.nixpkgs.follows = "nixpkgs";
 
         # Home manager contains: Software package, helper libraries
         home-manager.url = "github:nix-community/home-manager/release-26.05";
@@ -35,7 +35,8 @@
         zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: 
+    # outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: 
+    outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
     let
         # Import my custom lib functions
         system = "x86_64-linux";
@@ -63,6 +64,15 @@
             username = "ejradford";
             system = system;
             modules = [ ./Hosts/ejlaptop/V2/configuration.nix ];
+            specialArgs = { };
+        };
+
+        # My general use, office laptop
+        nixosConfigurations.ejvm = myLib.mkHost {    # Uses my custom mkHost function to take care of boilerplate
+            hostname = "ejvm";
+            username = "ejradford";
+            system = system;
+            modules = [ ./Hosts/ejvm/V1/configuration.nix ];
             specialArgs = { };
         };
         # ...
