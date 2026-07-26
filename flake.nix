@@ -72,7 +72,7 @@
             hostname = "ejvm";
             username = "ejradford";
             system = system;
-            modules = [ ./Hosts/ejvm/V1/configuration.nix ];
+            modules = [ ./Hosts/ejvm/V1/configuration.nix disko.nixosModules.disko];
             specialArgs = { };
         };
         # ...

@@ -5,11 +5,8 @@
 #  disko.devices.disk.main.device = "/dev/sda";
 # }
 
-{ disko, ... }:
-
 {
-    imports = [ disko.nixosModules.disko ];
-
+    
     # Disks
     disko.devices.disk.main = {
         type = "disk";
