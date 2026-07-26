@@ -5,75 +5,76 @@
 #  disko.devices.disk.main.device = "/dev/sda";
 # }
 
-{ ... }:
+{ disko, ... }:
+
 {
-    disko.devices = {
-        disk = {
-            type = "disk";
-            device = "/dev/vda";
-            content = {
-                type = "gpt";
-                partitions = [
+    imports = [ disko.nixosModules.disko ];
 
-                    # Boot partition
-                    {
-                        name = "ESP";
-                        size = "500M";
-                        type = "EF00";
-                        content = {
-                            type = "filesystem";
-                            format = "vfat";
-                            mountpoint = "/boot";
-                            mountOptions = [ "umask=0077" ];
-                        };
-                    }
+    # Disks
+    disko.devices.disk.main = {
+        type = "disk";
+        device = "/dev/vda";
+        content = {
+            type = "gpt";
+            
+            # Boot partition
+            partitions.ESP ={
+                name = "ESP";
+                size = "500M";
+                type = "EF00";
+                content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                    mountOptions = [ "umask=0077" ];
+                };
+            };
 
-                    # LUKs partition (root)
-                    {
-                        name = "root";
-                        size = "100%";
-                        content = {
-                            type = "luks";
-                            name = "cryptroot";
-                            content = {
-                                type = "lvm_pv";
-                                vg = "myPool";
-                            };
-                        };
-                    }
-                ];
+            # LUKs partition (root)
+            partitions.luks = {
+                name = "root";
+                size = "100%";
+                content = {
+                    type = "luks";
+                    name = "cryptroot";
+                    content = {
+                        type = "lvm_pv";
+                        vg = "myPool";
+                    };
+                };
             };
         };
+    };
 
-        lvm_vg.myPool = {
-            type = "lvm_vg";
-            lvs = [
+    # LVMs
+    disko.devices.disk.lvm_vg.myPool = {
+        type = "lvm_vg";
+        lvs = [
 
-                # SWAP
+            # SWAP
 
-                {
-                    name = "swap";
-                    size = "8G";
-                    content = {
-                        type = "swap";
-                        discardPolicy = "both";
-                        resumeDevice = true;
-                    };
-                }
+            {
+                name = "swap";
+                size = "8G";
+                content = {
+                    type = "swap";
+                    discardPolicy = "both";
+                    resumeDevice = true;
+                };
+            }
 
-                # Root
-                {
-                    name = "root";
-                    size = "100%FREE";
-                    content = {
-                        type = "filesystem";
-                        format = "ext4";
-                        mountpoint = "/";
-                        mountOptions = [ "defaults" ];
-                    };
-                }
+            # Root
+            {
+                name = "root";
+                size = "100%FREE";
+                content = {
+                    type = "filesystem";
+                    format = "ext4";
+                    mountpoint = "/";
+                    mountOptions = [ "defaults" ];
+                };
+            }
 
-            ];
-        };
+        ];
     };
 }

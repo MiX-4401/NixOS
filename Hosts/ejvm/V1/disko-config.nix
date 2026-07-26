@@ -4,39 +4,65 @@
 #  imports = [ ./disko-config.nix ];
 #  disko.devices.disk.main.device = "/dev/sda";
 # }
+
+{ disko, ... }:
+
 {
-  disko.devices = {
-    disk = {
-      main = {
+    imports = [ disko.nixosModules.disko ];
+
+    # Disks
+    disko.devices.disk.main = {
         type = "disk";
-        content = {
-          type = "gpt";
-          partitions = {
-            boot = {
-              size = "1M";
-              type = "EF02"; # for grub MBR
-            };
-            ESP = {
-              size = "1G";
-              type = "EF00";
-              content = {
+        device = "/dev/vda";
+        content.type = "gpt";
+        
+        # Boot partition
+        content.partitions.ESP = {
+            name = "ESP";
+            size = "500M";
+            type = "EF00";
+            content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
-              };
             };
-            root = {
-              size = "100%";
-              content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/";
-              };
-            };
-          };
         };
-      };
+
+        # LUKs partition (root)
+        content.partitions.luks = {
+            name = "root";
+            size = "100%";
+            content = {
+                type = "luks";
+                name = "cryptroot";
+                content = {
+                    type = "lvm_pv";
+                    vg = "myPool";
+                };
+            };
+        };
     };
-  };
+
+    # LVMs
+    disko.devices.lvm_vg.myPool = {
+        type = "lvm_vg";
+        
+        # LVM logical volume (swap)
+        lvs.swap.size = "8G";
+        lvs.swap.content = {
+            type = "swap";
+            discardPolicy = "both";
+            resumeDevice = true;
+        };
+
+        # LVM logical volume (root)
+        lvs.root.size = "100%FREE";
+        lvs.root.content = {
+            type = "filesystem";
+            format = "ext4";
+            mountpoint = "/";
+            mountOptions = [ "defaults" ];
+        };
+    };
 }
