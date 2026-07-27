@@ -19,7 +19,7 @@
             };
 
             # RAID0 partition
-            partitions.mdadm.size = "100%FREE";
+            partitions.mdadm.size = "100%";
             partitions.mdadm.content = {
                 type = "mdraid";
                 name = "raid0";
@@ -45,7 +45,7 @@
             };
 
             # RAID0 partition
-            partitions.mdadm.size = "100%FREE";
+            partitions.mdadm.size = "100%";
             partitions.mdadm.content = {
                 type = "mdraid";
                 name = "raid0";
