@@ -8,7 +8,7 @@
         ../../../Modules/Desktop/V3/bootstrap.nix   # Import of the desktop environment configurations
         
         # Host specific imports
-        # ./hardware-configuration.nix    # Import of the physical storage systems
+        ./hardware-configuration.nix    # Import of the physical storage systems
         ./disko-config.nix
     ];
 
