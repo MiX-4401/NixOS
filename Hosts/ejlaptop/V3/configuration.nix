@@ -5,10 +5,11 @@
         
         # Bootstrap imports
         ../../../Modules/System/V2/bootstrap.nix   # Import of the systems environment configurations
-        ../../../Modules/Desktop/V2/bootstrap.nix # Import of the desktop environment configurations
+        ../../../Modules/Desktop/V3/bootstrap.nix  # Import of the desktop environment configurations
         
         # Host specific imports
-        ./hardware-configuration.nix    # Import of the physical storage systems 
+        ./hardware-configuration.nix    # Import of hardware configurations and mount points 
+        ./disko-config.nix              # Import of disko disk partitioning
         ./powermanagement.nix           # Import of suspend and hibernation power modules
     ];
 
@@ -21,15 +22,15 @@
     core.system.security.hardenRoot.enable = true;
     core.system.security.hardenFirewall.enable = true;
     core.system.nix.allowUnfreeSoftware = true;
-    core.system.nixos.hostname = "ejdesktop";
+    core.system.nixos.hostname = "ejlaptop";
     core.system.nixos.garbageCollection.enable = true;
     core.system.nixos.garbageCollection.period = "daily";
     core.system.nixos.osVersion = "26.05";
-    core.system.misc.gaming.enable = true;
+    core.system.misc.gaming.enable = false;
     
     # Sleep & hibernation
     core.system.nixos.hibernation.enable = true;
-    core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/37327f67-2c94-4502-8c71-4c91df4aa386";  # Do not need this one anymore
+    # core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/37327f67-2c94-4502-8c71-4c91df4aa386";  # Do not need this one anymore
     core.system.nixos.hibernation.hibernateAfter = "10min";
     desktop.packages.hypridle.enable = true;
     desktop.packages.hypridle.lockAfter = 60;
@@ -70,5 +71,5 @@
         microcode-intel
     ];
     
-    # boot.kernelPackages = pkgs.linuxPackages_zen.kernel
+    boot.kernelPackages = pkgs.linuxPackages_zen;
 }
