@@ -9,7 +9,7 @@
         
         # Host specific imports
         ./hardware-configuration.nix    # Import of hardware configurations and mount points 
-        ./disko-config.nix              # Import of disko disk partitioning
+        # ./disko-config.nix              # Import of disko disk partitioning
         ./powermanagement.nix           # Import of suspend and hibernation power modules
     ];
 
@@ -30,7 +30,7 @@
     
     # Sleep & hibernation
     core.system.nixos.hibernation.enable = true;
-    # core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/37327f67-2c94-4502-8c71-4c91df4aa386";  # Do not need this one anymore
+    core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/37327f67-2c94-4502-8c71-4c91df4aa386";  # Do not need this one anymore
     core.system.nixos.hibernation.hibernateAfter = "10min";
     desktop.packages.hypridle.enable = true;
     desktop.packages.hypridle.lockAfter = 60;
