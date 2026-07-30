@@ -4,7 +4,7 @@
     boot = {
         plymouth = {
             enable = lib.mkForce true;
-            theme = lib.mkForce "spinner";
+            theme = lib.mkForce "solar";
         };
 
         initrd.systemd.enable = true;
