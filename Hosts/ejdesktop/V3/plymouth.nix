@@ -1,9 +1,9 @@
-{ ... }:
+{ lib, config, ... }:
 
 {
     boot = {
         plymouth.enable = true;
-        plymouth.theme = "Fade-in";
+        plymouth.theme = lib.mkForce "Fade-in";
 
         consoleLogLevel = 3;
         initrd.verbose = false;
