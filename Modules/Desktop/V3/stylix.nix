@@ -8,6 +8,8 @@
     stylix = {
         enable = true;
         homeManagerIntegration.followSystem = true;
+
+        targets.plymouth.enable = false;
         
         polarity = "dark";
         image = ./Wallpapers/${config.core.system.misc.wallpaper.filename};
