@@ -10,6 +10,7 @@
         # Host specific imports
         ./hardware-configuration.nix    # Import of the physical storage systems 
         ./virtualisation.nix            # Import of custom virtualisation configurations
+        ./plymouth.nix                  # Import of animation boot sequences via plymouth    
     ];
 
     # Core system modular settings
