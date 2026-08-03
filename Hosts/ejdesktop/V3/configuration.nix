@@ -8,8 +8,10 @@
         ../../../Modules/Desktop/V3/bootstrap.nix   # Import of the desktop environment configurations
         
         # Host specific imports
-        ./hardware-configuration.nix    # Import of the physical storage systems 
-        ./virtualisation.nix            # Import of custom virtualisation configurations    
+        ./hardware-configuration.nix                # Import of the physical storage systems 
+        ./HostConfigs/virtualisation.nix            # Import of custom virtualisation configurations    
+        ./HostConfigs/yubikey.nix                   # Import of YubiKey settings
+        # ./HostConfigs/disko-config.nix              # Import of Disko configs
     ];
 
     # Core system modular settings
@@ -64,7 +66,9 @@
     desktop.bundles.extra.enable    = true; 
     desktop.bundles.social.enable   = true; 
 
-    # Host specific software
+    ############################
+    ## Host specific software ##
+    ############################
     environment.systemPackages = with pkgs; [
         microcode-amd
         rocmPackages.rocm-smi
