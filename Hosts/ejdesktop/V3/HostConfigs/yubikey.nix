@@ -8,6 +8,7 @@
 
     security.pam.u2f = {
         enable = true;
+        control = "required";
         settings.interactive = true;
         settings.cue = true;
         settings.authfile = pkgs.writeText "u2f-mappings" (lib.concatStrings [
