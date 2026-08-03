@@ -1,7 +1,11 @@
 TODO: Diskos disk partitioning w/ LUKs encryption
-TODO: Stylix colour caching 
 TODO: Git hardening
 TODO: Automatic backups possible with borg
+TODO: Master key USB
+ > Bootloader
+ > LUKs decryption key
+ > Password login as 2FA
+ > Sudo login as 2FA
 
 BUG:
 FIXME: ejdesktop host virtulisation not seemlessly returning back to Linux
