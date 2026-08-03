@@ -5,7 +5,7 @@
     options.core.system.security.hardenOpenSSH = {
         enable = lib.mkOption {
             type = lib.types.bool;
-            default = true;
+            default = false;
             description = "Enable OpenSSH without hardening";
         };
         
@@ -17,7 +17,7 @@
         
         ports = lib.mkOption {
             type = lib.types.listOf lib.types.int;
-            default = [ 6814 ];
+            default = [ 9764 ];
             description = "Int of the TCP port for OpenSSH";
         };
     };

@@ -4,8 +4,8 @@ TODO: Automatic backups possible with borg
 TODO: Master key USB
  > Bootloader
  > LUKs decryption key
- > Password login as 2FA
- > Sudo login as 2FA
+ > Password login as 2FA [done]
+ > Sudo login as 2FA [done]
 
 BUG:
 FIXME: ejdesktop host virtulisation not seemlessly returning back to Linux

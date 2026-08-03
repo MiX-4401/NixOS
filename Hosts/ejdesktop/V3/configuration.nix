@@ -18,7 +18,7 @@
     
     # Security options
     core.system.security.hardenSudo.enable = true;
-    core.system.security.hardenOpenSSH.enable = true;
+    core.system.security.hardenOpenSSH.enable = false;
     core.system.security.hardenOpenSSH.harden = true;
     core.system.security.hardenRoot.enable = true;
     core.system.security.hardenFirewall.enable = true;
