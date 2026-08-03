@@ -63,11 +63,8 @@
         htop.enable = true;     # Simple TUI resource monitor
         nano.enable = true;     # Simple TUI text editor
 
-        hyprland.enable = true; # GUI Desktop environment
-        # hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        # hyprland.portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        
-        hyprland.withUWSM = true;        # Added
-        hyprland.xwayland.enable = true; # Added
+        hyprland.enable = true; # GUI Desktop environment  
+        hyprland.withUWSM = true;       
+        hyprland.xwayland.enable = true; 
     };
 }
