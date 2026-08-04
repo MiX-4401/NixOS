@@ -12,6 +12,7 @@
         ./HostConfigs/virtualisation.nix            # Import of custom virtualisation configurations    
         ./HostConfigs/yubikey.nix                   # Import of YubiKey settings
         # ./HostConfigs/disko-config.nix              # Import of Disko configs
+        ./HostConfigs/homepage.nix                  # Import of homepage service and settings
     ];
 
     # Core system modular settings
@@ -27,6 +28,7 @@
     core.system.nixos.garbageCollection.enable = true;
     core.system.nixos.garbageCollection.period = "daily";
     core.system.nixos.osVersion = "26.05";
+    core.system.nixos.printing.enable = true;
     core.system.misc.gaming.enable = true;
     
     # Sleep & hibernation

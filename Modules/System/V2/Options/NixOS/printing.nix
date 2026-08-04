@@ -11,8 +11,8 @@
         
     };
 
-    config = config.core.system.nixos.printing.enable {
+    config = lib.mkIf config.core.system.nixos.printing.enable {
         services.printing.enable = true;
-        serivces.printing.cups-pdf.enable = true;
+        services.printing.cups-pdf.enable = true;
     };
 }
