@@ -26,6 +26,8 @@ core										# NixOS modules
 				bool enable
 				str hibernateDevice
 				str hibernateAfter
+			printing
+				bool enable
 		misc
 			gaming
 				bool enable

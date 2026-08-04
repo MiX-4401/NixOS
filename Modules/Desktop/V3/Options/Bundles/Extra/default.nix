@@ -13,6 +13,7 @@
             cbonsai
             cmatrix
             cava
+            tree
         ];
     };
 }

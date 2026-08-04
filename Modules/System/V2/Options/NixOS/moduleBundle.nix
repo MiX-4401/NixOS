@@ -6,5 +6,6 @@
         ./hostname.nix
         ./osVersion.nix
         ./hibernation.nix
+        ./printing.nix
     ];
 }
