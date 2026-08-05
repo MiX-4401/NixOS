@@ -6,6 +6,6 @@
         ./hardenOpenSSH.nix
         ./hardenRoot.nix
         ./hardenSudo.nix
-        ./hardenMisc.nix
+        ./hardenSandboxing.nix
     ];
 }
