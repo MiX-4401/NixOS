@@ -12,7 +12,6 @@
         ./HostConfigs/virtualisation.nix            # Import of custom virtualisation configurations    
         ./HostConfigs/yubikey.nix                   # Import of YubiKey settings
         # ./HostConfigs/disko-config.nix              # Import of Disko configs
-        ./HostConfigs/homepage.nix                  # Import of homepage service and settings
     ];
 
     # Core system modular settings
@@ -67,6 +66,7 @@
     desktop.bundles.gaming.enable   = true; 
     desktop.bundles.extra.enable    = true; 
     desktop.bundles.social.enable   = true; 
+    desktop.bundles.troubleshooting.enable = true;
 
     ############################
     ## Host specific software ##

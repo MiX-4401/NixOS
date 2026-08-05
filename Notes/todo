@@ -12,10 +12,10 @@ FIXME: ejdesktop host virtulisation not seemlessly returning back to Linux
 
 Future possibilites: 
 NixOS Impermanence: Make / dir ephemeral (reset at boot)
-NixOS Homepage: Custom dashboard with widget support (gamedig, navidome, time&date, (Glances, Resources), Greeting, Logo, (Open-Meteo, OpenWeatherMap), Search)
+[not useful] NixOS Homepage: Custom dashboard with widget support (gamedig, navidome, time&date, (Glances, Resources), Greeting, Logo, (Open-Meteo, OpenWeatherMap), Search)
 NixOS lanzaboote: Secure boot support
 NixOS Agenix: Better secret management
-NixOS Plymouth: Animated boot
+[not useful] NixOS Plymouth: Animated boot
 NixOS Borg: Timeshift equivilent - should be better on storage (https://nixos.org/manual/nixos/stable/#module-borgbase)
 BTRFS filesystem
 ISOify NixOS with nix-generators
