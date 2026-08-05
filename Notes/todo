@@ -6,6 +6,7 @@ TODO: Master key USB
  > LUKs decryption key
  > Password login as 2FA [done]
  > Sudo login as 2FA [done]
+TODO: BTRFS filesystem
 
 BUG:
 FIXME: ejdesktop host virtulisation not seemlessly returning back to Linux
