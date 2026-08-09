@@ -9,6 +9,8 @@
     config.core.system.security.hardenFirewall.enable = true;
     config.core.system.security.hardenServices.enable = true;
     config.core.system.security.hardenServices.services = [ "sshd" "cups" "nscd" ];
+    config.core.system.security.hardenPam.enable = true;
+    config.core.system.security.hardenNetwork.enable = true;
     
     # core.system.nix options
     config.core.system.nix.allowUnfreeSoftware = true;

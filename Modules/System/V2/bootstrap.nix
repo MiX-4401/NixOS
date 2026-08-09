@@ -13,6 +13,9 @@
     # NixOS
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    # Umask
+    environment.extraInit = "umask 0077";
+
     # Boot
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;

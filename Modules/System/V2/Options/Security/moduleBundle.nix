@@ -9,5 +9,6 @@
         # ./hardenSandboxing.nix
         ./hardenNetwork.nix
         ./hardenServices.nix
+        ./hardenPam.nix
     ];
 }

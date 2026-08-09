@@ -1,21 +1,24 @@
 { lib, config, ... }:
 
 {
-    options = {};
+    options.config.core.system.security.hardenNetwork = {
+        enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Enable OpenSSH without hardening";
+        };
+    };
 
     config = {
 
         # Harden systemd NetworkManager service
         systemd.services.NetworkManager = {
             serviceConfig = {
-                privateTmp = true;
-                privateUsers = true;
-                protectProc = "invisable";
-                ProtectSystem = "strict";  
-                PrivateTmp = "disconnected";
-                PrivateProc = "invisable";
+                NoNewPrivileges = true;
+                PrivateTmp = true;
+                ProtectSystem = "full";
                 ProtectHome = true;
-                NoNewPrivileges= true;
+                RestrictSUIDSGID = true;
             };
         };
 
@@ -33,12 +36,12 @@
             # Logging
             logLevel = "TRACE";
         
-            # connectionConfig = {
-            #     ipv4.dhcp-send-hostname     = false; # Disable hostname advertising ipv4
-            #     ipv4.dhcp-send-hostname-v2  = 0;
-            #     ipv6.dhcp-send-hostname     = false; # Disable hostname advertising ipv6
-            #     ipv6.dhcp-send-hostname-v2  = 0;
-            # };
+            connectionConfig = {
+                ipv4.dhcp-send-hostname     = false; # Disable hostname advertising ipv4
+                ipv4.dhcp-send-hostname-v2  = 0;
+                ipv6.dhcp-send-hostname     = false; # Disable hostname advertising ipv6
+                ipv6.dhcp-send-hostname-v2  = 0;
+            };
         };
     };
 }
