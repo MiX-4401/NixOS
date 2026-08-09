@@ -7,9 +7,9 @@
     config.core.system.security.hardenOpenSSH.harden = true;
     config.core.system.security.hardenRoot.enable = true;
     config.core.system.security.hardenFirewall.enable = true;
-    config.core.system.security.hardenServices.enable = true;
-    config.core.system.security.hardenServices.base = [ "sshd" ];
-    config.core.system.security.hardenServices.strict = [ ];
+    # config.core.system.security.hardenServices.enable = true;
+    # config.core.system.security.hardenServices.base = [ "sshd" ];
+    # config.core.system.security.hardenServices.strict = [ ];
     
     # core.system.nix options
     config.core.system.nix.allowUnfreeSoftware = true;
