@@ -10,5 +10,6 @@
         ./hardenNetwork.nix
         ./hardenServices.nix
         ./hardenPam.nix
+        ./hardenUsb.nix
     ];
 }

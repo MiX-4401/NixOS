@@ -20,6 +20,8 @@ core										# NixOS modules
 				bool enable
 			hardenPam
 				bool enable
+			hardenUSB
+				bool enable
 		nix
 			int downloadBufferSize
 			bool allowUnfreeSoftware
