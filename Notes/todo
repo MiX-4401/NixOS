@@ -20,3 +20,17 @@ NixOS Agenix: Better secret management
 NixOS Borg: Timeshift equivilent - should be better on storage (https://nixos.org/manual/nixos/stable/#module-borgbase)
 BTRFS filesystem
 ISOify NixOS with nix-generators
+
+
+security 
+
+* systemd global attibutes to set
+umask = 777
+privateTmp = true
+privateUsers = true
+protectProc = "invisable"
+ProtectSystem= either true or "full" or "strict"  
+PrivateTmp= either true or "disconnected"
+ProtectHome= either true or "read-only" or "tmpfs"
+NoNewPrivileges= true
+NoNewPrivileges= 
