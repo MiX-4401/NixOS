@@ -30,8 +30,15 @@
         displayManager.ly.settings = { save = false; };
     };
 
-    networking.networkmanager = {
+    # Networking
+
+    networking.networkmanager = { # Networkmanager for Wifi
         enable = true;
+    };
+
+    systemd.network = { # Systemd network for static configurations (ethernet)
+        enable = true;
+        wait-online.enable = false; # Stop conflicts between nm and systemdnetwork
     };
 
     # Users
