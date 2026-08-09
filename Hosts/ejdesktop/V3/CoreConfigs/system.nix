@@ -2,27 +2,27 @@
 
 {
     # core.system.security options
-    core.system.security.hardenSudo.enable = true;
-    core.system.security.hardenOpenSSH.enable = true;
-    core.system.security.hardenOpenSSH.harden = true;
-    core.system.security.hardenRoot.enable = true;
-    core.system.security.hardenFirewall.enable = true;
-    core.system.security.hardenServices.enable = true;
-    core.system.security.hardenServices.base = [ "sshd", "" ];
-    core.system.security.hardenServices.strict = [ ];
+    config.core.system.security.hardenSudo.enable = true;
+    config.core.system.security.hardenOpenSSH.enable = true;
+    config.core.system.security.hardenOpenSSH.harden = true;
+    config.core.system.security.hardenRoot.enable = true;
+    config.core.system.security.hardenFirewall.enable = true;
+    config.core.system.security.hardenServices.enable = true;
+    config.core.system.security.hardenServices.base = [ "sshd" ];
+    config.core.system.security.hardenServices.strict = [ ];
     
     # core.system.nix options
-    core.system.nix.allowUnfreeSoftware = true;
+    config.core.system.nix.allowUnfreeSoftware = true;
     
     # core.system.misc options
-    core.system.misc.wallpaper.filename = "rainworld12.png";
-    core.system.misc.gaming.enable = true;
+    config.core.system.misc.wallpaper.filename = "rainworld12.png";
+    config.core.system.misc.gaming.enable = true;
 
     # core.system.nixos options
-    core.system.nixos.printing.enable = true;
-    core.system.nixos.garbageCollection.enable = true;
-    core.system.nixos.garbageCollection.period = "daily";
-    core.system.nixos.osVersion = "26.05";
-    core.system.nixos.hostname = "ejdesktop";
+    config.core.system.nixos.printing.enable = true;
+    config.core.system.nixos.garbageCollection.enable = true;
+    config.core.system.nixos.garbageCollection.period = "daily";
+    config.core.system.nixos.osVersion = "26.05";
+    config.core.system.nixos.hostname = "ejdesktop";
 }
 

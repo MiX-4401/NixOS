@@ -26,13 +26,13 @@
         radeontop
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+    # boot.kernelPackages = pkgs.linuxPackages_zen;
 
     # Hibernation settings
-    core.mySystem.nixos.hibernation.enable = true;
-    core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/3b56c352-90da-455f-964d-3d43564682c6";  # Do not need this one anymore
-    core.system.nixos.hibernation.hibernateAfter = "10min";
-    desktop.packages.hypridle.enable = true;
-    desktop.packages.hypridle.lockAfter = 60;
-    desktop.packages.hypridle.sleepAfter = 600;
+    # config.core.mySystem.nixos.hibernation.enable = true;
+    # config.core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/3b56c352-90da-455f-964d-3d43564682c6";  # Do not need this one anymore
+    # config.core.system.nixos.hibernation.hibernateAfter = "10min";
+    # config.desktop.packages.hypridle.enable = true;
+    # config.desktop.packages.hypridle.lockAfter = 60;
+    # config.desktop.packages.hypridle.sleepAfter = 600;
 }
