@@ -31,7 +31,7 @@ in {
 
         services = lib.mkOption {
             type = lib.types.listOf lib.types.str;
-            default = [ "sshd" ];
+            default = [ ];
             description = "List of services to receive systemd hardening"; 
         };
     };
