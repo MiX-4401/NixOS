@@ -8,7 +8,7 @@
     config.core.system.security.hardenRoot.enable = true;
     config.core.system.security.hardenFirewall.enable = true;
     config.core.system.security.hardenServices.enable = true;
-    config.core.system.security.hardenServices.services = [ "sshd" ];
+    config.core.system.security.hardenServices.services = [ "sshd" "cups" "nscd" ];
     
     # core.system.nix options
     config.core.system.nix.allowUnfreeSoftware = true;

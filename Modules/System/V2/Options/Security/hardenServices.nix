@@ -2,15 +2,43 @@
 
 let 
     templateBaseline = {
+
+        # My configuration
         NoNewPrivileges         = true;
         PrivateTmp              = true;
         ProtectSystem           = "full"; 
         ProtectHome             = true;
         ProtectKernelTunables   = true;
         ProtectKernelModules    = true;
-        ProtectControlGroups    = true;
+        ProtectControlGroups    = "strict";
         RestrictSUIDSGID        = true;
 
+        # NixOS wiki suggestions (https://wiki.nixos.org/wiki/Systemd/Hardening?utm_source=chatgpt.com#Hardened_service_unit_example)
+        CapabilityBoundingSet = "";
+        SystemCallArchitectures = "native";
+        RestrictAddresFamilies = [
+            "AF_UNIX" # Unix sockets
+            "AF_INET" # ipv4
+            "AF_INET6" # ipv6
+        ];
+        SocketBindDeny = "any";
+        SystemCallErrorNumber = "EPERM";   
+        SystemCallFilter = [
+            "@system-service"
+        ];
+        ProtectProc = "invisible";
+        UMask = "0007";
+        SystemCallArchitectures = "native";
+        LockPersonality = true;
+        PrivateMounts = true;
+        PrivateDevices = true;
+        PrivateIPC = true;
+        PrivatePIDs = true;
+        PrivateUsers = true;
+        ProtectClock = true;
+        ProtectKernelLogs = true;
+        RestrictNamespaces = true;
+        MemoryDenyWriteExecute = true;
     };
 
     templateStrict = {
