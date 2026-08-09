@@ -29,21 +29,18 @@ in {
             description = "Enable custom systemd service hardening"; 
         };
 
-        base = lib.mkOption {
+        services = lib.mkOption {
             type = lib.types.listOf lib.types.str;
             default = [ "sshd" ];
-            description = "List of services to receive baseline systemd hardening"; 
-        };
-        
-        strict = lib.mkOption {
-            type = lib.types.listOf lib.types.str;
-            default = [ ];
-            description = "List of services to receive strict systemd hardening"; 
+            description = "List of services to receive systemd hardening"; 
         };
     };
 
-    # Hardening sudo settings
-    config = (
-        map (name: hardenService { inherit name; profile = templateBaseline; }) config.core.system.security.hardenServices.base 
-    );
+    config = lib.mkIf config.core.system.security.hardenServices.enable {
+        systemd.services = lib.genAttrs
+            config.core.system.security.hardenServices.services (_: {
+                serviceConfig = templateBaseline;
+            }
+        );
+    };
 }
