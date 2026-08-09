@@ -28,7 +28,6 @@ let
         ];
         ProtectProc = "invisible";
         UMask = "0007";
-        SystemCallArchitectures = "native";
         LockPersonality = true;
         PrivateMounts = true;
         PrivateDevices = true;

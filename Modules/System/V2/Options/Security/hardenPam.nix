@@ -2,14 +2,12 @@
 
 {
 
-    options = {
-        core.system.security.hardenPam = {
-            enable = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Enable PAM hardening";
-            }; 
-        };
+    options.core.system.security.hardenPam = {
+        enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Enable PAM hardening";
+        }; 
     };
     
     config = {
@@ -19,7 +17,7 @@
             # Lockdown sshd even further lol
             services.sshd = {
                 failDelay.enable = true;
-                failDely.delay = 4000000;
+                failDelay.delay = 4000000;
             }; 
 
             # Increase hashing rounds

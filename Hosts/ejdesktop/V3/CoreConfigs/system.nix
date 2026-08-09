@@ -8,7 +8,7 @@
     config.core.system.security.hardenRoot.enable = true;
     config.core.system.security.hardenFirewall.enable = true;
     config.core.system.security.hardenServices.enable = true;
-    config.core.system.security.hardenServices.services = [ "sshd" "cups" "nscd" ];
+    config.core.system.security.hardenServices.services = [ "sshd" "cups" ]; #"nscd" 
     config.core.system.security.hardenPam.enable = true;
     config.core.system.security.hardenNetwork.enable = true;
     config.core.system.security.hardenUSB.rules = ''
