@@ -13,6 +13,10 @@ core										# NixOS modules
 				bool enable
 				list allowedTCPPorts
 				list allowedUDPPorts
+			hardenServices
+				bool enable					# Harden systemd service units
+				list base					# Baseline - generally safe to insert services here and provides better copmatibiliy 
+				list strict					# Strict - generally unsafe to insert services here but provides stronger security
 		nix
 			int downloadBufferSize
 			bool allowUnfreeSoftware

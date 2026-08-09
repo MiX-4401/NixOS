@@ -13,6 +13,7 @@
                 protectProc = "invisable";
                 ProtectSystem = "strict";  
                 PrivateTmp = "disconnected";
+                PrivateProc = "invisable";
                 ProtectHome = true;
                 NoNewPrivileges= true;
             };
