@@ -1,7 +1,7 @@
 # disko-config.nix
 
 # Paritioning is setup as follows 
-# RAID0 (disk one + disk two) -> LUKs -> LVM -> vfat (/boot) and ext4 (/)
+# RAID0 (disk one + disk two) -> LUKs -> LVM -> swap () and ext4 (/)
 
 {
     # Physical disk one configs
