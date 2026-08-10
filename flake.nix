@@ -45,8 +45,10 @@
     in { 
         
         # Devopment shells
-        devShells.${system}.forensics = import ./Modules/Shells/Forensics/default.nix { inherit pkgs; };                # Forensics development shell
-        devShells.troubleshooting = import ./Modules/Shells/Troubleshooting/default.nix { inherit pkgs; };    # Troubleshooting shell
+        devShells.${system} = {
+            forensics = import ./Modules/Shells/Forensics/default.nix { inherit pkgs; };                # Forensics development shell
+            troubleshooting = import ./Modules/Shells/Troubleshooting/default.nix { inherit pkgs; };    # Troubleshooting shell
+        };
 
         # Hosts
         
