@@ -68,6 +68,9 @@
                 type = "luks";
                 name = "crypted";
                 settings.allowDiscards = true;
+                crypttabExtraOpts = [
+                    "fido2-device=auto"
+                ];
                 content = {
                     type = "lvm_pv";
                     vg = "myPool";
