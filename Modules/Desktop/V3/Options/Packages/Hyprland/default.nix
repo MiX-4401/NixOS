@@ -21,7 +21,7 @@
 
         desktop.packages.hyprland.monitors = lib.mkOption {
             type = lib.types.listOf lib.types.attrs;
-            default = [ { output = "auto"; mode = "auto"; position = "auto"; scale = 1.0; }];
+            default = [ { output = "auto"; mode = "preferred"; position = "auto"; scale = 1.0; }];
             description = "Monitor settings";
         };
 

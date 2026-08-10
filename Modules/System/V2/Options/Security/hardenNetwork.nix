@@ -9,7 +9,7 @@
         };
     };
 
-    config = {
+    config = lib.mkIf config.core.system.security.hardenNetwork.enable {
 
         # Harden systemd NetworkManager service
         systemd.services.NetworkManager = {
