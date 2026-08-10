@@ -23,13 +23,4 @@
 
         ]);
     };
-
-    # Enable YubiKey decryption for LUKs
-    boot.initrd = {
-        luks.devices.root = {
-            cryptabExtraOpts = [ "fido2-device=auto" ];
-            device = "";
-        };
-        systemd.enable = true;
-    };
 }

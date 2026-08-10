@@ -13,7 +13,7 @@
         ./hardware-configuration.nix                # Import of hardware configurations and mount points 
         ./OtherConfigs/disko-config.nix             # Import of disko disk partitioning
         ./OtherConfigs/powermanagement.nix          # Import of suspend and hibernation power modules
-        # ./OtherConfigs/yubikey.nix
+        ./OtherConfigs/yubikey.nix
     ];
 
     # Host specific software
