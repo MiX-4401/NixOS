@@ -22,4 +22,7 @@
     ];
     
     boot.kernelPackages = pkgs.linuxPackages_zen;
+
+    networking.wireless.enable = true;
+    networking.wireless.enableHardening = false;
 }
