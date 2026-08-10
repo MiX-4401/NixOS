@@ -7,7 +7,7 @@
     # Physical disk one configs
     disko.devices.disk.primary = {
         type = "disk";
-        # device = "/dev/vda";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_250GB_S465NX1KA60626K";
         content = {
             type = "gpt";
         
@@ -33,7 +33,7 @@
     # Physical disk two configs
     disko.devices.disk.secondary = {
         type = "disk";
-        # device = "/dev/vdb";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_250GB_S4EUNF0M952220Y";
         content = {
             type = "gpt";
         
@@ -66,7 +66,10 @@
             partitions.luks.size = "100%";
             partitions.luks.content = {
                 type = "luks";
-                name = "cryptroot";
+                name = "crypted";
+                settings.allowDiscards = true;
+                enrollFido2 = true;
+                enrollRecovery = false;
                 content = {
                     type = "lvm_pv";
                     vg = "myPool";
