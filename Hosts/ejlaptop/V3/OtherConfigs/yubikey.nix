@@ -23,7 +23,7 @@
     # };
 
     # Enable YubiKey decryption for LUKs
-    boot.initrd = {
+    boot.initrd = lib.mkForce {
         luks.devices.crypted = {
             crypttabExtraOpts = [ "fido2-device=auto" ];
             device = "/dev/md127p1";
