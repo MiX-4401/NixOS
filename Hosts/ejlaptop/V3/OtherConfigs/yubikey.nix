@@ -24,10 +24,11 @@
 
     # Enable YubiKey decryption for LUKs
     boot.initrd = {
-        # luks.devices.crypted = {
-        #     crypttabExtraOpts = [ "fido2-device=auto" ];
-        #     device = "/dev/md127p1";
-        # };
+        luks.devices.crypted = {
+            crypttabExtraOpts = [ "fido2-device=auto" ];
+            device = "/dev/md127p1";
+        };
         systemd.enable = true;
+        systemd.fido2.enable = true;
     };
 }
