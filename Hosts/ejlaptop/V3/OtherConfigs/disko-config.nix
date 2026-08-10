@@ -68,8 +68,6 @@
                 type = "luks";
                 name = "crypted";
                 settings.allowDiscards = true;
-                enrollFido2 = true;
-                enrollRecovery = false;
                 content = {
                     type = "lvm_pv";
                     vg = "myPool";

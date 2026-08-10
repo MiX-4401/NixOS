@@ -1,13 +1,11 @@
 { pkgs, lib, ... }:
 
 {
-    # Enable 2fa for PAM
     security.pam.services = {
         login.u2fAuth = true;
         sudo.u2fAuth = true;
     };
 
-    # Enable YubiKey module (u2f protocol)
     security.pam.u2f = {
         enable = true;
         control = "required";
@@ -22,14 +20,5 @@
             # ...
 
         ]);
-    };
-
-    # Enable YubiKey decryption for LUKs
-    boot.initrd = {
-        luks.devices.root = {
-            cryptabExtraOpts = [ "fido2-device=auto" ];
-            device = "";
-        };
-        systemd.enable = true;
     };
 }
