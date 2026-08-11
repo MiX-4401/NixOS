@@ -11,6 +11,15 @@
 
     config = lib.mkIf config.core.system.security.hardenNetwork.enable {
 
+        # Disable unused network kernel modules
+        boot.blacklistedKernelModules = [ 
+            "dccp"   # Datagram Congestion Control Protocol
+            "sctp"   # Stream Control Transmission Protocol
+            "rds"    # Reliable Datagram Sockets
+            "tipc"   # Transparent Inter-Process Communication
+        ];
+
+
         # Harden systemd NetworkManager service
         systemd.services.NetworkManager = {
             serviceConfig = {

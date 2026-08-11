@@ -55,6 +55,26 @@
         initialPassword = username;
     };
 
+    users.motd = ''
+        ╔══════════════════════════════════════════════════════════════╗
+        ║                 ⚠️  AUTHORIZED ACCESS ONLY  ⚠️               ║
+        ╠══════════════════════════════════════════════════════════════╣
+        ║                                                              ║
+        ║  This system is restricted to authorised users only.         ║
+        ║                                                              ║
+        ║  Unauthorised  access, use, modification, or interference    ║
+        ║  is strictly prohibited and may be monitored, logged, and    ║
+        ║  reported to the appropriate authorities.                    ║
+        ║                                                              ║
+        ║  If you are not explicitly authorised to access this system, ║
+        ║  disconnect immediately.                                     ║
+        ║                                                              ║
+        ║                 KEEP OUT. YOU HAVE BEEN WARNED.              ║
+        ║                                                              ║
+        ╚══════════════════════════════════════════════════════════════╝
+
+    '';
+
     # System fonts
     fonts.packages = with pkgs; [
         noto-fonts      # My favorite font pack <|:P

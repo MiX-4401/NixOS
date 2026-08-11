@@ -12,6 +12,12 @@
     
     config = {
         
+        # Increase hashing rounds
+        security.loginDefs.settings = {
+            ENCRYPT_METHOD = "YESCRYPT";
+            YESCRYPT_COST_FACTOR = "7"; # Options range from 5 to 11
+        };
+
         security.pam = {
 
             # Lockdown sshd even further lol
@@ -19,12 +25,6 @@
                 failDelay.enable = true;
                 failDelay.delay = 4000000;
             }; 
-
-            # Increase hashing rounds
-            security.loginDefs.settings = {
-                ENCRYPT_METHOD = "YESCRYPT";
-                YESCRYPT_COST_FACTOR = "7"; # Options range from 5 to 11
-            };
 
 
             # Log logins

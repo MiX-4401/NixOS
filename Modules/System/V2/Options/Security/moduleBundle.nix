@@ -11,5 +11,6 @@
         ./hardenServices.nix
         ./hardenPam.nix
         ./hardenUsb.nix
+        ./hardenAuditing.nix
     ];
 }
