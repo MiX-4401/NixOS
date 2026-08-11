@@ -39,10 +39,10 @@
         enable = true;
     };
 
-    # systemd.network = { # Systemd network for static configurations (ethernet)
-    #     enable = true;
-    #     wait-online.enable = false; # Stop conflicts between nm and systemdnetwork
-    # };
+    systemd.network = { # Systemd network for static configurations (ethernet)
+        enable = true;
+        wait-online.enable = false; # Stop conflicts between nm and systemdnetwork
+    };
 
     # Set umask
     security.loginDefs.settings.UMASK = "077";
