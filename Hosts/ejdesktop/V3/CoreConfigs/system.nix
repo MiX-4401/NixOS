@@ -10,7 +10,7 @@
     # config.core.system.security.hardenServices.enable = false;
     # config.core.system.security.hardenServices.services = [ "sshd" "cups" ]; #"nscd" 
     config.core.system.security.hardenPam.enable = true;
-    config.core.system.security.hardenNetwork.enable = true;
+    config.core.system.security.hardenNetwork.enable = false;
     config.core.system.security.hardenUSB.enable = true;
     config.core.system.security.hardenUSB.rules = ''
         allow id 1d6b:0002 serial "0000:03:00.0" name "xHCI Host Controller" hash "Lw/Cdah32MiEGYi1D+rX5Vcs8544WKd6bqSOuVKqKn4=" parent-hash "w3c++Hva/cvMNTcx3y72UlxkR0WUPCWne2mlaosYanw=" with-interface 09:00:00 with-connect-type ""
