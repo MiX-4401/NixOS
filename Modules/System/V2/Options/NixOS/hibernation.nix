@@ -28,8 +28,8 @@
         powerManagement.enable = true;
 
         # Hibernate device to resume from 
-        # swapDevices = [{ device = config.core.system.nixos.hibernation.hibernateDevice; }]; 
-        # boot.resumeDevice = config.core.system.nixos.hibernation.hibernateDevice;
+        swapDevices = [{ device = config.core.system.nixos.hibernation.hibernateDevice; }]; 
+        boot.resumeDevice = config.core.system.nixos.hibernation.hibernateDevice;
 
         # Basic sleep & hibernation settings
         systemd.sleep.settings.Sleep = {
