@@ -44,6 +44,9 @@
     #     wait-online.enable = false; # Stop conflicts between nm and systemdnetwork
     # };
 
+    # Set umask
+    security.loginDefs.settings.UMASK = "077";
+
     # Users
     users.users.${username} = {
         isNormalUser = true;

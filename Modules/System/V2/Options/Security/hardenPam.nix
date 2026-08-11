@@ -21,7 +21,11 @@
             }; 
 
             # Increase hashing rounds
-            services.passwd.rules.password."unix".settings.rounds = 500000;
+            security.loginDefs.settings = {
+                ENCRYPT_METHOD = "YESCRYPT";
+                YESCRYPT_COST_FACTOR = "7"; # Options range from 5 to 11
+            };
+
 
             # Log logins
             services.sshd.logFailures = true;

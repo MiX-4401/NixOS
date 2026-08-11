@@ -7,8 +7,8 @@
     config.core.system.security.hardenOpenSSH.harden = true;
     config.core.system.security.hardenRoot.enable = true;
     config.core.system.security.hardenFirewall.enable = true;
-    # config.core.system.security.hardenServices.enable = false;
-    # config.core.system.security.hardenServices.services = [ "sshd" "cups" ]; #"nscd" 
+    config.core.system.security.hardenServices.enable = false;
+    config.core.system.security.hardenServices.services = [ "cups" ]; # "nscd" "sshd" 
     config.core.system.security.hardenPam.enable = true;
     config.core.system.security.hardenNetwork.enable = false;
     config.core.system.security.hardenUSB.enable = true;
