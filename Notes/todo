@@ -34,3 +34,6 @@ PrivateTmp= either true or "disconnected"
 ProtectHome= either true or "read-only" or "tmpfs"
 NoNewPrivileges= true
 NoNewPrivileges= 
+
+https://github.com/NixOS/nixpkgs/blob/8aa75139ccb0137fe157d353bb9fc56ac18f3aba/nixos/modules/profiles/hardened.nix
+https://github.com/rti/nixwrap

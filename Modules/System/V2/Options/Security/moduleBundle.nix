@@ -12,5 +12,6 @@
         ./hardenPam.nix
         ./hardenUsb.nix
         ./hardenAuditing.nix
+        ./hardenSandboxing.nix
     ];
 }

@@ -16,12 +16,20 @@
         security.apparmor = {
             enable = true;
 
-            policies.ping = {
+            policies.htop = {
                 state = "complain";
-                profile  = ''
-                    profile ping ${lib.getExe pkgs.ping} {
-                        deny capability net_raw,
-                    }
+                profile = '' 
+                    abi <abi/4.0>, 
+                    include <tunables/global> 
+                    profile ping-no-raw ${lib.getExe' pkgs.iputils "ping"} { 
+                        include <abstractions/base> 
+                        
+                        # Allow ping to execute normally... 
+                        ${lib.getExe' pkgs.iputils "ping"} rix, 
+                        
+                        # ...but don't allow it to use CAP_NET_RAW. 
+                        deny capability net_raw, 
+                    } 
                 '';
             };
         };

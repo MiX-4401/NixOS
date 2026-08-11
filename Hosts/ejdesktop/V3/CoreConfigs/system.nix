@@ -24,6 +24,7 @@
         allow id 046d:c33f serial "1790324E3836" name "G815 RGB MECHANICAL GAMING KEYBOARD" hash "If8l/LLBn1sUt6qJij3dIL6dv5oeKv+ZryPQtZbDtjA=" parent-hash "Lw/Cdah32MiEGYi1D+rX5Vcs8544WKd6bqSOuVKqKn4=" with-interface { 03:01:01 03:00:00 } with-connect-type "hotplug"
     '';
     config.core.system.security.hardenAuditing.enable = true;
+    config.core.system.security.hardenSandboxing.enable = true;
     
     # core.system.nix options
     config.core.system.nix.allowUnfreeSoftware = true;
