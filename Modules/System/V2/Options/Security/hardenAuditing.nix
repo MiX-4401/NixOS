@@ -21,7 +21,7 @@
         services.journald.audit = true;
         security.auditd.enable = true;
         security.audit = {
-            enable = "lock";
+            enable = true;
             rules = [
 
                 # Log changes to important files
