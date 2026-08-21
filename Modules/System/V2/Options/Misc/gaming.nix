@@ -11,6 +11,8 @@
 
     config = lib.mkIf (config.core.system.misc.gaming.enable) {
         programs.steam.enable = true;
+        programs.steam.localNetworkGameTransfers.openFirewall = true;
+        programs.steam.remotePlay.openFirewall = true;
         programs.steam.gamescopeSession.enable = true;
 
         programs.gamescope.enable = true;

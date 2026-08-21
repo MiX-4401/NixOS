@@ -1,6 +1,5 @@
 TODO: Diskos disk partitioning w/ LUKs encryption
 TODO: Git hardening
-TODO: Automatic backups possible with borg
 TODO: Master key USB
  > Bootloader
  > LUKs decryption key
