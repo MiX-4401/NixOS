@@ -13,6 +13,7 @@
             prismlauncher
             wineWow64Packages.full
             winetricks
+            bottles
         ];
     };
 }

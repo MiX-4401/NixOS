@@ -16,21 +16,19 @@
         security.apparmor = {
             enable = true;
 
-            policies.htop = {
-                state = "complain";
-                profile = '' 
-                    abi <abi/4.0>, 
-                    include <tunables/global> 
-                    profile ping-no-raw ${lib.getExe' pkgs.iputils "ping"} { 
-                        include <abstractions/base> 
-                        
-                        # Allow ping to execute normally... 
-                        ${lib.getExe' pkgs.iputils "ping"} rix, 
-                        
-                        # ...but don't allow it to use CAP_NET_RAW. 
-                        deny capability net_raw, 
-                    } 
-                '';
+            policies = {
+                
+                # baseProfile.state = "enforce";
+                # baseProfile.profile = ''
+                #     abi <abi/4.0>,
+                #     include <tunable/global>
+                #     profile baseProfile ${lib.getExe pkgs.zen-browser} {
+                #         include <abstractions/base>
+
+                #         # Profile contents here
+                #         flags=(unconfirmed)
+                #     }
+                # '';
             };
         };
 
