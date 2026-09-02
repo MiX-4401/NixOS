@@ -31,12 +31,17 @@
         # };
 
         # Additional software
+
+        # Browser Zen
         zen-browser.url = "github:youwen5/zen-browser-flake";
         zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    
+        # Mediplayer PsySonic
+        psysonic-mediaplayer.url = "github:Psysonic/psysonic";
+        psysonic-mediaplayer.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: 
-    # outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
+    outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }:
     let
         # Import my custom lib functions
         system = "x86_64-linux";

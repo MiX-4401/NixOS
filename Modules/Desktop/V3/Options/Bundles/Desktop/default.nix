@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 {
     options.desktop.bundles.desktop.enable = lib.mkOption {
@@ -16,6 +16,7 @@
             gnome-calendar
             showtime
             vlc
+            inputs.psysonic-mediaplayer.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
     };
 }

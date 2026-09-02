@@ -11,7 +11,7 @@
     
     # Hypridle
     config.desktop.packages.hypridle.enable = true;
-    config.desktop.packages.hypridle.lockAfter = 60; # Lock after 60 seconds
+    config.desktop.packages.hypridle.lockAfter = 120; # Lock after 60 seconds
     config.desktop.packages.hypridle.sleepAfter = 600; # Sleep after 10 minutes
     
     # Sleep/hibernate
