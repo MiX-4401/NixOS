@@ -43,6 +43,7 @@
             
             # User TUI applications
             yazi
+            superfile
             btop
 
             # User CLI applications

@@ -30,7 +30,7 @@
     config.core.system.nix.allowUnfreeSoftware = true;
     
     # core.system.misc options
-    config.core.system.misc.wallpaper.filename = "rainworld03.jpg";
+    config.core.system.misc.wallpaper.filename = "spaceking06.jpg";
     config.core.system.misc.gaming.enable = true;
 
     # core.system.nixos options
