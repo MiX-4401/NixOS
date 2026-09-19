@@ -37,7 +37,10 @@ core										# NixOS modules
 				str hibernateAfter
 			printing
 				bool enable
-				# list of strings drivers
+				bool allowAutoDiscovery
+				list drivers
+				list printers				# [ {} ] for hardware.printers.ensurePrinters
+				
 		misc
 			gaming
 				bool enable

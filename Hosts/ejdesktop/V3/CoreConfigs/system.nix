@@ -35,10 +35,24 @@
 
     # core.system.nixos options
     config.core.system.nixos.printing.enable = true;
-    config.core.systems.nixos.printing.drivers = [pkgs.mfcl3770cdwlpr];
+    config.core.system.nixos.printing.allowAutoDiscovery = false;
+    config.core.system.nixos.printing.drivers = [];
+    config.core.system.nixos.printing.printers = [
+        {
+            name = "Brother-Printer";
+            location = "Home";
+            deviceUri = "ipp://192.168.5.126/ipp/print";
+            model = "everywhere";
+            ppdOptions = {
+                PageSize = "A4";
+            };
+        }
+    ];
 
     config.core.system.nixos.garbageCollection.enable = true;
     config.core.system.nixos.garbageCollection.period = "daily";
     config.core.system.nixos.osVersion = "26.05";
     config.core.system.nixos.hostname = "ejdesktop";
 }
+# MFC-L3770CDW
+#  pkgs.brlaser
