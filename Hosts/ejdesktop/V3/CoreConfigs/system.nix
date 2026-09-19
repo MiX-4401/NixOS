@@ -38,7 +38,7 @@
     config.core.system.nixos.printing.allowAutoDiscovery = false;
     config.core.system.nixos.printing.drivers = [];
     config.core.system.nixos.printing.printers = [
-        {
+        {   # MFC-L3770CDW
             name = "Brother-Printer";
             location = "Home";
             deviceUri = "ipp://192.168.5.126/ipp/print";
@@ -54,5 +54,3 @@
     config.core.system.nixos.osVersion = "26.05";
     config.core.system.nixos.hostname = "ejdesktop";
 }
-# MFC-L3770CDW
-#  pkgs.brlaser
