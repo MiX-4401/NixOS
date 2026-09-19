@@ -37,6 +37,7 @@ core										# NixOS modules
 				str hibernateAfter
 			printing
 				bool enable
+				# list of strings drivers
 		misc
 			gaming
 				bool enable

@@ -22,9 +22,10 @@
     ############################
     environment.systemPackages = with pkgs; [
         microcode-amd
+        (btop.override { rocmSupport = true; })
         rocmPackages.rocm-smi
+        amdgpu_top
         mdadm
-        radeontop
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;

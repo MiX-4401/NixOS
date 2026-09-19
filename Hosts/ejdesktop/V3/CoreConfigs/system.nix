@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 {
     # core.system.security options
@@ -35,9 +35,10 @@
 
     # core.system.nixos options
     config.core.system.nixos.printing.enable = true;
+    config.core.systems.nixos.printing.drivers = [pkgs.mfcl3770cdwlpr];
+
     config.core.system.nixos.garbageCollection.enable = true;
     config.core.system.nixos.garbageCollection.period = "daily";
     config.core.system.nixos.osVersion = "26.05";
     config.core.system.nixos.hostname = "ejdesktop";
 }
-
