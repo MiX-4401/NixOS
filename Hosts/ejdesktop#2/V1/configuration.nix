@@ -14,7 +14,7 @@
         ./OtherConfigs/virtualisation.nix           # Import of custom virtualisation configurations    
         ./OtherConfigs/yubikey.nix                  # Import of YubiKey settings
         ./OtherConfigs/hibernation.nix              # Import of hibernation settings
-        # ./OtherConfigs/disko-config.nix              # Import of Disko configs
+        # ./OtherConfigs/disko-config.nix             # Import of Disko configs
     ];
 
     ############################
@@ -26,7 +26,7 @@
         rocmPackages.rocm-smi
         amdgpu_top
         mdadm
-        bambu-studio
+        # bambu-studio
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;

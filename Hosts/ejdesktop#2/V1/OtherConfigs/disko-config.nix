@@ -3,7 +3,7 @@
 {
     disko.devices.disk.primary = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_M.2_250GB_S413NB0K515812B";    
+        device = "/dev/disk/by-id/";    # need to fill out    
         content = {
             type = "gpt";
 
