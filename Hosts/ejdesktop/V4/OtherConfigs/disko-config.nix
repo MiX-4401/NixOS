@@ -3,7 +3,7 @@
 {
     disko.devices.disk.primary = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_M.2_250GB_S413NB0K515812B";    
+        device = "/dev/disk/by-id/nvme-SAMSUNG_MZVL2512HCJQ-00BH1_S63ZNE0R300787";    
         content = {
             type = "gpt";
 
@@ -17,6 +17,14 @@
                 mountOptions = [ "umask=0077" ];
             };
 
+            # Swap partition
+            partitions.swap.size = "20GB";
+            partitions.content = {
+                type = "swap";
+                discardPolicy = "both";
+                resumeDevice = true;
+            };
+            
             # Root partition (/)
             partitions.root.size = "100%";
             partitions.root.content = {

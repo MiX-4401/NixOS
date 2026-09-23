@@ -29,7 +29,8 @@
         allow id 046d:c33f serial "1790324E3836" name "G815 RGB MECHANICAL GAMING KEYBOARD" hash "If8l/LLBn1sUt6qJij3dIL6dv5oeKv+ZryPQtZbDtjA=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" with-interface { 03:01:01 03:00:00 } with-connect-type "unknown"
         allow id 1050:0407 serial "" name "YubiKey OTP+FIDO+CCID" hash "2msOvGX5iCToX2LqCqPIO9H6KxlnnkuQgfKCOZkGzNg=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" via-port "1-5.2" with-interface { 03:01:01 03:00:00 0b:00:00 } with-connect-type "unknown"
         allow id 046d:c07e serial "498B587A3235" name "Gaming Mouse G402" hash "ln34xeondrI8S0qN28OKu5qIXN7t98Q2oKPvV8+oFXQ=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" with-interface { 03:01:02 03:00:00 } with-connect-type "unknown"
-    '';
+        allow id 03f0:03c0 serial "0123456789" name "HyperX Cloud Jet" hash "ffvGlNc4UFQTYOznlcheHYwyFxaHnGFSlUQomtLGax4=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" with-interface { 01:01:00 01:02:00 01:02:00 01:02:00 01:02:00 03:00:00 } with-connect-type "unknown"
+'';
     config.core.system.security.hardenAuditing.enable = true;
     config.core.system.security.hardenSandboxing.enable = true;
     

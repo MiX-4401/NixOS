@@ -12,7 +12,7 @@
         ./CoreConfigs/system.nix                    # Import of settings defining ../../Modules/System/[version]
         ./CoreConfigs/desktop.nix                   # Import of settings defining ../../Modules/Desktop/[version]
         #./OtherConfigs/virtualisation.nix           # Import of custom virtualisation configurations    
-        ./OtherConfigs/yubikey.nix                  # Import of YubiKey settings
+        #./OtherConfigs/yubikey.nix                  # Import of YubiKey settings
         #./OtherConfigs/hibernation.nix              # Import of hibernation settings
         #./OtherConfigs/disko-config.nix              # Import of Disko configs
     ];
