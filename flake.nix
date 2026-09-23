@@ -62,7 +62,7 @@
             hostname = "ejdesktop";
             username = "ejradford";
             system = system;
-            modules = [ ./Hosts/ejdesktop/V3/configuration.nix ];
+            modules = [ ./Hosts/ejdesktop/V4/configuration.nix ];
             specialArgs = { };
         };
 

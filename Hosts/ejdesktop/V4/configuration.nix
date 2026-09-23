@@ -11,10 +11,10 @@
         # Host imports
         ./CoreConfigs/system.nix                    # Import of settings defining ../../Modules/System/[version]
         ./CoreConfigs/desktop.nix                   # Import of settings defining ../../Modules/Desktop/[version]
-        ./OtherConfigs/virtualisation.nix           # Import of custom virtualisation configurations    
+        #./OtherConfigs/virtualisation.nix           # Import of custom virtualisation configurations    
         ./OtherConfigs/yubikey.nix                  # Import of YubiKey settings
-        ./OtherConfigs/hibernation.nix              # Import of hibernation settings
-        # ./OtherConfigs/disko-config.nix             # Import of Disko configs
+        #./OtherConfigs/hibernation.nix              # Import of hibernation settings
+        #./OtherConfigs/disko-config.nix              # Import of Disko configs
     ];
 
     ############################
@@ -22,11 +22,7 @@
     ############################
     environment.systemPackages = with pkgs; [
         microcode-amd
-        (btop.override { rocmSupport = true; })
-        rocmPackages.rocm-smi
-        amdgpu_top
         mdadm
-        # bambu-studio
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
