@@ -10,10 +10,12 @@
     config = lib.mkIf config.desktop.bundles.gaming.enable {
         home.packages = with pkgs; [
             heroic
-            prismlauncher
+            modrinth-app
             wineWow64Packages.full
             winetricks
             bottles
         ];
+
+        programs.nix-ld.enable = true; # Support for Modrinth-App for Minecraft
     };
 }
