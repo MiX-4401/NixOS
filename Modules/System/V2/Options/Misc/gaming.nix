@@ -22,5 +22,7 @@
         hardware.graphics.enable32Bit = true;
     
         # programs.gamemode.enable = true;
+
+        programs.nix-ld.enable = true; # Support for Modrinth-App for Minecraft
     };
 }

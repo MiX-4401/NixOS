@@ -15,7 +15,5 @@
             winetricks
             bottles
         ];
-
-        programs.nix-ld.enable = true; # Support for Modrinth-App for Minecraft
     };
 }
