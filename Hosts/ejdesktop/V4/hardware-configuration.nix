@@ -25,13 +25,13 @@
   fileSystems."/media/DA" =
     { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
       fsType = "ext4";
-      options = [ "defaults" ];
+      options = [ "rw" "users" "nofail" "exec" ];
     };
 
   fileSystems."/media/GA" =
     { device = "/dev/mapper/raid5Storage-GA";
       fsType = "ext4";
-      options = [ "defaults" ];
+      options = [ "rw" "users" "nofail" "exec" ];
     };
 
   swapDevices =
