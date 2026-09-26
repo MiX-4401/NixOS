@@ -30,6 +30,8 @@
         allow id 1050:0407 serial "" name "YubiKey OTP+FIDO+CCID" hash "2msOvGX5iCToX2LqCqPIO9H6KxlnnkuQgfKCOZkGzNg=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" via-port "1-5.2" with-interface { 03:01:01 03:00:00 0b:00:00 } with-connect-type "unknown"
         allow id 046d:c07e serial "498B587A3235" name "Gaming Mouse G402" hash "ln34xeondrI8S0qN28OKu5qIXN7t98Q2oKPvV8+oFXQ=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" with-interface { 03:01:02 03:00:00 } with-connect-type "unknown"
         allow id 03f0:03c0 serial "0123456789" name "HyperX Cloud Jet" hash "ffvGlNc4UFQTYOznlcheHYwyFxaHnGFSlUQomtLGax4=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" with-interface { 01:01:00 01:02:00 01:02:00 01:02:00 01:02:00 03:00:00 } with-connect-type "unknown"
+        # allow id 1058:0820 serial "575843314133345637333433" name "My Passport 0820" hash "ckIv2o7JFWA+mwFjixI46Mj+VVxGQ889Egj2kcYrXCY=" parent-hash "KjQfwiBztB653vlSzixD+8+ZDLVjfb2zJGoFc1XKUaU=" with-interface 08:06:50 with-connect-type "unknown"
+
     '';
     config.core.system.security.hardenAuditing.enable = true;
     config.core.system.security.hardenSandboxing.enable = true;
@@ -38,7 +40,7 @@
     config.core.system.nix.allowUnfreeSoftware = true;
     
     # core.system.misc options
-    config.core.system.misc.wallpaper.filename = "spaceking10.png";
+    config.core.system.misc.wallpaper.filename = "spaceking04.jpg";
     config.core.system.misc.gaming.enable = true;
 
     # core.system.nixos options
