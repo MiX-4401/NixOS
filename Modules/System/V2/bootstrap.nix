@@ -13,6 +13,8 @@
     # NixOS
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
+
     # Umask
     environment.extraInit = "umask 0077";
 

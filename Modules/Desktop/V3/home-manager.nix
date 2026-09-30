@@ -23,7 +23,7 @@
         imports = [
             ./Options/moduleBundle.nix
         ]; 
-
+        
         # Forced applications
         home.packages = with pkgs; [
             

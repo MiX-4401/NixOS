@@ -23,6 +23,7 @@
     environment.systemPackages = with pkgs; [
         microcode-amd
         mdadm
+        jdk17
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
