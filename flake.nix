@@ -4,6 +4,8 @@
     # 
     inputs = {
 
+        # System software #
+
         # NixOS nixpkgs contains: Software packages, helper libraries
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -17,28 +19,21 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
         # Stylix contains: Software package, helper libraries
-        # stylix.url = "github:nix-community/stylix/release-24.11";
         stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-        # Verion pinned Hyprland for beautiful desktop environmnet 
-        # hyprland = {
-        #     type = "git";
-        #     url = "https://github.com/hyprwm/Hyprland";
-        #     rev = "0002f148c9a4fe421a9d33c0faa5528cdc411e62";
-        #     # submodules = true;
-        #     inputs.nixpkgs.follows = "nixpkgs";
-        # };
-
-        # Additional software
+        # Additional software #
 
         # Browser Zen
         zen-browser.url = "github:youwen5/zen-browser-flake";
         zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     
         # Mediplayer PsySonic
-        psysonic-mediaplayer.url = "github:Psysonic/psysonic";
-        psysonic-mediaplayer.inputs.nixpkgs.follows = "nixpkgs";
+        psysonic-mediaplayer = {
+            url = "https://github.com/Psysonic/psysonic";
+            rev = "d42c426e69b669bd597f953b36869c41be93ba08";
+            inputs.nixpkgs.follows = true;
+        };
     };
 
     outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }:

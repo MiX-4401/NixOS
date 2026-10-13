@@ -24,6 +24,7 @@
         microcode-amd
         mdadm
         jdk17
+        libXrender
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
