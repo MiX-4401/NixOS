@@ -243,17 +243,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1791560079,
-        "narHash": "sha256-LxsjupD2U1dZcfO47L4f2DCPzxMzhttQpjMeskcL2Ec=",
-        "owner": "Psysonic",
-        "repo": "psysonic",
-        "rev": "d75973c714d508eb9e3aad6e1c61886118ac5b54",
-        "type": "github"
+        "lastModified": 1789336497,
+        "narHash": "sha256-WQ8vWkPOOLgb9Iiftjry3s9Gc2oIasmT17zt/emmAuo=",
+        "ref": "refs/heads/main",
+        "rev": "d42c426e69b669bd597f953b36869c41be93ba08",
+        "revCount": 1927,
+        "type": "git",
+        "url": "https://github.com/Psysonic/psysonic"
       },
       "original": {
-        "owner": "Psysonic",
-        "repo": "psysonic",
-        "type": "github"
+        "rev": "d42c426e69b669bd597f953b36869c41be93ba08",
+        "type": "git",
+        "url": "https://github.com/Psysonic/psysonic"
       }
     },
     "root": {

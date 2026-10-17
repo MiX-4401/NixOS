@@ -14,11 +14,11 @@
         disko.url = "github:nix-community/disko";
         disko.inputs.nixpkgs.follows = "nixpkgs";
 
-        # Home manager contains: Software package, helper libraries
+        # Home manager contains: Software helper libraries for ~/.config and ~/ management
         home-manager.url = "github:nix-community/home-manager/release-26.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        # Stylix contains: Software package, helper libraries
+        # Stylix contains: Software herlper libraries for system/application appearence management 
         stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -30,9 +30,10 @@
     
         # Mediplayer PsySonic
         psysonic-mediaplayer = {
+            type = "git";
             url = "https://github.com/Psysonic/psysonic";
             rev = "d42c426e69b669bd597f953b36869c41be93ba08";
-            inputs.nixpkgs.follows = true;
+            inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
@@ -70,7 +71,7 @@
             specialArgs = { };
         };
 
-        # My general use, office laptop
+        # My experiemental virtual machine
         nixosConfigurations.ejvm = myLib.mkHost {    # Uses my custom mkHost function to take care of boilerplate
             hostname = "ejvm";
             username = "ejradford";
