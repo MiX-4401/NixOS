@@ -2,7 +2,7 @@
 
 {
 
-    options.core.system.misc.gaming = {
+    options.core.system.misc.virtualisation = {
         enable = lib.mkOption {
             type = lib.types.bool;
             default = false;
@@ -16,7 +16,7 @@
         };
     };
 
-    config = lib.mkIf config.core.system.misc.gaming.enable {
+    config = lib.mkIf config.core.system.misc.virtualisation.enable {
         
         # Ensure correct user permissions are set
         users.groups.libvirtd.members = [ username ];
@@ -30,6 +30,7 @@
             qemu = {
                 runAsRoot = true;
                 swtpm.enable = true;
+            };
         };
 
         virtualisation.spiceUSBRedirection = {     # USB passthrough
@@ -38,7 +39,7 @@
 
         # Set custom boot parametres for additional support
         # Enables GPU passthrough support for AMD cards
-        boot = lib.mkIf config.core.system.misc.gaming.enableGPUPassthroughSupport {                        
+        boot = lib.mkIf config.core.system.misc.virtualisation.enableGPUPassthroughSupport {                        
             kernelParams = [
                 "amd_iommu=on"
                 "iommu=pt"
