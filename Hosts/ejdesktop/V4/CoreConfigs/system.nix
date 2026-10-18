@@ -59,6 +59,8 @@
     config.core.system.misc.wallpaper.filename = "spaceking05.png";
     config.core.system.misc.gaming.enable = true;
 
+    config.core.system.misc.virtualisation.enable = true;
+
     # core.system.nixos options
     config.core.system.nixos.printing.enable = true;
     config.core.system.nixos.printing.allowAutoDiscovery = false;

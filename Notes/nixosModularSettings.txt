@@ -46,6 +46,9 @@ core										# NixOS modules
 				bool enable
 			wallpaper
 				str filename
+			virtualisation
+				bool enable
+				bool enableGPUPassthroughSupport	# Enable GPU passthrough drivers at boot
 
 	shells
 		forensics
