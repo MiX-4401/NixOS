@@ -22,17 +22,23 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  # fileSystems."/media/DA" =
-  #   { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
-  #     fsType = "ext4";
-  #     options = [ "rw" "users" "nofail" "exec" ];
-  #   };
+  fileSystems."/media/GA" =
+    { device = "/dev/mapper/root-origin";
+      fsType = "btrfs";
+      options = [ "subvol=GA" "defaults" "nofail" ];
+    };
 
-  # fileSystems."/media/GA" =
-  #   { device = "/dev/mapper/raid5Storage-GA";
-  #     fsType = "ext4";
-  #     options = [ "rw" "users" "nofail" "exec" ];
-  #   };
+  fileSystems."/media/OT" =
+    { device = "/dev/mapper/root-origin";
+      fsType = "btrfs";
+      options = [ "subvol=OT" "defaults" "nofail" ];
+    };
+
+  fileSystems."/media/BU" =
+    { device = "/dev/mapper/root-origin";
+      fsType = "btrfs";
+      options = [ "subvol=BU" "defaults" "nofail" ];
+    };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/81e9d1db-bebb-46d7-a324-b2d05717ab6b"; }
