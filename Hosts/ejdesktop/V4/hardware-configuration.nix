@@ -6,7 +6,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" "dm-cache" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.swraid.enable = true;
@@ -22,17 +22,17 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/media/DA" =
-    { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
-      fsType = "ext4";
-      options = [ "rw" "users" "nofail" "exec" ];
-    };
+  # fileSystems."/media/DA" =
+  #   { device = "/dev/disk/by-uuid/8c7f09a1-968c-4a11-965d-67bb9abda72d";
+  #     fsType = "ext4";
+  #     options = [ "rw" "users" "nofail" "exec" ];
+  #   };
 
-  fileSystems."/media/GA" =
-    { device = "/dev/mapper/raid5Storage-GA";
-      fsType = "ext4";
-      options = [ "rw" "users" "nofail" "exec" ];
-    };
+  # fileSystems."/media/GA" =
+  #   { device = "/dev/mapper/raid5Storage-GA";
+  #     fsType = "ext4";
+  #     options = [ "rw" "users" "nofail" "exec" ];
+  #   };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/81e9d1db-bebb-46d7-a324-b2d05717ab6b"; }

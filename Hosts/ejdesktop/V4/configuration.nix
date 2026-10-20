@@ -25,6 +25,7 @@
         mdadm
         jdk17
         libXrender
+        btrfs-progs
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
