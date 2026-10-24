@@ -22,7 +22,7 @@
     config.core.system.nix.allowUnfreeSoftware = true;
     
     # core.system.misc options
-    config.core.system.misc.wallpaper.filename = "spaceking05.png";
+    config.core.system.misc.wallpaper.filename = "spaceking11.png";
     config.core.system.misc.gaming.enable = true;
 
     config.core.system.misc.virtualisation.enable = true;
