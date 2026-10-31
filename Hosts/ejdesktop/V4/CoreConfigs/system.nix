@@ -6,7 +6,7 @@
     config.core.system.security.hardenOpenSSH.enable = false;
     config.core.system.security.hardenOpenSSH.harden = true;
     config.core.system.security.hardenRoot.enable = true;
-    config.core.system.security.hardenFirewall.enable = true;
+    config.core.system.security.hardenFirewall.enable = false;
     config.core.system.security.hardenServices.enable = false;
     config.core.system.security.hardenServices.services = [ "cups" ]; # "nscd" "sshd" 
     config.core.system.security.hardenPam.enable = true;
@@ -22,8 +22,7 @@
     config.core.system.nix.allowUnfreeSoftware = true;
     
     # core.system.misc options
-    config.core.system.misc.wallpaper.filename = "spaceking11.png
-    ";
+    config.core.system.misc.wallpaper.filename = "spaceking11.png";
     config.core.system.misc.gaming.enable = true;
 
     config.core.system.misc.virtualisation.enable = true;

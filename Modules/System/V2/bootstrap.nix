@@ -90,6 +90,9 @@
         brightnessctl   # Screen brightness controls 
         dosfstools      # DOS file system libraries
         ntfs3g          # DOS file system libraries
+        zip             # .zip tools
+        zstd            # .zstd tools
+        gnutar          # .tar tools
     ];
 
     programs = {

@@ -10,6 +10,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.swraid.enable = true;
+  boot.supportedFilesystems = [ "nfs" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ee835a3b-8595-457e-8e8d-3dc52e317c7c";
@@ -39,6 +40,12 @@
       fsType = "btrfs";
       options = [ "subvol=BU" "defaults" "nofail" ];
     };
+
+  fileSystems."/media/test" = 
+  { device = "192.168.5.108:/homes";
+    fsType = "nfs4";
+    options = [ "defaults" "nofail" ];
+  };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/81e9d1db-bebb-46d7-a324-b2d05717ab6b"; }
