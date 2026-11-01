@@ -18,6 +18,7 @@ core										# NixOS modules
 				list services				# Baseline - generally safe to insert services here and provides better copmatibiliy 
 			hardenNetwork
 				bool enable
+				bool rotateEthernetMacAddress	# Enable rotating mac addresses for the eth interface
 			hardenPam
 				bool enable
 			hardenUSB

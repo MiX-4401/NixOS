@@ -5,7 +5,13 @@
         enable = lib.mkOption {
             type = lib.types.bool;
             default = false;
-            description = "Enable OpenSSH without hardening";
+            description = "Enable hardening of the network protocol";
+        };
+
+        rotateEthernetMacAddress = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Enable rotation of ethernet mac address";
         };
     };
 
@@ -39,7 +45,7 @@
 
             
             # Randomise MAC address
-            ethernet.macAddress = "random";
+            ethernet.macAddress = if config.core.system.security.hardenNetwork.rotateEthernetMacAddress then "random" else "preserve"; 
             wifi.macAddress = "random";
 
             # Logging

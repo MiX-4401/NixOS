@@ -16,6 +16,6 @@
     
     # Sleep/hibernate
     config.core.system.nixos.hibernation.enable = true;
-    config.core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/3b56c352-90da-455f-964d-3d43564682c6";  # Do not need this one anymore
+    config.core.system.nixos.hibernation.hibernateDevice = "/dev/disk/by-uuid/81e9d1db-bebb-46d7-a324-b2d05717ab6b";  # Do not need this one anymore
     config.core.system.nixos.hibernation.hibernateAfter = "10min"; # Hibernate after 10 minutes
 }
