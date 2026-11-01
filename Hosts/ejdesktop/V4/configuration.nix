@@ -15,6 +15,7 @@
         #./OtherConfigs/yubikey.nix                  # Import of YubiKey settings
         #./OtherConfigs/hibernation.nix              # Import of hibernation settings
         #./OtherConfigs/disko-config.nix              # Import of Disko configs
+        ./OtherConfigs/networking.nix               # Import of my custom networking settings
     ];
 
     ############################
