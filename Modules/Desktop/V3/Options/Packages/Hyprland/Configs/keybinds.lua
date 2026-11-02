@@ -1,6 +1,7 @@
 -- Primary programs
 hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("kitty yazi"))
+hl.bind("SUPER + C", hl.dsp.exec_cmd("kitty systemd-manager-tui"))
 hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("kitty superfile"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("zen")) -- changed from V to avoid conflict
 hl.bind("SUPER + A", hl.dsp.exec_cmd("walker"))

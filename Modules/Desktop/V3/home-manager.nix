@@ -28,29 +28,29 @@
         home.packages = with pkgs; [
             
             # Destop environment
-            clipse
-            hyprshot
-            pavucontrol
-            wl-clipboard
-            font-awesome_5
-            breeze-hacked-cursor-theme
+            clipse                          # Clipboard (tui)
+            hyprshot                        # Screenshotting
+            pavucontrol                     # Volume control
+            wl-clipboard                    # Clipboard support
+            font-awesome_5                  # Font support
+            breeze-hacked-cursor-theme      # Mouse icon pack
 
             # User GUI applications
-            nautilus
-
-            # bitwarden-desktop          
-            vscode
+            nautilus                        # Filemanager (GTK)
+            bitwarden-desktop               # PasswordManager      
+            vscode                          # Coding IDE
             
             # User TUI applications
-            yazi
-            superfile
-            btop
+            yazi                            # Filemanager
+            superfile                       # Filemanager
+            btop                            # Resource monitor
+            systemd-manager-tui             # SystemD service manager 
 
             # User CLI applications
-            python3
+            python3                         # Programming
             
             # External flake packages
-            inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+            inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default  # Browser
         ];
     };
 }

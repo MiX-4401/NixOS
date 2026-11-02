@@ -15,18 +15,17 @@
         #./OtherConfigs/yubikey.nix                  # Import of YubiKey settings
         ./OtherConfigs/hibernation.nix              # Import of hibernation settings
         #./OtherConfigs/disko-config.nix              # Import of Disko configs
-        # ./OtherConfigs/networking.nix               # Import of my custom networking settings
+        ./OtherConfigs/networking.nix               # Import of my custom networking settings
     ];
 
     ############################
     ## Host specific drop-ins ##
     ############################
     environment.systemPackages = with pkgs; [
-        microcode-amd
-        mdadm
-        jdk17
-        libXrender
-        btrfs-progs
+        microcode-amd   # AMD CPU security patches
+        mdadm           # Raid support
+        btrfs-progs     # Btrfs support
+        # libXrender #unsure what this is for
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
