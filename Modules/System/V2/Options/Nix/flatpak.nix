@@ -8,6 +8,6 @@
     };
 
     config = {
-        services.flatpak.enable = true;
+        services.flatpak.enable = config.core.system.nix.flatpak.enable;
     };
 }

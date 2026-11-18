@@ -6,7 +6,7 @@
     options = {
         desktop.packages.hmFlatpak.enable = lib.mkOption {
             type = lib.types.bool;
-            default = true;
+            default = false;
             description = "Enable Flatpak via Declarative-Flatpak";
         };
 
