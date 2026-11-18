@@ -37,10 +37,10 @@
     
     # core.system.nix options
     config.core.system.nix.allowUnfreeSoftware = true;
-    config.core.system.nix.flatpak.enable = false;
+    config.core.system.nix.flatpak.enable = true;
     
     # core.system.misc options
-    config.core.system.misc.wallpaper.filename = "spaceking11.png";
+    config.core.system.misc.wallpaper.filename = "halo28.jpg";
     config.core.system.misc.gaming.enable = true;
     config.core.system.misc.virtualisation.enable = true;
 

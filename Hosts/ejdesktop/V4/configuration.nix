@@ -26,6 +26,7 @@
         mdadm           # Raid support
         btrfs-progs     # Btrfs support
         # libXrender #unsure what this is for
+        # faugus-launcher   # Would like to investigate and try this instead of bottles via flatpak
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;

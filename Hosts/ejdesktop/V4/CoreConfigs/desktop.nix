@@ -17,9 +17,8 @@
     desktop.packages.hyprland.sensitivity = -1.0;
     desktop.packages.hyprland.scrollFactor = 1.0;
 
-    desktop.packages.hmFlatpak.enable = false;
-    # desktop.packages.hmFlatpak.packages = [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
-    desktop.packages.hmFlatpak.packages = [];
+    desktop.packages.hmFlatpak.enable = true;
+    desktop.packages.hmFlatpak.packages = [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
     desktop.packages.hmFlatpak.remotes = {};
     
     # desktop.bundles options
