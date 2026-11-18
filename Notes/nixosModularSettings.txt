@@ -26,6 +26,8 @@ core										# NixOS modules
 		nix
 			int downloadBufferSize
 			bool allowUnfreeSoftware
+			flatpak
+				bool enable						# Enable standalone Flatpak, can be integrated with hm with desktop.package.hmFlatpak which also offers declarative management options
 		nixos
 			str hostname
 			garbageCollection
@@ -89,7 +91,7 @@ desktop
 			bool enable
 			str username
 			str email
-		flatpak
+		hmFlatpak							# Requries core.system.nix.flakepak.enable to be set to 'true'; This integrates Flatpak into HomeManager and allows for declarative management using software named 'Declarative-Flatpak'
 			bool enable
 			listof str packages				# [ "" ] For name of package - remote:type/package/architecture/branch/commit ex: [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
 			listof attrs remotes			# [ {} ] For name of source ex:  { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; };

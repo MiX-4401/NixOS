@@ -4,29 +4,31 @@
 
     imports = [ inputs.flatpaks.homeModules.default ];
     options = {
-        desktop.packages.flatpak.enable = lib.mkOption {
+        desktop.packages.hmFlatpak.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = "Enable Flatpak via Declarative-Flatpak";
         };
 
-        desktop.packages.flatpak.packages = lib.mkOption {
+        desktop.packages.hmFlatpak.packages = lib.mkOption {
             type = lib.types.listOf lib.types.str;
             default = [];
             description = "The list of packages to be installed";
         };
 
-        desktop.packages.flatpak.remotes = lib.mkOption {
+        desktop.packages.hmFlatpak.remotes = lib.mkOption {
             type = lib.types.listOf lib.types.attrs;
             default = {};
             description = "The remote sources included";
         };
     };
 
-    config = lib.mkIf config.desktop.packages.flatpak.enable {
+    config = lib.mkIf config.desktop.packages.hmFlatpak.enable {
 
         # Using DeclaritiveFlatpak syntax
-        services.flatpak.packages = config.desktop.packages.flatpak.packages;
-        services.flatpak.remotes = config.desktop.packages.flatpak.remotes;
+        services.flatpak.packages = config.desktop.packages.hmFlatpak.packages;
+        services.flatpak.remotes = config.desktop.packages.hmFlatpak.remotes;
+
+        # services.flakepak.enable = true;
     };
 }
