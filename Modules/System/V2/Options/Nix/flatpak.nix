@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
-    options.core.system.nix.flatpack.enable = lib.mkOption {
+    options.core.system.nix.flatpak.enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Enable Flatpak";

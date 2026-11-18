@@ -14,11 +14,11 @@ core										# NixOS modules
 				list allowedTCPPorts
 				list allowedUDPPorts
 			hardenServices
-				bool enable					# Harden systemd service units
-				list services				# Baseline - generally safe to insert services here and provides better copmatibiliy 
+				bool enable							# Harden systemd service units
+				list services						# Baseline - generally safe to insert services here and provides better copmatibiliy 
 			hardenNetwork
 				bool enable
-				bool rotateEthernetMacAddress	# Enable rotating mac addresses for the eth interface
+				bool rotateEthernetMacAddress		# Enable rotating mac addresses for the eth interface
 			hardenPam
 				bool enable
 			hardenUSB
@@ -27,7 +27,7 @@ core										# NixOS modules
 			int downloadBufferSize
 			bool allowUnfreeSoftware
 			flatpak
-				bool enable						# Enable standalone Flatpak, can be integrated with hm with desktop.package.hmFlatpak which also offers declarative management options
+				bool enable							# Enable standalone Flatpak, can be integrated with hm with desktop.package.hmFlatpak which also offers declarative management options
 		nixos
 			str hostname
 			garbageCollection
@@ -58,7 +58,7 @@ core										# NixOS modules
 			bool enable
 
 desktop
-	other									# Global values which multiple packages may access
+	other											# Global values which multiple packages may access
 		# str wallpaper	
 		defaultApplications
 			str browser														

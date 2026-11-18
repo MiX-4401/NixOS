@@ -16,6 +16,10 @@
     desktop.packages.hyprland.layout = "dwindle";
     desktop.packages.hyprland.sensitivity = -1.0;
     desktop.packages.hyprland.scrollFactor = 1.0;
+
+    desktop.packages.hmFlatpak.enable = true;
+    desktop.packages.hmFlatpak.packages = [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
+    desktop.packages.hmFlatpak.remotes = { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; };
     
     # desktop.bundles options
     desktop.bundles.office.enable   = true; 
@@ -25,3 +29,4 @@
     desktop.bundles.social.enable   = true; 
     desktop.bundles.troubleshooting.enable = true;
 }
+

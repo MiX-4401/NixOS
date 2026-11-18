@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, inputs, config, ... }:
 
 {
 
@@ -17,7 +17,7 @@
         };
 
         desktop.packages.hmFlatpak.remotes = lib.mkOption {
-            type = lib.types.listOf lib.types.attrs;
+            type = lib.types.attrs;
             default = {};
             description = "The remote sources included";
         };
@@ -28,7 +28,5 @@
         # Using DeclaritiveFlatpak syntax
         services.flatpak.packages = config.desktop.packages.hmFlatpak.packages;
         services.flatpak.remotes = config.desktop.packages.hmFlatpak.remotes;
-
-        # services.flakepak.enable = true;
     };
 }
