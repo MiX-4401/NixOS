@@ -31,15 +31,4 @@
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
-
-    # services.webdav = {
-    #     enable = true;
-    #     settings.address = "192.168.5.108";
-    #     settings.port = "5001";
-    #     settings.directory = "/media/test";
-    #     settings.users = {
-    #         username = "ethanr";
-    #         password = "++32=Deep=Shown=Movement=80++";
-    #     };
-    # };
 }

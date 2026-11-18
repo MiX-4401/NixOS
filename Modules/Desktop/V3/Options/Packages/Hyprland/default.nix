@@ -79,38 +79,7 @@
                     colors = [ "rgb(${config.stylix.base16Scheme.base01})" "rgb(${config.stylix.base16Scheme.base02})" ];
                     angle = 45;
                 };
-                
-                # Temp - to be removed
-                # monitor = [ 
-                #     {
-                #         output = "HDMI-A-1";
-                #         mode = "1920x1080@75";
-                #         position = "auto";
-                #         scale = 1.2;
-                #     }
-                #     {
-                #         output = "DP-1";
-                #         mode = "1920x1080@144";
-                #         position = "0x0";
-                #         scale = 1.2;
-                #     } 
-                # ];
             };
         };
     };
 }
-
-# monitor = [ 
-#     {
-#         output = "HDMI-A-1";
-#         mode = "1920x1080@75";
-#         position = "auto";
-#         scale = 1.2;
-#     }
-#     {
-#         output = "DP-1";
-#         mode = "1920x1080@144";
-#         position = "0x0";
-#         scale = 1.2;
-#     } 
-# ];
