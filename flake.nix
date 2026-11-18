@@ -8,7 +8,7 @@
         ###################
 
         # NixOS nixpkgs contains: Software packages, helper libraries
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
         # Diskio contains: Helper libraries for declarative disk management
@@ -50,6 +50,7 @@
         system = "x86_64-linux";
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         myLib = import ./Lib/moduleBundle.nix { inherit inputs; };
+
     in { 
         
         # Devopment shells

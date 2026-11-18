@@ -1,4 +1,4 @@
-{ lib, username, pkgs, config, ... }:
+{ lib, username, pkgs, pkgsUnstable, config, ... }:
 
 {
     imports = [
@@ -21,12 +21,17 @@
     ############################
     ## Host specific drop-ins ##
 ############################
-    environment.systemPackages = with pkgs; [
-        microcode-amd   # AMD CPU security patches
-        mdadm           # Raid support
-        btrfs-progs     # Btrfs support
+    environment.systemPackages = [
+      
+        # Stable packages
+        pkgs.microcode-amd   # AMD CPU security patches
+        pkgs.mdadm           # Raid support
+        pkgs.btrfs-progs     # Btrfs support
         # libXrender #unsure what this is for
         # faugus-launcher   # Would like to investigate and try this instead of bottles via flatpak
+    
+        # Unstable packages
+        pkgsUnstable.bottles
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
