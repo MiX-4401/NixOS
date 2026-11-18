@@ -19,7 +19,7 @@
 
     desktop.packages.hmFlatpak.enable = true;
     desktop.packages.hmFlatpak.packages = [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
-    desktop.packages.hmFlatpak.remotes = { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; };
+    desktop.packages.hmFlatpak.remotes = {};
     
     # desktop.bundles options
     desktop.bundles.office.enable   = true; 

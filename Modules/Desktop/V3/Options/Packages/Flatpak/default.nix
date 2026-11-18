@@ -18,7 +18,7 @@
 
         desktop.packages.hmFlatpak.remotes = lib.mkOption {
             type = lib.types.attrs;
-            default = {};
+            default = { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; };
             description = "The remote sources included";
         };
     };
@@ -27,6 +27,6 @@
 
         # Using DeclaritiveFlatpak syntax
         services.flatpak.packages = config.desktop.packages.hmFlatpak.packages;
-        services.flatpak.remotes = config.desktop.packages.hmFlatpak.remotes;
+        services.flatpak.remotes = lib.mkMerge [ { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; } config.desktop.packages.hmFlatpak.remotes ];
     };
 }
