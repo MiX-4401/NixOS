@@ -1,7 +1,6 @@
 {
     description = "Multi-Host Modular System Configurations";
     
-    # 
     inputs = {
 
         # System software #
@@ -47,8 +46,8 @@
         
         # Devopment shells
         devShells.${system} = {
-            forensics = import ./Modules/Shells/Forensics/default.nix { inherit pkgs; };                # Forensics development shell
-            troubleshooting = import ./Modules/Shells/Troubleshooting/default.nix { inherit pkgs; };    # Troubleshooting shell
+            forensics = import ./Modules/Shells/Forensics/default.nix { inherit pkgs; };                # nix develop .#forensics Forensics development shell
+            troubleshooting = import ./Modules/Shells/Troubleshooting/default.nix { inherit pkgs; };    # nix develop .#troubleshooting Troubleshooting shell
         };
 
         # Hosts

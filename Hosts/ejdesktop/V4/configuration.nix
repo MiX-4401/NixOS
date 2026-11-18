@@ -25,6 +25,8 @@
         microcode-amd   # AMD CPU security patches
         mdadm           # Raid support
         btrfs-progs     # Btrfs support
+        dxvk            # Tarnslate DirectX9-11 to Vulkan
+        vkd3d           # Translate DirectX12 to Vulkan
         # libXrender #unsure what this is for
     ];
 
