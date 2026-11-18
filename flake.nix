@@ -25,7 +25,7 @@
 
         # NixFlatpak contains: Software helper for declaritive Flatpak management (used for Bottles)
         # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-        nix-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
+        flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
         #######################
         # Additional software #
@@ -44,7 +44,7 @@
         };
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, disko, nix-flatpak, ... }:
+    outputs = inputs@{ self, nixpkgs, home-manager, disko, flatpaks, ... }:
     let
         # Import my custom lib functions
         system = "x86_64-linux";

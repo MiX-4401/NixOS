@@ -25,6 +25,7 @@
         microcode-amd   # AMD CPU security patches
         mdadm           # Raid support
         btrfs-progs     # Btrfs support
+        bottles
         # libXrender #unsure what this is for
     ];
 
