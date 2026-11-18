@@ -13,7 +13,8 @@
             modrinth-app
             wineWow64Packages.full
             winetricks
-            bottles
         ];
+
+        
     };
 }

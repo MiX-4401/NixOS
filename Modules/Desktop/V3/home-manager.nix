@@ -21,7 +21,19 @@
         home.homeDirectory = "/home/${username}";
         home.stateVersion = "26.05";
         imports = [
+            inputs.nix-flatpak.homeModules.default
+            # inputs.nix-flatpak.homeManagerModules.nix-flatpak
             ./Options/moduleBundle.nix
+
+            # {
+            #     # services.flatpak.enable = true;
+            #     services.flatpak.packages = [
+            #         { appId = "com.usebottles.bottles"; origin = "flathub"; }   # Flathub for Bottles
+            #     ];
+            #     services.flatpak.remotes = [
+            #         { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
+            #     ];
+            # }
         ]; 
         
         # Forced applications

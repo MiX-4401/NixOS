@@ -11,5 +11,4 @@
     # Prevent DNS managed by DHCP
     networking.nameservers = [ "1.1.1.1" ];
     networking.networkmanager.insertNameservers = [ "1.1.1.1" ];
-
 }

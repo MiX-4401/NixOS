@@ -3,7 +3,9 @@
     
     inputs = {
 
+        ###################
         # System software #
+        ###################
 
         # NixOS nixpkgs contains: Software packages, helper libraries
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
@@ -17,11 +19,17 @@
         home-manager.url = "github:nix-community/home-manager/release-26.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        # Stylix contains: Software herlper libraries for system/application appearence management 
+        # Stylix contains: Software helper libraries for system/application appearence management 
         stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
+        # NixFlatpak contains: Software helper for declaritive Flatpak management (used for Bottles)
+        # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+        nix-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
+
+        #######################
         # Additional software #
+        #######################
 
         # Browser Zen
         zen-browser.url = "github:youwen5/zen-browser-flake";
@@ -36,7 +44,7 @@
         };
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }:
+    outputs = inputs@{ self, nixpkgs, home-manager, disko, nix-flatpak, ... }:
     let
         # Import my custom lib functions
         system = "x86_64-linux";
@@ -70,18 +78,10 @@
             specialArgs = { };
         };
 
-        # My experiemental virtual machine
-        nixosConfigurations.ejvm = myLib.mkHost {    # Uses my custom mkHost function to take care of boilerplate
-            hostname = "ejvm";
-            username = "ejradford";
-            system = system;
-            modules = [ ./Hosts/ejvm/V1/configuration.nix disko.nixosModules.disko];
-            specialArgs = { };
-        };
-        # ...
-        
-        # My server
+        # Anything else
 
         # ...
+
+        #
     };
 }
