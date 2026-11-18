@@ -14,12 +14,13 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
-    xdg.portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-            xdg-desktop-portal-gtk
-        ];
-    };
+    # xdg.portal = {
+    #     enable = true;
+    #     extraPortals = with pkgs; [
+    #         xdg-desktop-portal-hyprland
+    #         xdg-desktop-portal-gtk
+    #     ];
+    # };
 
     # Umask
     environment.extraInit = "umask 0077";
