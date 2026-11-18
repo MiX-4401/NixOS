@@ -9,15 +9,11 @@
         enable = true;
         homeManagerIntegration.followSystem = true;
         
+        # Force system and application colours to depend on a generated pallet from the specified wallpaper image
         polarity = "dark";
         image = ./Wallpapers/${config.core.system.misc.wallpaper.filename};
-        
-        # cursor = {
-        #     size = 12;
-        #     name = "Breeze_Hacked";
-        #     package = pkgs.breeze-hacked-cursor-theme;
-        # };
 
+        # Force system and application wide fonts
         fonts = {
             serif = {
                 package = pkgs.noto-fonts;

@@ -5,7 +5,6 @@
     imports = [
         inputs.home-manager.nixosModules.home-manager
         ./Options/moduleBridge.nix
-        
     ];
 
     home-manager.useGlobalPkgs = true;
@@ -13,7 +12,7 @@
     home-manager.extraSpecialArgs = { 
         inherit inputs; 
         inherit username;
-        wallpaper = config.core.system.misc.wallpaper.filename;   # Passthrough toplevel value to home-manager's scope
+        wallpaper = config.core.system.misc.wallpaper.filename;   # Passthrough toplevel value of the wallpaper filename to home-manager's scope as a new variable
     };
     
     home-manager.users.${username} = {
@@ -21,13 +20,8 @@
         home.homeDirectory = "/home/${username}";
         home.stateVersion = "26.05";
         imports = [
-            inputs.flatpaks.homeModules.default
             ./Options/moduleBundle.nix
         ]; 
-       
-        # Declarative Flatpak for NixOS
-        services.flatpak.packages = [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
-        services.flatpak.remotes = { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; };
         
         # Forced applications
         home.packages = with pkgs; [

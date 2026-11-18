@@ -13,5 +13,6 @@
         ./Waybar
         ./Waypaper
         ./Git
+        ./Flatpak
     ];
 }

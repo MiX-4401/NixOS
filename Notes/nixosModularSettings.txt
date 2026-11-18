@@ -32,15 +32,15 @@ core										# NixOS modules
 				bool enable
 				str period
 			str osVersion
-			hibernation						# Requires core.desktop.idleController.enable to be set to 'true'
+			hibernation								# Requires core.desktop.idleController.enable to be set to 'true'
 				bool enable
 				str hibernateDevice
 				str hibernateAfter
 			printing
 				bool enable
 				bool allowAutoDiscovery
-				list drivers
-				list printers				# [ {} ] for hardware.printers.ensurePrinters
+				listOf pkgs drivers					# [ nixpkgs.myPackage ]
+				listOf attr printers				# [ {} ] for hardware.printers.ensurePrinters
 				
 		misc
 			gaming
@@ -89,6 +89,13 @@ desktop
 			bool enable
 			str username
 			str email
+		flatpak
+			bool enable
+			listof str packages				# [ "" ] For name of package - remote:type/package/architecture/branch/commit ex: [ "flathub:app/com.usebottles.bottles/x86_64/stable" ];
+			listof attrs remotes			# [ {} ] For name of source ex:  { "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo"; };
+
+			
+
 		
 
 	

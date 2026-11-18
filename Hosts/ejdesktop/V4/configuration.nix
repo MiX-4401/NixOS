@@ -20,17 +20,13 @@
 
     ############################
     ## Host specific drop-ins ##
-    ############################
+############################
     environment.systemPackages = with pkgs; [
         microcode-amd   # AMD CPU security patches
         mdadm           # Raid support
         btrfs-progs     # Btrfs support
-        bottles
         # libXrender #unsure what this is for
     ];
-
-    
-    services.flatpak.enable = true;
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
 }
