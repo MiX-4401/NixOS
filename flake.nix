@@ -7,7 +7,7 @@
         # System software #
         ###################
 
-        # NixOS nixpkgs contains: Software packages, helper libraries
+        # NixOS nixpkgs contains: Software packages, helper libraries (stable and unstable)
         nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
@@ -23,8 +23,7 @@
         stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-        # NixFlatpak contains: Software helper for declaritive Flatpak management (used for Bottles)
-        # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+        # DeclarativeFlatpak contains: Software helper for declarative Flatpak management (used for Bottles)
         flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
         #######################

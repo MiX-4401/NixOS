@@ -15,10 +15,10 @@ inputs.nixpkgs.lib.nixosSystem {
         inherit inputs username; 
 
         # Passthrough unstable nixpkgs input to allow explicit installation of packages from the unstable nixpkgs source
-        pkgsUnstable = import inputs.nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-        };
+        # pkgsUnstable = import inputs.nixpkgs-unstable {
+        #     inherit system;
+        #     config.allowUnfree = true;
+        # };
     }; 
     modules = modules ++ [{ networking.hostName = inputs.nixpkgs-stable.lib.mkDefault hostname; }];    # modules: Joins auto setting hostname with custom mdoules to simplfy networking modules
 }
