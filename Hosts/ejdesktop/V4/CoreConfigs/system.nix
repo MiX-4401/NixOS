@@ -37,7 +37,7 @@
     
     # core.system.nix options
     config.core.system.nix.allowUnfreeSoftware = true;
-    config.core.system.nix.flatpak.enable = true;
+    config.core.system.nix.flatpak.enable = false;
     
     # core.system.misc options
     config.core.system.misc.wallpaper.filename = "spaceking11.png";
