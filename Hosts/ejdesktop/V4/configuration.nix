@@ -1,4 +1,4 @@
-{ lib, username, pkgs, config, ... }:
+{ lib, username, pkgs, pkgsUnstable, config, ... }:
 
 {
     imports = [
@@ -31,7 +31,7 @@
         # faugus-launcher   # Would like to investigate and try this instead of bottles via flatpak
     
         # Unstable packages
-        # pkgsUnstable.bottles
+        (pkgsUnstable.bottles.override { removeWarningPopup = true; })
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;

@@ -7,8 +7,8 @@
         # System software #
         ###################
 
-        # NixOS nixpkgs contains: Software packages, helper libraries (stable and unstable)
-        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
+        # NixOS nixpkgs contains: Software packages, helper libraries
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
         # Diskio contains: Helper libraries for declarative disk management
@@ -23,7 +23,8 @@
         stylix.url = "github:nix-community/stylix/release-26.05";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-        # DeclarativeFlatpak contains: Software helper for declarative Flatpak management (used for Bottles)
+        # NixFlatpak contains: Software helper for declaritive Flatpak management (used for Bottles)
+        # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
         flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
         #######################
@@ -49,7 +50,6 @@
         system = "x86_64-linux";
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         myLib = import ./Lib/moduleBundle.nix { inherit inputs; };
-
     in { 
         
         # Devopment shells
